@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\ApiUploadController;
-use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\BioController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
@@ -11,11 +9,11 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TourController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/bio', [BioController::class, 'index']);
-Route::get('/services', [ServicesController::class, 'index']);
-Route::get('/music', [MusicController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']);
-Route::get('/tour', [TourController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/bio', [BioController::class, 'index'])->name('bio');
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/music', [MusicController::class, 'index'])->name('music');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/tour', [TourController::class, 'index'])->name('tour');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
