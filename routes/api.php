@@ -11,4 +11,7 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 Route::middleware('auth:sanctum')->group(function () {
     //user routes
     Route::post('/upload', [ApiUploadController::class, 'upload']);
+
+    
+
 });
