@@ -40,5 +40,6 @@ class posts extends Model
         'updated_at' => 'timestamp',
         'title' => 'array',
         'description' => 'array',
+        'content' => 'array',
     ];
 }

@@ -1,29 +1,5 @@
 <section class="footer">
     <div class="footer-nav">
-        <div class="footer-mobile">
-            <img src="assets/img/logow.svg" alt="Logo">
-            <div class="footer-elm">
-
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/RafaelDatoPiano/" target="_blank"><i class="fa-brands fa-facebook"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/rafael_dato/" target="_blank"><i class="fa-brands fa-instagram"
-                            aria-hidden="true"></i></a>
-                    <a href="https://fr.linkedin.com/in/rafa%C3%ABl-dato-6292a51a9" target="_blank"><i
-                            class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                </div>
-                <select name="lang" id="lang" size="1" onchange="window.location.href=this.value">
-                    <option value="" placeholder=""></option>
-                    <option value="?lng=fr" class="language">
-                        français
-                    </option>
-                    <option value="?lng=en" class="language">
-                        english
-                    </option>
-                </select>
-            </div>
-        </div>
-
         <div class="footer-bottom">
             <div class="footer-logo">
                 <img src="assets/img/logow.svg" alt="Logo">
@@ -83,19 +59,32 @@
                 </div>
 
                 <div class="lang">
-                    <select name="lang" id="lang" size="1" onchange="window.location.href=this.value">
-                        <option value="placeholder" class="language" disabled="" selected="">select lang</option>
-                        <option value="?lng=fr" class="language">
-                            français
-                        </option>
-                        <option value="?lng=en" class="language">
-                            english
-                        </option>
-                    </select>
+                    <form id="translationForm" method="POST" action="{{ route('lang') }}">
+                        @csrf
+                        <select id="languageSelect" name="lang">
+                            <option value="placeholder" class="language" disabled="" selected="">select lang</option>
+                            <option value="fr" class="language">
+                                français 1
+                            </option>
+                            <option value="en" class="language">
+                                english 2
+                            </option>
+                        </select>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var languageSelect = document.getElementById('languageSelect');
+            
+            languageSelect.addEventListener('change', function () {
+                document.getElementById('translationForm').submit();
+            });
+        });
+    </script>
 
     <div class="copyright">
         <p>copyright orbin © 2023. all rights reserved</p>

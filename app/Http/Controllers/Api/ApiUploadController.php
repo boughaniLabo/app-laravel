@@ -13,7 +13,7 @@ class ApiUploadController extends Controller
             $urls = [];
 
             foreach ($request->file('files') as $file) {
-                $fileName = time() . '_' . $file->getClientOriginalName();
+                $fileName = str_replace(' ', '_', time() . '_' . $file->getClientOriginalName());
                 $filePath = $file->storeAs('uploads', $fileName, 'public');
 
                 // Generate the full URL
