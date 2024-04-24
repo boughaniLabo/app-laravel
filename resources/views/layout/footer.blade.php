@@ -62,7 +62,8 @@
                     <form id="translationForm" method="POST" action="{{ route('lang') }}">
                         @csrf
                         <select id="languageSelect" name="lang">
-                            <option value="placeholder" class="language" disabled="" selected="">select lang</option>
+                            <option value="placeholder" class="language" disabled="" selected="">select lang
+                            </option>
                             <option value="fr" class="language">
                                 français 1
                             </option>
@@ -77,13 +78,43 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var languageSelect = document.getElementById('languageSelect');
-            
-            languageSelect.addEventListener('change', function () {
+
+            languageSelect.addEventListener('change', function() {
                 document.getElementById('translationForm').submit();
             });
         });
+    </script>
+
+    <script>
+        var btn = document.getElementById('menu-btn');
+        var menu = document.getElementById('menu');
+        var icon = document.querySelector('#menu-btn i');
+        let navEl1 = document.querySelectorAll(".nav a")
+        var pos = 0;
+        btn.addEventListener('click', function() {
+            if (pos == 0) {
+
+                menu.classList.add('menu');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                if (window.location.href.split('=')[2] === "Artibiography" || window.location.href.split('=')[2] ===
+                    "Artibiographie") {
+                    biOverlay.style.display = 'none'
+                }
+                pos = 1;
+            } else {
+                menu.classList.remove('menu');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+                if (window.location.href.split('=')[2] === "Artibiography" || window.location.href.split('=')[2] ===
+                    "Artibiographie") {
+                    biOverlay.style.display = 'block'
+                }
+                pos = 0;
+            }
+        })
     </script>
 
     <div class="copyright">
