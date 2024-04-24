@@ -39,6 +39,7 @@ body {
 }
 .navbar {
   max-width: 1440px;
+  z-index: 1000000000 !important;
 }
 
 .btn-cont {
@@ -107,6 +108,7 @@ body {
 
 .topbar {
   width: 100%;
+  z-index: 9999999999999 !important;
 }
 .topbar .wrapper {
   max-width: 1920px;

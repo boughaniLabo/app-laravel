@@ -688,6 +688,8 @@
       
     
 </section>
+
+
 <script>
    
     let playOverlay = document.querySelectorAll('.play-overlay');
@@ -709,11 +711,7 @@
         }
         
     });
-    // playOverlay[1].addEventListener('click', function() {
-    //     playOverlay[1].style.display = "none"
-    //     pauseOverlay[1].style.display = "block"
-    //     document.getElementsByTagName('iframe')[1].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*')
-    // });
+
     pauseOverlay[0].addEventListener('click', function() {
         if (window.getComputedStyle(document.querySelector('.youtube-frame')).display === 'flex') {
             document.querySelector('.youtube-frame').style.display = 'none';
@@ -724,11 +722,234 @@
             // document.getElementsByTagName('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*')
         }
     });
-    // pauseOverlay[1].addEventListener('click', function() {
-    //     playOverlay[1].style.display = "block"
-    //     pauseOverlay[1].style.display = "none"
-    //     document.getElementsByTagName('iframe')[1].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*')
-    // });
 
+
+</script>
+<script type="module">
+import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+const wavesurfer = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: '#B5D9D9',
+  progressColor: '#1E96A6',
+  url: 'assets/audio.mp3',
+  barWidth: 2,
+  barRadius: 10,
+  height: 40,
+  cursorWidth: 0,
+})
+const wavesurfer2 = WaveSurfer.create({
+  container: '#waveform-two',
+  waveColor: '#B5D9D9',
+  progressColor: '#1E96A6',
+  url: 'assets/audio.mp3',
+  barWidth: 2,
+  height: 50,
+  cursorWidth: 0,
+})
+wavesurfer.on('ready', () => {
+    var totalDuration = wavesurfer.getDuration();
+    var minutes = Math.floor((totalDuration % 3600) / 60);
+    var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+    let totalTime = `${minutes}:${secondes}`;
+    document.getElementById('time-total').innerText = totalTime;
+})
+wavesurfer2.on('ready', () => {
+    var totalDuration = wavesurfer2.getDuration();
+    var minutes = Math.floor((totalDuration % 3600) / 60);
+    var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+    let totalTime = `${minutes}:${secondes}`;
+    document.getElementById('time-total-two').innerText = totalTime;
+
+})
+closePlayer.addEventListener('click', function () {
+        if (window.getComputedStyle(document.querySelector('.big-player')).display === 'block') {
+            document.querySelector('.big-player').style.display = 'none';
+            wavesurfer2.stop()}})
+let btns = document.querySelectorAll('.control button')
+let icon = document.querySelectorAll('.control button i')
+let btns2 = document.querySelectorAll('.control-two button')
+let icon2 = document.querySelectorAll('.control-two button i')
+for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function() {
+        switch(i) {
+            case 0:
+                wavesurfer.seekTo(0);
+                break;
+            case 1:
+                wavesurfer.playPause();
+                if (icon[1].className === 'fa-solid fa-play') {
+                    icon[1].className = 'fa-solid fa-pause'
+                } else {
+                    icon[1].className = 'fa-solid fa-play'
+                }
+                break;
+            case 2: 
+                wavesurfer.skip(2);
+                break;
+            case 3:
+                if (wavesurfer.getMuted() && icon[3].className === 'fa-solid fa-volume-xmark') {
+                    icon[3].className = 'fa-solid fa-volume-high'
+                    wavesurfer.setMuted(false);
+                }else{
+                    wavesurfer.setMuted(true);
+                    icon[3].className = 'fa-solid fa-volume-xmark'
+                }
+                
+                break;
+            
+        }
+    })
+        btns2[i].addEventListener('click', function() {
+        switch(i) {
+            case 0:
+                wavesurfer2.seekTo(0);
+                break;
+            case 1:
+                wavesurfer2.playPause();
+                if (icon2[1].className === 'fa-solid fa-play') {
+                    icon2[1].className = 'fa-solid fa-pause'
+                } else {
+                    icon2[1].className = 'fa-solid fa-play'
+                }
+                break;
+            case 2: 
+                wavesurfer2.skip(2);
+                break;
+            case 3:
+                if (wavesurfer2.getMuted() && icon2[3].className === 'fa-solid fa-volume-xmark') {
+                    icon2[3].className = 'fa-solid fa-volume-high'
+                    wavesurfer2.setMuted(false);
+                }else{
+                    wavesurfer2.setMuted(true);
+                    icon2[3].className = 'fa-solid fa-volume-xmark'
+                }
+                
+                break;
+            
+        }
+
+    
+    })
+}
+for (let i = 0; i < startBigPlayer.length; i++) {
+        
+        startBigPlayer[i].addEventListener('click', function(e) {
+            console.log(i)
+            if (window.getComputedStyle(document.querySelector('.big-player')).display === 'none') {
+                document.querySelector('.big-player').style.display = 'none';
+                document.querySelector('.big-player').style.display = 'block';}
+            if (i === 0){
+            songName.textContent = "01. So What's next ?";
+            wavesurfer2.load('assets/album/audio08.mp3')
+            icon2[1].className = 'fa-solid fa-play'
+            } else if (i === 1){
+            songName.textContent = "02. Friendly Walk";
+            wavesurfer2.load('assets/album/audio03.mp3')
+          
+            icon2[1].className = 'fa-solid fa-play'
+            }else if (i === 2){
+            songName.textContent = "03. When you touch the sky";
+            wavesurfer2.load('assets/album/audio09.mp3')
+           
+            icon2[1].className = 'fa-solid fa-play'
+            }else if (i === 3){
+            songName.textContent = "04. One Step Away From Dark Shadow";
+            wavesurfer2.load('assets/album/audio06.mp3')
+        
+            icon2[1].className = 'fa-solid fa-play'
+            }
+        }
+        )
+    }
+let strtPlayMobile = document.querySelectorAll('.play-song-mobile');
+for (let i = 0; i < startBigPlayer.length; i++) {
+    
+    strtPlayMobile[i].addEventListener('click', function(e) {
+        console.log(i)
+        if (window.getComputedStyle(document.querySelector('.big-player')).display === 'none') {
+            document.querySelector('.big-player').style.display = 'none';
+            document.querySelector('.big-player').style.display = 'block';}
+        if (i === 0){
+        songName.textContent = "01. So What's next ?";
+        wavesurfer2.load('assets/album/audio08.mp3')
+            wavesurfer2.playPause()
+        icon2[1].className = 'fa-solid fa-play'
+        } else if (i === 1){
+        songName.textContent = "02. Friendly Walk";
+        wavesurfer2.load('assets/album/audio03.mp3')
+        wavesurfer2.stop()
+        wavesurfer2.playPause()
+        icon2[1].className = 'fa-solid fa-play'
+        }else if (i === 2){
+        songName.textContent = "03. When you touch the sky";
+        wavesurfer2.load('assets/album/audio09.mp3')
+        icon2[1].className = 'fa-solid fa-play'
+        }else if (i === 3){
+        songName.textContent = "04. One Step Away From Dark Shadow";
+        wavesurfer2.load('assets/album/audio06.mp3')
+        icon2[1].className = 'fa-solid fa-play'
+        }
+    }
+    )
+}
+
+wavesurfer.on('audioprocess', function() {
+    
+  if (wavesurfer.isPlaying()) {
+    var currentTime = wavesurfer.getCurrentTime();
+    var minutes = Math.floor((currentTime % 3600) / 60);
+    var secondes = ('00' + Math.floor(currentTime % 60)).slice(-2);
+    let current = `${minutes}:${secondes}`;
+    document.getElementById('time-current').innerText = current;
+    
+  }
+});
+wavesurfer2.on('audioprocess', function() {
+    
+    if (wavesurfer2.isPlaying()) {
+      var currentTime = wavesurfer2.getCurrentTime();
+      var minutes = Math.floor((currentTime % 3600) / 60);
+      var secondes = ('00' + Math.floor(currentTime % 60)).slice(-2);
+      let current = `${minutes}:${secondes}`;
+      document.getElementById('time-current-two').innerText = current;
+    }
+});
+
+let select = document.querySelectorAll('.video-select');
+let frameSelect = document.getElementById('youtube-select');
+let thumbTitle = document.querySelectorAll('.thumb-title');
+let frameTitle = document.querySelector('.frame-title');
+
+for (let i = 0; i < select.length; i++) {
+    select[i].addEventListener('click', function() {
+        if (i === 0) {
+            frameSelect.src = 'https://www.youtube.com/embed/UcWu4IhHb9Q?enablejsapi=1&showinfo=0&controls=0&autohide=1'
+            frameTitle.innerText = thumbTitle[0].innerText
+        }else if (i === 1) {
+            frameSelect.src = 'https://www.youtube.com/embed/BQ9E8idV0Ps?enablejsapi=1&showinfo=0&controls=0&autohide=1'
+            frameTitle.innerText = thumbTitle[1].innerText
+        }else if (i === 2) {
+            frameSelect.src = 'https://www.youtube.com/embed/WlltN3tWK-8?enablejsapi=1&showinfo=0&controls=0&autohide=1'
+            frameTitle.innerText = thumbTitle[2].innerText
+        }else if (i === 3) {
+            frameSelect.src = 'https://www.youtube.com/embed/fS_XyRgpXgc?enablejsapi=1&showinfo=0&controls=0&autohide=1'
+            frameTitle.innerText = thumbTitle[3].innerText
+        }else if (i === 4) {
+            frameSelect.src = 'https://www.youtube.com/embed/krIQbEGZBp0?enablejsapi=1&showinfo=0&controls=0&autohide=1'
+            frameTitle.innerText = thumbTitle[4].innerText
+        }else {
+            console.log('no')
+        }
+    })
+}
+
+let navEl = document.querySelectorAll(".nav a")
+    navEl[0].classList.add('active')
+
+let playSng = document.querySelector('.play-song-mobile')
+playSng.addEventListener('click', function() {
+    console.log('hi')
+})
 </script>
 @endsection
