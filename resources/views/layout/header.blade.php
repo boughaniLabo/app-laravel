@@ -1,6 +1,6 @@
 <div class="bg"></div>
 @if ($currentRoute == 'bio' || $currentRoute == 'home')
-    <section class="showcase" style="background-image: url('{{ $image }}');">
+    <section class="showcase h-fit" style="background-image: url('{{ $image }}');background-size: cover;">
         @if ($currentRoute == 'home')
             <div class="topbar">
                 <div class="wrapper">
@@ -21,7 +21,6 @@
                         </div>
                         <nav class="topnav">
                             <div class="navbar" id="menu">
-
                                 <nav class="nav nav-home">
                                     <!-- <div id="marker"></div> -->
                                     <a href="/">Home</a>
@@ -36,14 +35,11 @@
                         </nav>
                     </div>
                 </div>
-                <div class="row head-row">
-
-
-                    <div class="header-title-wrapper">
-
+                <div class="row head-row flex flex-row items-center justify-center">
+                    <div class="flex-1"></div>
+                    <div class="header-title-wrapper w-fit sm:pb-40 pb-5">
                         <div class="hero-title">
-
-                            <p class="artist-name">rafael dato</p>
+                            <p class="artist-name">rafaËl dato</p>
                             <h2 class="artist-instru">pianist</h2>
                             <h2 class="artist-comp">composer &amp; arranger</h2>
                             <a class="cta-header" href="#album">new album</a>
@@ -64,6 +60,11 @@
 
                         </div>
                     </div>
+                    <div class="flex-1"></div>
+                    <div class="flex-1"></div>
+                    <div class="flex-1"></div>
+                    <div class="flex-1"></div>
+                    <div class="flex-1"></div>
                 </div>
             </div>
         @endif

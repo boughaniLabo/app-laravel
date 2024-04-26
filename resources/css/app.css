@@ -75,13 +75,9 @@
   }
   
   #menu-btn {
-    display: none;
     border: 0;
     color: #fff;
     background-color: transparent;
-  
-    right: 10px;
-    bottom: 10px;
     cursor: pointer;
     font-size: 2em;
   }
@@ -420,7 +416,6 @@
     font-weight: 400;
     line-height: 80px;
     text-transform: capitalize;
-    width: 270px;
     margin-top: 16px;
   }
   

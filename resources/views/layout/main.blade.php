@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/assets/css/viewer.min.css">
     <link rel="stylesheet" href="/assets/css/style.css?v=<?=time();?>">
     <link rel="stylesheet" href="/assets/css/responsive.css?v=<?=time();?>">
+    {{-- tailwindcss  --}}
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
 </head>
     <title>@yield('title')</title>
     <!-- Include any CSS or scripts -->

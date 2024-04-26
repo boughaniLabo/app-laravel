@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('page.home', ['image' => '/assets/img/home1.jpg']);
+        return view('page.home', ['image' => '/assets/img/home1.png']);
     }
 }
