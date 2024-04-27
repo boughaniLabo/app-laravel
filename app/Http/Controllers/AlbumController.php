@@ -25,7 +25,6 @@ class AlbumController extends Controller
             'year' => 'required|integer',
             'cover' => 'nullable|string',
             'description' => 'required|string',
-            'links' => 'nullable|json',
         ]);
 
         if ($validator->fails()) {
@@ -78,7 +77,6 @@ class AlbumController extends Controller
             'year' => 'required|integer',
             'cover' => 'nullable|string',
             'description' => 'required|string',
-            'links' => 'nullable|json',
         ]);
 
         if ($validator->fails()) {

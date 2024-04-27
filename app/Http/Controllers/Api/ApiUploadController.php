@@ -17,7 +17,7 @@ class ApiUploadController extends Controller
                 $filePath = $file->storeAs('uploads', $fileName, 'public');
 
                 // Generate the full URL
-                $url = asset('storage/' . $filePath);
+                $url = asset('public/storage/' . $filePath);
                 $urls[] = $url;
             }
 

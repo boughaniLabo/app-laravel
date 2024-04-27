@@ -18,4 +18,16 @@ class Album extends Model
     {
         return $this->hasMany(Song::class, 'album_Id'); // Assuming 'album_Id' is the foreign key column name
     }
+
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+        'links' => 'array',
+    ];
 }
