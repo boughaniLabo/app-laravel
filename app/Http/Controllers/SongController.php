@@ -25,7 +25,6 @@ class SongController extends Controller
             'description' => 'required|string',
             'album_Id' => 'required|exists:albums,id',
             'url' => 'required|string',
-            'links' => 'nullable|json',
         ]);
        // dd($request->all()) ; 
         if ($validator->fails()) {
@@ -64,7 +63,6 @@ class SongController extends Controller
             'description' => 'required|string',
             'album_id' => 'required|exists:albums,id',
             'url' => 'required|string',
-            'links' => 'nullable|json',
         ]);
 
         $song->update($validatedData);
