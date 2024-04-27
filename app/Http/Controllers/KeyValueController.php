@@ -61,7 +61,7 @@ class KeyValueController extends Controller
     public function update(Request $request, $key)
     {
         $request->validate([
-            'value' => 'nullable|string',
+            'value' => 'nullable',
         ]);
     
         $keyValue = KeyValue::updateOrCreate(
