@@ -992,7 +992,7 @@
   }
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 880px) {
   .vid-thumb {
     width: 500px;
     height: 273px;
@@ -1035,7 +1035,7 @@
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 880px) {
   .showcase {
     height: 300px;
   }
@@ -1050,7 +1050,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 880px) {
   .tourlist li {
     justify-content: flex-start;
     align-items: center;
@@ -1140,7 +1140,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 880px) {
   .showcase {
     height: 480px;
     background-size: cover;
@@ -1184,7 +1184,7 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 880px) {
   .fl {
     overflow-x: hidden;
   }
@@ -1366,10 +1366,6 @@
     font-weight: 700;
   }
 
-  .col-md-3 h3 {
-    margin: 10px 0;
-    font-size: 16px;
-  }
 
   .youframe {
     width: 329px;

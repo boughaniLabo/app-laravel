@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="wrapper">
-            <div class="row album-row">
+            <div class="row album-row min-[880px]:flex flex-row w-full flex-nowrap">
                 <div class="col-md-6">
                     <div class="home-album">
 
@@ -114,12 +114,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-fit">
+                <div class="col-md-6">
                     <h2 class="nw-albm">new album</h2>
                     <div class="album-tit">
                         <h1 class="alb-title">
-                            so, what’s next?
-
+                            so, what’s <br> next?
                         </h1>
                     </div>
                     <p>

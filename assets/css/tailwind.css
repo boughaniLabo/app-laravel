@@ -614,12 +614,20 @@ video {
   width: fit-content !important;
 }
 
+.w-full {
+  width: 100% !important;
+}
+
 .flex-1 {
   flex: 1 1 0% !important;
 }
 
 .flex-row {
   flex-direction: row !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
 }
 
 .items-center {
@@ -662,8 +670,26 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
+@media (max-width: 880px) {
+  .max-\[880px\]\:flex {
+    display: flex !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:pb-40 {
     padding-bottom: 10rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 880px) {
+  .min-\[880px\]\:flex {
+    display: flex !important;
   }
 }
