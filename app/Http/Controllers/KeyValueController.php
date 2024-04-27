@@ -64,14 +64,13 @@ class KeyValueController extends Controller
             'value' => 'nullable|string',
         ]);
     
-        $keyValue = KeyValue::where('key', $key)->first();
+        $keyValue = KeyValue::updateOrCreate(
+            ['key' => $key],
+            ['value' => $request->value]
+        );
     
-        if (!$keyValue) {
-            return response()->json(['error' => 'Key not found.'], 404);
-        }
-    
-        $keyValue->update($request->all());
         return response()->json($keyValue, 200);
     }
+    
 
 }
