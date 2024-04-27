@@ -6,7 +6,7 @@ use App\Http\Controllers\BlogController;
 
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\AlbumController;
-
+use App\Http\Controllers\KeyValueController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +41,17 @@ Route::post('/songs', [SongController::class, 'store']);
 Route::get('/songs/{id}', [SongController::class, 'show']);
 Route::put('/songs/{id}', [SongController::class, 'update']);
 Route::delete('/songs/{id}', [SongController::class, 'destroy']);
+// Routes for Meta data 
+
+
+// Route to get all key-value pairs
+Route::get('/key-values', [KeyValueController::class, 'index']);
+
+// Route to create a new key-value pair
+Route::post('/key-values', [KeyValueController::class, 'store']);
+
+// Route to get a specific key-value pair by key
+Route::get('/key-values/{key}', [KeyValueController::class, 'show']);
+
+// Route to update a specific key-value pair by key
+Route::put('/key-values/{key}', [KeyValueController::class, 'update']);
