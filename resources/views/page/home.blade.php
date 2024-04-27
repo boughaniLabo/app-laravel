@@ -32,8 +32,7 @@
         <div class="wrapper">
             <div class="row album-row min-[880px]:flex flex-row w-full flex-nowrap">
                 <div class="col-md-6">
-                    <div class="home-album">
-
+                    <div class="home-album h-[560px]">
                         <div></div>
                         <img src="assets/img/album-cover.jpg" alt="" class="alb-img">
 
@@ -126,7 +125,7 @@
                         What's Next?" frees itself from the boundaries between musical genres, to offer a sonic synthesis
                         with jazz accents, capable of seducing an audience of profane and discerning music lovers alike.
                     </p>
-                    <div class="audio-player-mini">
+                    <div class="audio-player-mini h-fit">
                         <div class="player top-player">
                             <div class="song-name">01. So What's next ?</div>
                             <div class="timer">

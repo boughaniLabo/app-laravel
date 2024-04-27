@@ -609,6 +609,10 @@ video {
   height: fit-content !important;
 }
 
+.h-\[560px\] {
+  height: 560px !important;
+}
+
 .w-fit {
   width: -moz-fit-content !important;
   width: fit-content !important;
