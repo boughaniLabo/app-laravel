@@ -16,13 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('cover');
             $table->string('description');
-            $table->foreignId('album_Id')->constrained('albums');
+            $table->foreignId('album_Id')->constrained('albums')->references('id')->on('albums')->onDelete('cascade');
             $table->string('url');
             $table->json('links')->nullable();
             $table->timestamps();
-            $table->foreign('album_Id')->references('id')->on('albums')->onDelete('cascade');
-
-
         });
     }
 
