@@ -208,6 +208,19 @@
     width: 610px;
     line-height: 32px;
   }
+  .dispaly-flex{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 768px) {
+    .dispaly-flex {
+        justify-content: center; /* Horizontally center flex items */
+        align-items: center; /* Vertically center flex items */
+    }
+}
+.albumDetails{
+  
+}
   .arti-header div {
     margin-top: 100px;
     align-self: flex-end;

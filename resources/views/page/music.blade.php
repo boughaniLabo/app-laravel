@@ -1,14 +1,55 @@
 @extends('layout.main')
 @section('title', 'Home')
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js" integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    
+    function playAudio(song) {
+        console.log(song);
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#B5D9D9',
+            progressColor: '#1E96A6',
+            barWidth: 2,
+            height: 50,
+            cursorWidth: 0,
+        });
+        const audio = new Audio(song.url);
+        audio.crossOrigin = "anonymous";
+        console.log(audio);
+        document.getElementById('song-name').innerText = song.title;
+        // Load audio from the audio element
+        wavesurfer.load(audio);
+
+        // Play the audio
+        wavesurfer.play();
+
+        // Set the song title
+     
+  
+    }
+
+    function closeElement(element) {
+        console.log("Function called.");
+        var parent = element.parentElement.parentElement.parentElement;
+        console.log("Parent element:", parent);
+        if (parent) {
+            parent.style.display = 'none';
+            console.log("Parent element hidden.");
+        } else {
+            console.log("Parent element not found.");
+        }
+    }
+</script>
+
 <section class="album">
-    <div class="big-player">
+    <div class="big-player" id="costumeWave">
         <div>
             <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
         </div>
     <div class="player top-player">
 
-                        <div class="song-name">01. So What's next ?</div>
+                        <div class="song-name" id="song-name">01. So What's next ?</div>
                         <div class="timer">
                             <span class="start-two" id="time-current-two">00:00</span>
                             <span class="slash-two">/</span>
@@ -161,88 +202,12 @@
         <div class="title">
             <h1>Latest releases</h1>
         </div>
-        <div class="mobile-row music-page-row">
-            @foreach($albums as $album)
-            <div class="col-md-3">
-                <div class="rel-card">
-                    <div class="image">
-                        <img src="{{$album->cover}}" alt="">
-                    </div>
-                    
-                        <div class="social rel-card-link">
-                            @foreach($album->links as $link)
-                            @switch($link['link']) 
-                                @case('youtube')
-                                <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                                @break
-                                @case('spotify')
-                                <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-
-
-                                @break
-                                @case('itunes')
-                                <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-
-
-                                @break
-                                @case('deezer')
-                                <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                @break
-                                @case('amazon')
-                                <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                @break
-                                @endswitch
-                            @endforeach
-                                            
-                        </div>
-                        
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="social rel-card-link">
-                                @foreach($album->links as $link)
-                                @switch($link['link']) 
-                                    @case('youtube')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                                    @break
-                                    @case('spotify')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-
-
-                                    @break
-                                    @case('itunes')
-                                    <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-
-
-                                    @break
-                                    @case('deezer')
-                                    <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                    @break
-                                    @case('amazon')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                    @break
-                                    @endswitch
-                                @endforeach
-                                            
-                        </div>
-                        </div>
-                </div>
-                <h3>{{$album->title}}</h3>
-                <h4>{{$album->description}}</h4>
-                    
-            </div>
-        @endforeach
-        </div>
         
         
         
         <div class="row desktop-row rl-desk">
             @foreach($albums as $album)
-                <div class="col-md-3">
+                <div class="col-md-3 albumDetails" id="album-{{$album->id}}">
                     <div class="rel-card">
                         <div class="image">
                             <img src="{{$album->cover}}" alt="">
@@ -276,46 +241,16 @@
                                                 
                             </div>
                             
-                            <div class="overlay rel-card">
-                                <div></div>
-                                <div>
-                                    <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                                </div>
-                                <div class="social rel-card-link">
-                                    @foreach($album->links as $link)
-                                    @switch($link['link']) 
-                                        @case('youtube')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-    
-                                        @break
-                                        @case('spotify')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-    
-    
-                                        @break
-                                        @case('itunes')
-                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-    
-    
-                                        @break
-                                        @case('deezer')
-                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                        @break
-                                        @case('amazon')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                        @break
-                                        @endswitch
-                                    @endforeach
-                                                
+            
                             </div>
-                            </div>
+                            <h3>{{$album->title}}</h3>
+                            <h4>{{$album->description}}</h4>
                     </div>
-                    <h3>{{$album->title}}</h3>
-                    <h4>{{$album->description}}</h4>
+                 
                         
-                </div>
+                
             @endforeach
-    
+        </div>
         </div>
     </div>
 </section>
@@ -327,78 +262,65 @@
         </div>
         <div class="row best-songs">
             @foreach($values as $value)
-            <div class="col-md-3">
-                <div class="rel-card">
-                    <div class="image">
-                        <img src="{{$value['cover']}}" alt="">
-                    </div>
-                    <div class="social rel-card-link">
-                            
-                        @foreach($value['links'] as $link)
-                        @switch($link['link']) 
-                            @case('youtube')
-                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                            @break
-                            @case('spotify')
-                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-
-
-                            @break
-                            @case('itunes')
-                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-
-
-                            @break
-                            @case('deezer')
-                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            @break
-                            @case('amazon')
-                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                            @break
-                            @endswitch
-                        @endforeach
-                                            
-                                        </div>
-                                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="social rel-card-link">
-                            
-                                @foreach($value['links'] as $link)
+                <div class="col-md-3">
+                    <div class="rel-card">
+                        <div class="image">
+                            <img src="{{$value['cover']}}" alt="">
+                        </div>
+                        <div class="social rel-card-link">
+                            @foreach($value['links'] as $link)
                                 @switch($link['link']) 
                                     @case('youtube')
-                                    <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-        
-                                    @break
+                                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('spotify')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-        
-        
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('itunes')
-                                    <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-        
-        
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('deezer')
-                                    <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('amazon')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                        @break
+                                @endswitch
+                            @endforeach
+                        </div>
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big" id="play-button-{{$loop->index}}" onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="social rel-card-link">
+                                @foreach($value['links'] as $link)
+                                    @switch($link['link']) 
+                                        @case('youtube')
+                                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('spotify')
+                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('itunes')
+                                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('deezer')
+                                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('amazon')
+                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                            @break
                                     @endswitch
                                 @endforeach
-                                            
+                            </div>
                         </div>
-                        </div>
+                    </div>
+                    <h3 class="song-title">{{$value['title']}}</h3>
+                    <h4>{{$value['description']}}</h4>
                 </div>
-                <h3 class="song-title">{{$value['title']}}</h3>
-                <h4>{{$value['description']}}</h4>
-            </div>
-           @endforeach
+             @endforeach
+        
         </div>
         <div class="row best-songs">
             @foreach($values2 as $value)
@@ -476,287 +398,164 @@
            @endforeach
         </div>
     </div>
+    <div class="mobile-row music-page-row">
+        @foreach($values as $value)
+        <div class="col-md-3">
+            <div class="rel-card">
+                <div class="image">
+                    <img src="{{$value['cover']}}" alt="">
+                </div>
+                <div class="social rel-card-link">
+                        
+                    @foreach($value['links'] as $link)
+                    @switch($link['link']) 
+                        @case('youtube')
+                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+
+                        @break
+                        @case('spotify')
+                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+
+
+                        @break
+                        @case('itunes')
+                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+
+
+                        @break
+                        @case('deezer')
+                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                        @break
+                        @case('amazon')
+                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                        @break
+                        @endswitch
+                    @endforeach
+                                        
+                                    </div>
+                                    <div class="overlay rel-card">
+                        <div></div>
+                        <div>
+                            <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="social rel-card-link">
+                        
+                            @foreach($value['links'] as $link)
+                            @switch($link['link']) 
+                                @case('youtube')
+                                <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+    
+                                @break
+                                @case('spotify')
+                                <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
     
     
+                                @break
+                                @case('itunes')
+                                <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+    
+    
+                                @break
+                                @case('deezer')
+                                <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                @break
+                                @case('amazon')
+                                <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                @break
+                                @endswitch
+                            @endforeach
+                                        
+                    </div>
+                    </div>
+            </div>
+            <h3 class="song-title">{{$value['title']}}</h3>
+            <h4>{{$value['description']}}</h4>
+        </div>
+       @endforeach
+    </div>
 </section>
 <section class="song-page">
-    <div class="wrapper desktop-row">
+    <div class="wrapper">
           <div class="title">
               <h1>Nos pistes</h1>
               <a class="cta-header music-cta close-cta" href="javascript:void(0)">close</a>
           </div>
-          <div class="row best-songs">
-              <div class="col-md-3">
-                  <div class="rel-card">
-                      <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                  </div>
-                  <h3 class="song-title">So what's next?</h3>
-                  <h4>So what's next?</h4>
-                      
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                      </div>
-                                      
-                                      <h3 class="song-title">Friendly Walk</h3>
-                                      <h4>So What's next?</h4>
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                      </div>
-                                      <h3 class="song-title">when you touch the sky</h3>
-                                      <h4>So What's next ?</h4>
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                      </div>
-                                      <h3 class="song-title">One step away from dark shadow</h3>
-                                      <h4>So What's next ?</h4>
-              </div>
+          <div class="row best-songs dispaly-flex">
+            @foreach($songs as $value)
+            <div class="col-md-3">
+                <div class="rel-card">
+                    <div class="image">
+                        <img src="{{$value['cover']}}" alt="">
+                    </div>
+                    <div class="social rel-card-link">
+                            
+                        @foreach($value['links'] as $link)
+                        @switch($link['link']) 
+                            @case('youtube')
+                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+
+                            @break
+                            @case('spotify')
+                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+
+
+                            @break
+                            @case('itunes')
+                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+
+
+                            @break
+                            @case('deezer')
+                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                            @break
+                            @case('amazon')
+                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                            @break
+                            @endswitch
+                        @endforeach
+                                            
+                                        </div>
+                                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="social rel-card-link">
+                            
+                                @foreach($value['links'] as $link)
+                                @switch($link['link']) 
+                                    @case('youtube')
+                                    <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+        
+                                    @break
+                                    @case('spotify')
+                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+        
+        
+                                    @break
+                                    @case('itunes')
+                                    <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+        
+        
+                                    @break
+                                    @case('deezer')
+                                    <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                    @break
+                                    @case('amazon')
+                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                    @break
+                                    @endswitch
+                                @endforeach
+                                            
+                        </div>
+                        </div>
+                </div>
+                <h3 class="song-title">{{$value['title']}}</h3>
+                <h4>{{$value['description']}}</h4>
+            </div>
+           @endforeach    
           </div>
-          <div class="row best-songs">
-              <div class="col-md-3">
-                  <div class="rel-card">
-                      <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                  </div>
-                  <h3 class="song-title">How Deep Is the Ocean</h3>
-                  <h4>So what's next?</h4>
-                      
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                      </div>
-                                      <h3 class="song-title">Folk Waltz</h3>
-                                      <h4>So What's next?</h4>
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                          
-                                      </div>
-                                      <h3 class="song-title">Pop Song</h3>
-                                      <h4>So What's next ?</h4>
-              </div>
-              <div class="col-md-3">
-                  <div class="rel-card">
-                  <div class="image">
-                          <img src="assets/img/album-cover.jpg" alt="">
-                      </div>
-                      <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                                          </div>
-                                          <div class="overlay rel-card">
-                              <div></div>
-                              <div>
-                                  <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                              </div>
-                              <div class="social rel-card-link">
-                              
-                              <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                              <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                              <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                              <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                              <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                              
-                          </div>
-                          </div>
-                                      </div>
-                                      <h3 class="song-title">Hymn to Heal the Earth</h3>
-                                      <h4>So What's next ?</h4>
-              </div>
-          </div>
+
       </div>
       <div class="wrapper">
       <div class="title song-page-title">
@@ -766,230 +565,106 @@
               <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
       </div>
-      <div class="mobile-row">
-          <div class="col-md-3 card">
-              <div class="rel-card">
-                  <div></div>
-                  <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  
-                      <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                      </div>
-                      
-                      
-              </div>
-              <h3>So what's next?</h3>
-              <h4>So what's next?</h4>
-                  
-          </div>
-          <div class="col-md-3">
-          
-              <div class="rel-card card">
-              <div></div>
-              <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                                      </div>
-                                      
-                                  </div>
-                                  <h3>how deep is the ocean</h3>
-                                  <h4>So What's next?</h4>
-          </div>
       </div>
-      <div class="mobile-row">
-          <div class="col-md-3 card">
-              <div class="rel-card">
-                  <div></div>
-                  <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  
-                      <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                      </div>
-                      
-                      
-              </div>
-              <h3>pop song</h3>
-              <h4>So what's next?</h4>
-                  
-          </div>
-          <div class="col-md-3 card">
-          
-              <div class="rel-card">
-              <div></div>
-              <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                                      </div>
-                                      
-                                  </div>
-                                  <h3>when you touch the sky</h3>
-                                  <h4>So What's next?</h4>
-          </div>
-      </div>
-      <div class="mobile-row">
-          <div class="col-md-3 card">
-              <div class="rel-card">
-                  <div></div>
-                  <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  
-                      <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                      </div>
-                      
-                      
-              </div>
-              <h3>one step away from dark shadow</h3>
-              <h4>So what's next?</h4>
-                  
-          </div>
-          <div class="col-md-3 card">
-          
-              <div class="rel-card">
-              <div></div>
-              <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                                      </div>
-                                      
-                                  </div>
-                                  <h3>all the things you are</h3>
-                                  <h4>So What's next?</h4>
-          </div>
-      </div>
-      <div class="mobile-row">
-          <div class="col-md-3 card">
-              <div class="rel-card">
-                  <div></div>
-                  <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  
-                      <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                      </div>
-                      
-                      
-              </div>
-              <h3>folk waltz</h3>
-              <h4>So what's next?</h4>
-                  
-          </div>
-          <div class="col-md-3 card">
-          
-              <div class="rel-card">
-              <div></div>
-              <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                                      </div>
-                                      
-                                  </div>
-                                  <h3>friendly walk</h3>
-                                  <h4>So What's next?</h4>
-          </div>
-      </div>
-      <div class="mobile-row">
-          <div class="col-md-3 card">
-              <div class="rel-card">
-                  <div></div>
-                  <div class="image">
-                      <button class="play-song-mobile"><i class="fa-solid fa-play" aria-hidden="true"></i></button>         
-                      <img src="assets/img/album-cover.jpg" alt="">
-                  </div>
-                  
-                      <div class="social rel-card-link">
-                          
-                          <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                          <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                          <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                          <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                          <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                          
-                      </div>
-                      
-                      
-              </div>
-              <h3>hymn to heal the world</h3>
-              <h4>So what's next?</h4>
-                  
+</section>
+@foreach($albums as $album)
+<section class="song-page" id="popup-{{$album->id}}">
+    <div class="wrapper">
+          <div class="title">
+              <h1>{{$album->title}}</h1>
+              <a class="cta-header music-cta close-cta" href="javascript:void(0)" onclick="closeElement(this)">close</a>
+            </div>
+          <div class="row best-songs dispaly-flex">
+            @foreach($album->songs as $value)
+            <div class="col-md-3">
+                <div class="rel-card">
+                    <div class="image">
+                        <img src="{{$value['cover']}}" alt="">
+                    </div>
+                    <div class="social rel-card-link">
+                            
+                        @foreach($value['links'] as $link)
+                        @switch($link['link']) 
+                            @case('youtube')
+                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+
+                            @break
+                            @case('spotify')
+                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+
+
+                            @break
+                            @case('itunes')
+                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+
+
+                            @break
+                            @case('deezer')
+                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                            @break
+                            @case('amazon')
+                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                            @break
+                            @endswitch
+                        @endforeach
+                                            
+                                        </div>
+                                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="social rel-card-link">
+                            
+                                @foreach($value['links'] as $link)
+                                @switch($link['link']) 
+                                    @case('youtube')
+                                    <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+        
+                                    @break
+                                    @case('spotify')
+                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+        
+        
+                                    @break
+                                    @case('itunes')
+                                    <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+        
+        
+                                    @break
+                                    @case('deezer')
+                                    <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                    @break
+                                    @case('amazon')
+                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                    @break
+                                    @endswitch
+                                @endforeach
+                                            
+                        </div>
+                        </div>
+                </div>
+                <h3 class="song-title">{{$value['title']}}</h3>
+                <h4>{{$value['description']}}</h4>
+            </div>
+           @endforeach    
           </div>
 
       </div>
+      <div class="wrapper">
+      <div class="title song-page-title">
+        
+          <h1>Nos pistes</h1>
+          <button type="button" class="cls-pan">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+      </div>
       </div>
 </section>
+@endforeach
+
 <script type="module">
     import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
-    
     const wavesurfer = WaveSurfer.create({
       container: '#waveform',
       waveColor: '#B5D9D9',
@@ -1034,7 +709,8 @@
             if (window.getComputedStyle(document.querySelector('.big-player')).display === 'block') {
                 document.querySelector('.big-player').style.display = 'none';
                 icon2[1].className = 'fa-solid fa-play'
-            wavesurfer2.stop()}})
+                wavesurfer2.stop()
+                }})
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function() {
         console.log("############",i);
@@ -1121,7 +797,21 @@
     });
     
     
-    
+
+        let albumDetail = document.querySelectorAll('.albumDetails') ;
+        console.log("#####album",albumDetail);
+        albumDetail.forEach(element => {
+                element.addEventListener('click', function(e) {
+                    console.log(element.id);
+                    const list = element.id.split('-') ; 
+                    const  id = list[list.length- 1] ;  
+                    const popupId = 'popup-'+id
+                    console.log(popupId);
+                    const disppalyElement = document.getElementById(popupId) ; 
+                    disppalyElement.style.display = "block";
+                })
+        });
+        console.log("######",albumDetail); 
         let playOverlay = document.querySelectorAll('.play-overlay');
         let pauseOverlay = document.querySelectorAll('.pause-overlay');
         let startBigPlayer = document.querySelectorAll('.play-big');
@@ -1133,7 +823,7 @@
         let musCta = document.querySelectorAll('.music-cta')
         let playSng = document.querySelector('.play-song-mobile')
         let iframe = document.getElementsByTagName('iframe')[0]
-        console.log(musCta)
+        console.log("##################################",musCta)
         for (let i = 0; i < startBigPlayer.length; i++) {
             
             startBigPlayer[i].addEventListener('click', function(e) {
@@ -1208,7 +898,8 @@
                 songPage.style.display = "none"
             }
         })
-        musCta[1].addEventListener('click', function() {
+        musCta[0].addEventListener('click', function() {
+            console.log("test");
             if (window.getComputedStyle(songPage).getPropertyValue('display') === 'none') {
                 songPage.classList.add('appear')
                 songPage.classList.remove('fade')
@@ -1310,6 +1001,7 @@
         }
         )
     }
+    
         
     </script>
   @endsection
