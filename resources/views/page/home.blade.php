@@ -563,49 +563,75 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-row-1">
-                    <img src="/assets/img/rafael-trio.jpg" class="sm-img" alt="">
-                    <img src="/assets/img/rafael-trio2.jpg" class="lg-img" alt="">
+                    @if(isset($gallerie1[0]))
+                    <img src="{{$gallerie1[0]}}" class="sm-img" alt="">
+                    @endif
+
+                    @if(isset($gallerie1[1]))
+                    <img src="{{$gallerie1[1]}}" class="lg-img" alt="">
+                    @endif
                 </div>
                 <div class="gallery-row-2">
-                    <img src="/assets/img/rafael-trio-yong.jpg" class="lg-img" alt="">
-                    <img src="/assets/img/rafael-yong.jpg" class="sm-img" alt="">
+                    @if(isset($gallerie2[0]))
+                    <img src="{{$gallerie2[0]}}" class="lg-img" alt="">
+                    @endif
+
+                    @if(isset($gallerie2[1]))
+                    <img src="{{$gallerie2[1]}}" class="sm-img" alt="">
+                    @endif
                 </div>
             </div>
             <div class="mobile-gallery">
                 <div class="row">
-                    <div class="col-md-3 card-img">
-
+                    @if(isset($gal[0]))
+                          <div class="col-md-3 card-img">
                         <div class="gal-image">
-                            <img src="/assets/img/rafael-trio.jpg" alt="">
+                            <img src="{{$gal[0]}}" alt="">
                         </div>
-                    </div>
-                    <div class="col-md-3 card-img">
-
+                   
+                        </div>
+                    @endif
+                    @if(isset($gal[1]))
+                        <div class="col-md-3 card-img">
                         <div class="gal-image">
-                            <img src="/assets/img/rafael-bw.jpg" alt="">
+                            <img src="{{$gal[1]}}" alt="">
                         </div>
-                    </div>
+                
+                        </div>
+                  @endif
                 </div>
                 <div class="row">
+                    @if(isset($gal[2]))
                     <div class="gal-image-big">
-                        <img src="/assets/img/rafael-trio2.jpg" alt="">
+                        <img src="{{$gal[2]}}" alt="">
                     </div>
+                    @endif
                 </div>
                 <div class="row-grid">
+                    @if(isset($gal[3]))
                     <div class="gal-image gr-1">
-                        <img src="/assets/img/pic1.jpg" alt="">
+                        <img src="{{$gal[3]}}" alt="">
                     </div>
+                    @endif
+
+                    @if(isset($gal[4]))
                     <div class="gal-image gr-2">
-                        <img src="/assets/img/long-rafael.jpg" alt="">
+                        <img src="{{$gal[4]}}" alt="">
                     </div>
+                    @endif
+
+                    @if(isset($gal[5]))
                     <div class="gal-image gr-3">
-                        <img src="/assets/img/rafael-yong.jpg" alt="">
+                        <img src="{{$gal[5]}}" alt="">
                     </div>
+                    @endif
                 </div>
                 <div class="row">
+                    @if(isset($gal[6]))
                     <div class="gal-image-big">
-                        <img src="/assets/img/rafael-trio-yong.jpg" alt="">
+                        <img src="{{$gal[6]}}" alt="">
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
