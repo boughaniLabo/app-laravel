@@ -63,9 +63,10 @@ class SongController extends Controller
             'description' => 'required|string',
             'album_id' => 'required|exists:albums,id',
             'url' => 'required|string',
+            'cover' => 'required|string',
         ]);
 
-        $song->update($validatedData);
+        $song->update($request->all());
         return response()->json($song, 200);
     }
 
