@@ -3,7 +3,6 @@
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
   color: #414141;
   overflow-x: hidden;
 }
@@ -80,7 +79,6 @@ z-index: 1000000000 !important;
 
 .title {
   display: flex;
-  font-family: "DM sans", serif;
   color: #d8d8d8;
   font-size: 40px;
   text-transform: uppercase;
@@ -163,7 +161,6 @@ margin: 0 auto ;
   align-items: center;
 }
 .hero-title {
-  font-family: "DM sans", sans-serif;
   color: #434343;
   font-size: 61px;
   text-transform: capitalize;

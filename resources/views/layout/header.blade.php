@@ -105,7 +105,7 @@
             <div class="wrapper">
                 <div class="col-md-5 blank"></div>
                 <div class="col-md-5 hero-title arti-header">
-                    <p class="artist-name arti-name">rafaël dato</p>
+                    <p class="artist-name arti-name text-5xl">rafaël dato</p>
                     <p class="arti-intro">À la recherche d’une utopique synthèse de toutes les musiques, Rafaël Dato
                         explore, depuis
                         sa petite enfance, les sons, les rythmes et les mélodies qui composent le paysage sonore de
@@ -116,7 +116,7 @@
                         Autant dire
                         qu’il n’a pas fini de chercher, pour le plus grand bonheur des mélomanes.</p>
                     <div>
-                        <a class="cta-header" href="#see-more">En savoir plus</a>
+                        <a class="cta-header" download="bio-fr.pdf" href="/assets/docs/bio-fr.pdf">En savoir plus</a>
                         <a class="cta-header" href="#see-article">Articles</a>
                     </div>
                 </div>

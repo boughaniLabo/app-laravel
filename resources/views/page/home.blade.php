@@ -72,7 +72,7 @@
                         </div>
 
                     </div>
-                    <div class=" home-album youtube-frame">
+                    <div class="home-album youtube-frame">
 
                         <iframe width="500" height="350" frameborder="0" allowfullscreen="" id="wnframe"
                             allow="autoplay"></iframe>

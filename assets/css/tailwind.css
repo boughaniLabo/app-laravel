@@ -588,10 +588,6 @@ video {
   }
 }
 
-.col-auto {
-  grid-column: auto !important;
-}
-
 .block {
   display: block !important;
 }
@@ -603,10 +599,6 @@ video {
 .h-fit {
   height: -moz-fit-content !important;
   height: fit-content !important;
-}
-
-.w-auto {
-  width: auto !important;
 }
 
 .w-fit {
@@ -640,6 +632,16 @@ video {
 
 .pb-5 {
   padding-bottom: 1.25rem !important;
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+}
+
+.text-5xl {
+  font-size: 3rem !important;
+  line-height: 1 !important;
 }
 
 .shadow {
