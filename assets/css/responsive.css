@@ -6,95 +6,74 @@
     height: 383px;
     background-color: #4141419c;
   }
-
   .tour-showcase {
     height: 982px !important;
     background-size: cover !important;
   }
-
   .navbar .nav {
     gap: 50px;
   }
-
   .tour-deets {
     width: 325px;
   }
-
   .tour-page {
     width: 1095px !important;
     margin: 0;
   }
-
   .tour-page li {
     padding: 33px;
   }
-
   .tour-date h1 {
     font-size: 64px;
   }
-
   .day-h {
     font-size: 18px;
   }
-
   .tour-location h2 {
     font-size: 22px;
     line-height: 25px;
   }
-
   .tour-location p {
     font-size: 20px;
     line-height: 15px;
   }
-
   .tour-loc p:nth-child(1) {
     font-size: 20px;
   }
-
   .tour-loc p:nth-child(2) {
     font-size: 14px;
   }
-
   .tourlist li:last-child {
     margin-bottom: 0;
   }
-
   .tour-page-wrapper {
     margin: 60px 60px 0 60px;
   }
-
   .tour-img {
     height: 295px;
   }
-
   .big-player {
     padding: 20px 150px;
   }
-
   .control-two:nth-child(1) {
     width: 185px;
   }
-
   .close-player {
     bottom: 6px;
     left: 1433px;
   }
-
   .big-player .top-player {
     margin-bottom: 10px;
     font-size: 25px;
   }
-
   .big-circle {
     bottom: -321px;
     left: 624px;
   }
-
   .little-circle {
     bottom: 0px;
     left: 870px;
   }
-
   .overlay .rel-card-link {
     margin-bottom: 5px;
   }
@@ -108,86 +87,68 @@
     height: 383px;
     background-color: #4141419c;
   }
-
   .tour-location h2 {
     font-size: 22px;
     line-height: 25px;
   }
-
   .tour-location p {
     font-size: 20px;
     line-height: 15px;
   }
-
   .navbar .nav {
     gap: 45px;
   }
-
   .big-player {
     padding: 20px 60px;
   }
-
   .control-two:nth-child(1) {
     width: 185px;
   }
-
   .close-player {
     bottom: 6px;
     left: 1470px;
   }
-
   .big-player .top-player {
     margin-bottom: 10px;
     font-size: 25px;
   }
-
   .big-circle {
     bottom: -321px;
     left: 567px;
   }
-
   .little-circle {
     bottom: 0px;
     left: 812px;
   }
 }
-
 @media screen and (max-width: 1580px) {
   .showcase {
     height: 780px;
   }
-
   .hero-title {
     margin-top: 85px;
     font-size: 55px;
   }
-
   .arti-header div {
     margin-top: 0;
   }
-
   .close-player {
     bottom: 6px;
     left: 1332px;
   }
-
   .big-player {
     padding: 20px 110px;
   }
-
   .logo img {
     width: 60px;
   }
-
   .navbar .nav a {
     font-size: 15px;
   }
-
   .arti-header {
     justify-content: flex-start;
     margin-top: 70px;
   }
-
   .video-overlay {
     position: absolute;
     left: 195px;
@@ -195,11 +156,9 @@
     height: 383px;
     background-color: #4141419c;
   }
-
   .navbar .nav {
     gap: 35px;
   }
-
   .tour-page {
     width: 1035px !important;
     margin: 0;
@@ -220,116 +179,91 @@
     height: 383px;
     background-color: #4141419c;
   }
-
   .close-player {
     bottom: 6px;
     left: 1320px;
   }
-
   .showcase {
     background-size: contain;
     height: 852px;
   }
-
   .navbar .nav {
     gap: 40px;
     height: 50px;
   }
-
   .navbar .nav a {
     font-size: 16px;
   }
-
   .logo img {
     width: 55px;
   }
-
   .tour-showcase {
     height: 982px !important;
   }
-
   .tour-location h2 {
     font-size: 22px;
     line-height: 25px;
   }
-
   .tour-location p {
     font-size: 20px;
     line-height: 15px;
   }
-
   .navbar .nav {
     gap: 50px;
   }
-
   .tour-deets {
     width: 300px;
   }
-
   .tour-page {
     width: 995px !important;
     margin: 0;
   }
-
   .tour-page li {
     padding: 33px;
   }
-
   .tour-date h1 {
     font-size: 64px;
   }
-
   .day-h {
     font-size: 18px;
   }
-
   .tour-loc p:nth-child(1) {
     font-size: 20px;
   }
-
   .tour-loc p:nth-child(2) {
     font-size: 14px;
   }
-
   .tourlist li:last-child {
     margin-bottom: 0;
   }
-
   .tour-page-wrapper {
     margin: 60px 60px 0 60px;
   }
-
   .tour-img {
     height: 236px;
   }
-
   .big-circle {
     bottom: -321px;
     left: 400px;
   }
-
   .little-circle {
     bottom: 0px;
     left: 636px;
   }
-
   .contact-form {
     justify-content: flex-start;
   }
-
   .contact-details h1 {
     padding: 40px 0;
   }
-
+  
   .contact-details-container {
     padding: 0;
     width: 491px;
   }
-
   .footer-social {
     gap: 10px;
   }
-
   .footer-social a {
     padding: 10px;
   }
@@ -343,12 +277,10 @@
     height: 383px;
     background-color: #4141419c;
   }
-
   .tour-page {
     width: 967px !important;
     margin: 0;
   }
-
   .close-player {
     bottom: 6px;
     left: 1275px;
@@ -359,341 +291,268 @@
   .topbar .wrapper {
     width: 1392px;
   }
-
   .wrapper {
-    width: 100%;
+    width: 922px;
   }
-
   .close-player {
     bottom: 6px;
     left: 1235px;
   }
-
   .showcase {
     background-size: cover;
     height: 600px;
   }
-
   .navbar .nav {
     gap: 40px;
     height: 80px;
   }
-
   .navbar .nav a {
     font-size: 14px;
   }
-
   .logo img {
     width: 55px;
   }
-
   .hero-title {
     margin-top: 100px;
     font-size: 42px;
   }
-
   .artist-name {
     font-size: 15px;
   }
-
   .album p {
     font-size: 14px;
     line-height: 22px;
     width: 380px;
   }
-
   .album-tit h1 {
     text-transform: capitalize;
     font-size: 42px;
     line-height: 65px;
   }
-
   .audio-player-mini {
     width: 410px;
     height: 140px;
   }
-
   .rel-card {
     height: 210px;
     width: 210px;
   }
-
   .rel-card .overlay {
     height: 210px;
     width: 210px;
   }
-
   .rel-card .image {
     width: 130px;
     height: 130px;
   }
-
   .image .play-song-mobile {
     top: 16px;
   }
-
   .rel-card-link {
     gap: 15px;
   }
-
   .play-big {
     font-size: 100px;
   }
-
   .youframe {
     width: 480px;
     height: 300px;
   }
-
   .video-select {
     gap: 14px;
   }
-
   .video-list {
     max-width: 430px;
     max-height: 300px;
   }
-
   .video-select h3 {
     font-size: 20px;
   }
-
   .video-select p {
     font-size: 13px;
   }
-
   .cta-video:visited,
   .cta-video:link {
     font-size: 12px;
     padding: 12px 25px;
   }
-
   .sm-img {
     width: 290px;
   }
-
   .lg-img {
     height: 286px;
   }
-
   .gallery-row-1 {
     grid-template-columns: 288px 778px;
   }
-
   .gallery-row-2 {
     grid-template-columns: 600px 288px;
   }
-
   .tourlist {
     width: 996px;
   }
-
   .tourlist .cta-video:link,
   .tourlist .cta-video:visited {
     padding: 16px 19.5px;
     font-size: 12px;
   }
-
   .rel-card-link a {
     font-size: 15px;
   }
-
   .cta-header:visited,
   .cta-header:link {
     font-size: 12px;
     padding: 15px 34px;
   }
-
   .home-album {
     width: 450px;
     height: 450px;
   }
-
   .album img {
     width: 285px;
   }
-
   .album-home-cover-link {
     gap: 34px;
   }
-
   .col-md-6 {
     margin-right: 40px;
   }
-
   .overlay {
     width: 450px;
     height: 450px;
   }
-
   .overlay .album-home-cover-link a {
     margin-bottom: 7px;
   }
-
   .overlay .rel-card-link a {
     margin-top: 7px;
   }
-
   .video-overlay {
     left: 215px;
     width: 465px;
     height: 300px;
   }
-
   .arti-name {
     font-size: 48px;
   }
-
   .arti-header {
     margin: 15px 0 0 389px;
     justify-content: flex-start;
   }
-
   .arti-intro {
     font-size: 14px;
     width: 550px;
   }
-
   .arti-header div {
     margin-top: 0;
     align-self: center;
     margin-left: 150px;
   }
-
   .bio-img {
     width: 381px;
     height: 540px;
     padding: 56px;
   }
-
   .bio-img img {
     width: 280px;
     height: auto;
   }
-
   .bio .container {
     max-width: 922px;
   }
-
   .arti-bio-row p {
     font-size: 14px;
     line-height: 28px;
     width: 450px;
   }
-
   .art-card {
     width: 270px;
     height: 340px;
   }
-
   .art-date {
     font-size: 14px;
   }
-
   .art-card p {
     padding: 2px 10px;
   }
-
   .art-card a {
     font-size: 18px;
   }
-
   .cta-arti:visited,
   .cta-arti:link {
     margin-top: 16px;
   }
-
   .arti-more {
     padding: 10px;
   }
-
   .bio-title {
     padding: 0;
   }
-
   .pres-header {
     margin-left: 80px;
   }
-
   .pres-title {
     padding: 64px 0 20px 0 !important;
     font-size: 50px;
   }
-
   .pres-subtitle {
     font-size: 18px;
     letter-spacing: 2.5px;
   }
-
   .al-text p {
     font-size: 14px;
     width: 860px;
     line-height: 28px;
   }
-
   .pres-image {
     height: 600px;
   }
-
   .al-tracks h1 {
     font-size: 32px;
     margin-bottom: 16px;
   }
-
   .al-tracks p {
     font-size: 12px;
     margin-bottom: 16px;
     line-height: 24px;
   }
-
   .cta-header:link:nth-child(1),
   .cta-header:visited:nth-child(1) {
     margin-top: 32px;
   }
-
   .blog-grid {
     grid-template-columns: 480px 400px;
   }
-
   .blog-card-1 {
     width: 480px;
     height: 300px;
   }
-
   .blog-card-2 {
     width: 400px;
     height: 141px;
   }
-
   .blog-card {
     width: 295px;
     height: 165px;
   }
-
   .tour-page-wrapper {
     max-width: 1440px;
   }
-
   .tour-page {
     width: 913px !important;
   }
-
   .tour-deets {
     width: 250px;
   }
-
   .tour-img {
     height: 197px;
   }
-
   .tourlist {
     width: 952px;
   }
-
   .overlay .rel-card-link {
     margin-bottom: 0;
   }
-
   .rl-desk .overlay .rel-card-link,
   .best-songs .overlay .rel-card-link {
     margin-bottom: 5px;
@@ -707,42 +566,34 @@
     height: 300px;
   }
 }
-
 @media screen and (max-width: 1280px) {
   .topbar .wrapper {
-    width: 100%;
+    width: 1312px;
   }
-
   .close-player {
     bottom: 6px;
     left: 1155px;
   }
-
   .tour-page {
     width: 847px !important;
   }
 }
-
 @media screen and (max-width: 1152px) {
   .topbar .wrapper {
-    width: 100%;
+    width: 1190px;
   }
-
   .navbar .nav a {
     font-size: 14px;
   }
 }
-
 @media screen and (max-width: 1024px) {
   .topbar .wrapper {
-    width: 100%;
+    width: 1080px;
   }
-
   .navbar .nav a {
     font-size: 12px;
   }
 }
-
 @media screen and (max-width: 991px) {
   .bio-img img {
     width: 100%;
@@ -752,186 +603,48 @@
   .bio p {
     text-align: left;
   }
-
   .vid-frame {
     width: 600px;
     height: 338px;
   }
 }
-
 @media screen and (max-width: 890px) {
   .vid-thumb {
     width: 350px;
     height: 191px;
   }
 }
-
 @media screen and (max-width: 880px) {
-
   .showcase {
     height: 350px;
     background-image: url(/assets/img/home-mobile.jpg);
   }
-
-  .album .wrapper {
-    margin: 0 auto !important;
-    padding: 0px;
-  }
-
-  .album .row.mobile {
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-
-
-  .album .row.mobile p {
-    padding: 0;
-    margin: 0 auto !important;
-  }
-
-  .album-row-mobile {
-    display: flex;
-  }
-
-  .album-row-mobile .home-album {
-    width: 160px;
-    height: 160px;
-    gap: 0;
-    margin-left: 10px;
-    margin-right: 5px;
-    border-radius: 5px;
-  }
-
-  .album-row-mobile .home-album img {
-    width: 100px;
-    height: 100px;
-    margin: 10px 0;
-  }
-
-  .album-row-mobile .home-album .album-home-cover-link {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .album-row-mobile .home-album .album-home-cover-link a {
-    font-size: 12px;
-    margin-right: 0 !important;
-  }
-
-  .mobile-titles {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-  }
-
-  .mobile-titles h1 {
-    font-size: 20px;
-    text-align: left !important;
-    width: 120px;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: normal;
-    margin-top: 5px;
-  }
-
-  .mobile-titles p {
-    font-size: 11px;
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 400;
-    line-height: 1.9;
-    min-width: 157px;
-    width: 100%;
-    max-width: 300px;
-
-  }
-
-  .album {
-    padding: 5px 0;
-  }
-
-  .album p {
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 1.9;
-    margin-bottom: 20px;
-  }
-
-  .mobile {
-    display: block !important;
-  }
-
-  .album .wrapper {
-    margin: auto !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .album-row-mobile {
-    height: 175px;
-    padding: 10px 0;
-  }
-
-  .song-page-title {
-    display: flex !important;
-  }
-
-  .album-row-mobile {
-    width: fit-content;
-    margin: 0 auto;
-  }
-
-  .title {
-    padding: 0 0 10px 0;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
   .hero-title {
     margin-top: 0;
   }
-
   .hero-title .cta-header {
     display: none;
   }
-
   .artist-instru,
   .artist-comp {
     font-size: 26px;
   }
-
-  .mobile-logo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 2rem;
-  }
-
-  .logo {
-    display: none;
-  }
-
   #menu-btn {
-    z-index: 9999999999;
+    position: absolute;
+    z-index: 9999;
+    left: 343px;
+    top: -4px;
+    display: block;
+    font-size: 20px;
   }
 
   .navbar {
-    width: 100%;
+    width: 400px;
     height: 100vh;
     position: fixed;
-    top: 0px;
-    left: -100%;
+    top: 0;
+    left: -400px;
     transition: 0.5s;
-    background-color: #242424;
   }
 
   .navbar .nav {
@@ -948,24 +661,45 @@
     background-color: transparent !important;
     color: #d8d8d8 !important;
   }
-
   .active,
   .active-white {
     border-radius: 0;
     border-bottom: white 1px solid;
   }
-
   .album-row {
     display: none;
   }
-
   .album-row-mobile {
     flex-direction: row;
     flex-wrap: nowrap;
   }
+  .album-row-mobile .home-album {
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
+  }
 
+  .album-row-mobile .home-album img {
+    width: 180px;
+    height: 170px;
+  }
+  .album-row-mobile .home-album .album-home-cover-link {
+    display: flex;
+    justify-content: space-around;
+    gap: 18px;
+  }
+  .album-row-mobile .home-album .album-home-cover-link a {
+    font-size: 18px;
+    margin: 0;
+  }
+  .album .title {
+    font-size: 1em;
+  }
 
-
+  .album p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
 
   .rel-card {
     width: 220px;
@@ -991,14 +725,12 @@
     margin-top: 2em;
   }
 }
-
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 786px) {
   .vid-thumb {
     width: 500px;
     height: 273px;
   }
 }
-
 @media screen and (max-width: 767px) {
   .album .col-md-6 {
     text-align: center;
@@ -1035,7 +767,7 @@
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 680px) {
   .showcase {
     height: 300px;
   }
@@ -1043,14 +775,13 @@
   .contact-page input {
     width: 400px;
   }
-
   .vid-frame {
     width: 450px;
     height: 253px;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 600px) {
   .tourlist li {
     justify-content: flex-start;
     align-items: center;
@@ -1091,32 +822,29 @@
   .topbar {
     height: 20%;
   }
-
+  .logo {
+    display: none;
+  }
   .mobile-logo img {
     width: 25px;
   }
-
   .artist-instru,
   .artist-comp {
     font-size: 16px;
     font-weight: 400;
   }
-
   .social a {
     font-size: 24px;
     margin-right: 15px;
   }
-
   .topbar .content {
     padding: 15px 0;
     justify-content: space-between;
   }
-
   .artist-name {
     font-size: 8px;
     margin-bottom: 10px;
   }
-
   .topnav {
     flex-direction: column-reverse;
   }
@@ -1133,14 +861,13 @@
     width: 300px;
     margin: auto;
   }
-
   .vid-thumb {
     width: 450px;
     height: 245px;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 550px) {
   .showcase {
     height: 480px;
     background-size: cover;
@@ -1167,11 +894,9 @@
   .contact-page h1 {
     margin-top: 0.6em;
   }
-
   .desktop-cont {
     display: none;
   }
-
   .wrapper-mobile {
     display: block;
   }
@@ -1183,44 +908,28 @@
     height: 175px;
   }
 }
-
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 450px) {
   .fl {
     overflow-x: hidden;
   }
-
   .topbar .wrapper {
     max-width: 360px;
   }
-
   .head-row {
-    width: 100%;
+    width: 0;
   }
-
-  .artist-instru,
-  .artist-comp {
-    font-size: 22px;
-  }
-
-  .artist-name {
-    font-size: 10px !important;
-  }
-
   .wrapper {
     max-width: 320px;
   }
-
   .header-title-wrapper {
     width: 260px;
     margin: 10px 20px;
   }
-
   .mobile-logo {
     position: relative;
     display: flex;
     align-items: center;
   }
-
   .album-row-mobile,
   .mobile,
   .mobile-row,
@@ -1228,65 +937,56 @@
   .mobile-bio {
     display: flex;
   }
-
   .album .title {
     width: 160px;
     margin: 0;
   }
-
   .col-xs-8 {
     width: 160px;
   }
-
   .showcase {
     background-size: 420px;
     background-position: 0;
     height: 219px;
   }
-
   .social-header {
     margin-top: 12px;
   }
-
   .social-header a {
     font-size: 16px;
   }
-
+  /* .nav-home #menu-btn {
+    bottom: 0;
+  } */
   .mobile-gallery {
     display: grid;
   }
-
   .album-row-mobile .home-album {
     width: 160px;
     height: 160px;
     gap: 0;
-    margin-left: 0;
+    margin-left: 10px;
     margin-right: 5px;
     border-radius: 5px;
   }
-
   .album-row-mobile .home-album img {
     width: 100px;
     height: 100px;
     margin: 10px 0;
   }
-
   .album-row-mobile .home-album .album-home-cover-link {
     display: flex;
     justify-content: space-around;
     gap: 10px;
   }
-
   .album-row-mobile .home-album .album-home-cover-link a {
     font-size: 12px;
   }
-
   .mobile-titles {
     display: flex;
     flex-direction: column;
     margin-top: 0;
   }
-
   .mobile-titles h1 {
     font-size: 20px;
     text-align: left !important;
@@ -1296,66 +996,53 @@
     letter-spacing: normal;
     margin-top: 5px;
   }
-
   .mobile-titles p {
     font-size: 11px;
     text-transform: none;
     letter-spacing: normal;
     font-weight: 400;
     line-height: 1.9;
-    min-width: 157px;
-    width: 100%;
-    max-width: 300px;
+    width: 157px;
   }
-
   .album {
     padding: 5px 0;
   }
-
   .album p {
     font-size: 11px;
     font-weight: 400;
     line-height: 1.9;
     margin-bottom: 20px;
   }
-
   .album-row-mobile {
     height: 175px;
     padding: 10px 0;
   }
-
   .song-page-title {
     display: flex !important;
   }
-
   .title {
     padding: 0 0 10px 0;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0;
   }
-
   .mobile-row {
     display: flex;
     gap: 10px;
   }
-
   .rel-card {
     width: 158px;
     height: 157px;
     margin-bottom: 10px;
   }
-
   .rel-card .image {
     position: relative;
     width: 99px;
     height: 97px;
   }
-
   .releases .col-md-3 {
     margin-bottom: 15px;
   }
-
   .nw-albm-mob {
     display: inline-block;
     color: #1e96a6 !important;
@@ -1365,64 +1052,54 @@
     width: 200px !important;
     font-weight: 700;
   }
-
-
+  .col-md-3 h3 {
+    margin: 10px 0;
+    font-size: 16px;
+  }
   .youframe {
     width: 329px;
     height: 183px;
     border: none;
   }
-
   .video-list {
     max-width: 324px;
   }
-
   .video-select img {
     height: 69px;
   }
-
   .gallery .title {
     margin: 25px 0;
   }
-
   .frame-title {
     font-size: 12px;
     margin: 20px 0;
   }
-
   .gallery-grid {
     display: none;
   }
-
   .desktop-row {
     display: none;
   }
-
   .gallery-title,
   .videos .title,
   .tour .title {
     align-items: center;
   }
-
   .tour .title {
     font-size: 15px;
   }
-
   .cta-video:link,
   .cta-video:visited {
     padding: 10px 15px;
     font-size: 12px;
   }
-
   .rel-card-link {
     gap: 10px;
   }
-
   .rel-card-link a {
     font-size: 12px;
     margin-right: 0;
   }
-
   .menu-btn-cont {
     height: 0px;
   }
@@ -1430,15 +1107,12 @@
   .track-list li {
     font-size: 1em;
   }
-
   .tour-list {
     display: flex;
   }
-
   .gal-img-2 {
     width: 200px;
   }
-
   /* .tour .title {
     font-size: 2em;
   } */
@@ -1446,7 +1120,6 @@
   .bio-intro .title {
     font-size: 2em;
   }
-
   .main-bio-page {
     position: relative;
     overflow: hidden;
@@ -1466,205 +1139,166 @@
   .contact-page input {
     width: 300px;
   }
-
   .vid-frame {
     width: 300px;
     height: 169px;
   }
-
   .social-lang,
   .footer-logo,
   .footer-menu:nth-child(4) {
     display: none;
   }
-
   .footer-mobile {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
   }
-
   .footer-mobile img {
     width: 30px;
   }
-
   .footer-elm {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-
   .footer-social a {
     padding: 5px;
     font-size: 12px;
   }
-
   .footer-nav {
     flex-direction: column;
     padding: 20px;
   }
-
   .footer-nav h3 {
     font-size: 11px;
   }
-
   .footer-nav ul a {
     font-size: 10px;
   }
-
   .footer-bottom {
     display: flex;
     justify-content: space-around;
   }
-
   .footer-nav::after {
     width: 300px;
     transform: translateY(150px);
   }
-
   .copyright {
     padding: 5px 20px 20px 20px;
     font-size: 12px;
   }
-
   .overlay {
     width: 311px;
     height: 184px;
     gap: 30px;
     left: 16px;
   }
-
   .big-player {
     padding: 20px 10px;
   }
-
   .big-player .top-player {
     padding: 5px;
     font-size: 16px;
   }
-
   .big-player .bottom-player {
     padding: 5px;
   }
-
   .control-two:nth-child(1) {
     width: 290px;
   }
-
   .control-two button {
     font-size: 11px;
     margin-left: -6px;
   }
-
   #waveform2 {
     width: 200px;
     height: 20px;
     left: 0px;
   }
-
   .close-player {
     left: 360px;
     top: -10px;
     font-size: 16px;
   }
-
   .rel-card .overlay {
     height: 167px;
     width: 158px;
     left: 14px;
     gap: 0px;
   }
-
   .video-select h3 {
     font-size: 11px;
     color: #414141;
   }
-
   .video-select p {
     font-size: 11px;
     color: #414141;
     line-height: 1.2;
     margin: 10px 0;
   }
-
   iframe {
     width: 329px;
     height: 193px;
   }
-
   .desktop-gal {
     display: none;
   }
-
   .card-img {
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
-
   .card-img {
     height: 156px;
     width: 166px;
     margin-bottom: 18px;
   }
-
   .gal-image img {
     width: 150px;
     height: 156px;
     border-radius: 8px;
     margin-bottom: 10px;
   }
-
   .gal-image-big img {
     width: 318px;
     height: 156px;
     border-radius: 8px;
     margin-bottom: 10px;
   }
-
   .col-md-12 {
     display: flex;
     height: 500px;
   }
-
   .row-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   .gr-2 {
     grid-column: 2;
     grid-row: 3/-1;
   }
-
   .gr-2 img {
     height: 325px;
     width: 158px;
   }
-
   .tour {
     display: none;
   }
-
   .tourlist {
     width: 320px;
   }
-
   .place {
     font-size: 12px;
   }
-
   .hour {
     font-size: 12px;
   }
-
   .mobile-tour .title h1 {
     color: #160101;
     font-size: 14px;
     align-self: center;
   }
-
   .tour-date-mobile {
     display: flex;
     flex-direction: column;
@@ -1672,7 +1306,6 @@
     border: #b5d9d980 1px solid;
     border-radius: 5px;
   }
-
   .tour-date-mobile li {
     padding: 5px 20px;
     border: none;
@@ -1680,32 +1313,26 @@
     justify-content: space-between;
     flex-direction: row;
   }
-
   .tour-date-mobile span:nth-child(1) {
     font-size: 80px;
   }
-
   .monthy {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-
   .monthy p {
     font-size: 16px;
     text-transform: capitalize;
   }
-
   .place {
     display: flex;
     gap: 10px;
     align-items: center;
   }
-
   .hour {
     margin-bottom: 40px;
   }
-
   .cta-mobile-ticket {
     font-weight: 700;
     background-color: #1e96a6;
@@ -1716,11 +1343,9 @@
     text-decoration: none;
     border-radius: 5px;
   }
-
   .mobile-tour-section {
     padding: 50px 0;
   }
-
   .mobile-tour-page {
     width: 100%;
     margin: auto;
@@ -1728,17 +1353,14 @@
     border: #b5d9d9 solid 1px;
     border-radius: 5px;
   }
-
   .mobile-tour-page li {
     padding: 5px 35px;
     border-radius: 5px;
     background-color: #242424;
   }
-
   .mobile-tour-page li .day {
     color: #414141;
   }
-
   .mobile-tour-page li .monthy,
   .mobile-tour-page li .hour {
     color: #d8d8d8;
@@ -1747,37 +1369,34 @@
   .mobile-tour-page .cta-mobile-ticket {
     background-color: #795d43;
   }
-
   .tour-showcase {
     background-image: url(/assets/img/tour-mobile.jpg) !important;
     background-size: cover !important;
     height: 100% !important;
   }
-
   .page-numbers {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
-
   .page-numbers li a {
     font-size: 14px;
     color: #d8d8d8;
     text-decoration: none;
   }
-
   .page-active {
     padding: 10px 15px;
     background-color: #d8d8d8;
     border-radius: 5px;
     color: #242424 !important;
   }
-
   .tour-showcase .mobile-logo img {
     width: 40px;
   }
-
+  /* .tour-showcase #menu-btn {
+    bottom: 1150px;
+  } */
   .contact-form {
     flex-direction: column;
     padding: 0;
@@ -1785,73 +1404,58 @@
     gap: 32px;
     box-shadow: none;
   }
-
   .contact-details-container {
     width: 320px;
     gap: 16px;
   }
-
   .contact-details-info {
     width: 280px;
   }
-
   .contact-form .footer-social {
     display: none;
   }
-
   .contact-info {
     margin-bottom: 16px;
     line-height: 32px;
   }
-
   form {
     width: 320px;
   }
-
-  .form-parts {
+    .form-parts {
     flex-direction: column;
     gap: 16px;
     margin-bottom: 16px;
   }
-
   .radio-choice {
     gap: 15px;
     align-items: flex-start;
   }
-
   .msg-box {
     width: 150px;
   }
-
   .radio-choice div {
     display: flex;
     width: 300px;
     align-items: flex-start;
     justify-content: flex-start;
   }
-
   .radio-choice div:nth-of-type(1) {
     width: 230px;
   }
-
   label {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
   }
-
   .radio {
     width: 10px !important;
   }
-
   .circles {
     display: none;
   }
-
   .navbar {
     background-color: #242424;
   }
-
   .contact-page h1 {
     margin-top: 0;
     font-size: 20px;
@@ -1859,39 +1463,31 @@
     text-transform: capitalize;
     padding: 42px;
   }
-
   .al-text p {
     font-size: 11px;
     width: 345px;
     line-height: 19.25px;
   }
-
   .al-cover {
     display: none;
   }
-
   .desktop-wrapper {
     display: none;
   }
-
   .desk-service {
     display: none;
   }
-
   .service-cta {
     display: none;
   }
-
   .wrapper-mobile {
     max-width: 350px;
     margin: auto;
   }
-
   .al-cover-mobile img {
     width: 156px;
     height: 151px;
   }
-
   .mobile-serv-row h1 {
     font-size: 20px;
     width: 144px;
@@ -1899,155 +1495,129 @@
     line-height: normal;
     text-transform: capitalize !important;
   }
-
   .mobile-serv-row p,
   .serv-txt-row p {
     font-size: 11px;
     line-height: 19.25px;
     width: 156px;
   }
-
   .serv-txt-row p {
     width: 350px;
     margin-top: 10px;
   }
-
   .serv-row-list h1 {
     font-size: 20px;
     text-transform: capitalize;
     padding: 10px 0;
   }
-
   .serv-row-list p {
     font-size: 11px;
     line-height: 19.25px;
   }
-
   .service-cta-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 48px;
   }
-
   .cta-header:link:nth-child(1),
   .cta-header:visited:nth-child(1) {
     margin-top: 12px;
     margin-right: 0;
   }
-
   .figure-txt {
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     width: 155px;
   }
-
   .desktop-hotel {
     display: none;
   }
-
   .pres-image {
     height: 183px;
     margin-bottom: 40px;
   }
-
   .pres-header {
     margin: 0;
   }
-
   .pres-title {
     font-size: 32px;
     line-height: 32px;
     padding: 20px 0 !important;
   }
-
   .pres-subtitle {
     font-size: 12px;
     letter-spacing: 0;
     text-transform: lowercase;
     font-weight: 700;
   }
-
   .al-intro .wrapper {
     max-width: 360px;
   }
-
   .al-tracks {
     margin-top: 20px;
   }
-
   .al-tracks h1 {
     font-size: 20px;
     text-transform: capitalize;
     margin-bottom: 0;
   }
-
   .al-tracks p {
     line-height: 1.5;
   }
-
   .al-cover {
     width: 160px;
     margin: 10px 0;
   }
-
   .press-header #menu-btn {
+    /* bottom: 0; */
     color: #160101;
   }
-
   .music-page-row {
     overflow-x: scroll;
     overflow-y: hidden;
     padding: 20px 0;
   }
-
   .releases .title {
     align-items: center;
   }
-
   .music-cta {
     display: none;
   }
-
   .music-page-row::-webkit-scrollbar {
-    display: none;
-    /* Safari and Chrome */
+    display: none; /* Safari and Chrome */
   }
-
+  /* .music-header #menu-btn {
+    bottom: 0px;
+  } */
   .blog-mobile-rec .blog-card-1 {
     width: 326px;
     height: 205px;
     align-items: flex-start;
   }
-
   .mobile-row .blog-card {
     background-image: url(/assets/img/image.svg) !important;
     width: 158px;
     height: 92px;
     border-radius: 8px;
   }
-
   .mobile-row .blog-card .article-date {
     padding: 0;
   }
-
   .blog-intro {
     padding: 0;
   }
-
   .blog-image {
     height: 193px;
   }
-
   .blog-sub-art-mobile {
     margin-bottom: 50px;
   }
-
   .contact-header #menu-btn {
     z-index: 99;
+    /* bottom: 0px; */
   }
-
   .navbar {
     /* width: 100%; */
     padding: 50px 0;
@@ -2062,14 +1632,12 @@
     justify-content: space-between;
     transition: all 0.8s;
   }
-
   .mobile-link {
     display: flex;
     justify-content: space-around;
     width: 360px;
     margin-bottom: 20px;
   }
-
   .cta-arti {
     padding: 8px 30px;
     border-radius: 10px;
@@ -2077,17 +1645,14 @@
     text-decoration: none;
     color: #d8d8d8;
   }
-
   .cta-arti:nth-child(2) {
     padding: 8px 50px;
   }
-
   .mobile-cta {
     background-color: #1e96a680 !important;
     backdrop-filter: blur(12.5px);
     -webkit-backdrop-filter: blur(12.5px);
   }
-
   .cls-pan {
     background-color: transparent;
     border: none;
@@ -2095,11 +1660,9 @@
     font-size: 18px;
     cursor: pointer;
   }
-
   .play-song {
     position: relative;
   }
-
   .play-song-mobile {
     background-color: transparent;
     padding: 0;
@@ -2109,41 +1672,33 @@
     border: none;
     left: 30px;
   }
-
   .play-music-page {
-    top: 25px;
+      top: 25px;
   }
-
   .play-song-mobile i {
-    font-size: 61px;
+      font-size : 61px;
   }
-
   .song-page .mobile-row {
     padding: 10px 0;
   }
-
   .mobile-bio .col-md-6 {
     margin-top: 10px;
   }
-
   .small-text {
     font-size: 16px !important;
     margin-bottom: 20px;
     width: 328px;
   }
-
   .mobile-art-row .art-card {
     width: 155px;
     height: 194px;
     padding: 0 10px;
   }
-
   .mobile-art-row {
     display: none;
     padding: 10px 0;
     transition: all 1s;
   }
-
   .bio-overlay {
     display: block;
     position: fixed;
@@ -2158,25 +1713,21 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
   /* .overlay-header {
     margin-top: 585px;
   } */
   .overlay-header .mobile-art-name {
     color: #d8d8d8;
   }
-
   .overlay-text {
     background-color: #fff;
     width: 100%;
     font-size: 16px;
     padding: 10px;
   }
-
   .overlay-text p {
     width: 420px;
   }
-
   .bio-showcase {
     background-image: url(/assets/img/mobile-arti.jpg) !important;
     background-size: 425px;
@@ -2185,64 +1736,50 @@
     padding: 20px 0;
     transition: 0.5s;
   }
-
   .bio-showcase .mobile-link {
     width: 304px;
     justify-content: space-between;
   }
-
   .bio-overlay img {
     width: 21px;
   }
-
   .art-card a {
     margin: 0 0 10px 0;
   }
-
   .mobile-art-row .art-card p {
     font-size: 11px;
     padding: 0 5px;
     width: 119px;
     line-height: 1.5;
   }
-
   .mobile-art-row .col-xs-8 {
     width: 170px;
     margin-bottom: 10px;
   }
-
   .arti-header {
     display: none;
   }
-
   .mobile-tour-section {
     display: block;
   }
-
   .mobile-tour-section .tourlist {
     width: 360px;
   }
-
   .blog-mobile-rec {
     display: block;
   }
-
   .blog-sub-art-mobile {
     display: flex;
   }
-
   .blog-grid {
     display: none;
   }
-
   .article-date {
     margin-left: 20px;
   }
-
   .blog-mobile-rec a {
     text-decoration: none;
   }
-
   .article-date-label-big {
     font-size: 16px;
     color: #f6f5f380;
@@ -2253,18 +1790,15 @@
     padding: 5px;
     margin-bottom: 10px;
   }
-
   .article-title-label-big {
     font-size: 20px;
     color: #fff;
     border-radius: 4px;
     text-transform: capitalize;
   }
-
   .mobile-bio-title {
     margin-top: 140px;
   }
-
   .mobile-art-name {
     font-size: 26px;
     text-transform: uppercase;
@@ -2272,33 +1806,26 @@
     padding: 10px 0;
   }
 }
-
 @media screen and (max-width: 380px) {
   .showcase {
     background-size: 380px;
   }
-
   #waveform-two {
-    width: 800px;
+      width:800px;
   }
-
   .art-showcase {
     background-size: 380px !important;
   }
-
   .navbar {
     width: 375px;
   }
-
   .album img {
     width: 250px;
     margin: auto;
   }
-
   #menu-btn {
     left: 300px;
   }
-
   .wrapper-mobile {
     max-width: 321px;
   }
@@ -2306,26 +1833,21 @@
   .topbar .wrapper {
     max-width: 325px;
   }
-
   .tourlist {
     width: 327px;
   }
-
   .mobile-tour-section .tourlist {
     width: 325px;
   }
-
   .mobile-tour-page li {
     padding: 5px 17px;
   }
-
   .bio-overlay {
     display: block;
     position: fixed;
     width: 375px;
     z-index: 999999;
   }
-
   .al-intro .wrapper {
     max-width: 330px;
   }
@@ -2337,25 +1859,21 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
   /* .overlay-header {
     margin-top: 585px;
   } */
   .overlay-header .mobile-art-name {
     color: #d8d8d8;
   }
-
   .overlay-text {
     background-color: #fff;
     width: 100%;
     font-size: 16px;
     padding: 10px;
   }
-
   .overlay-text p {
     width: 328px;
   }
-
   .bio-showcase {
     background-image: url(/assets/img/mobile-arti.jpg) !important;
     background-size: cover;
@@ -2363,16 +1881,13 @@
     padding: 20px 0;
     transition: 0.5s;
   }
-
   .bio-showcase .mobile-link {
     width: 304px;
     justify-content: space-between;
   }
-
   .bio-overlay img {
     width: 21px;
   }
-
   .close-player {
     left: 330px;
     font-size: 16px;

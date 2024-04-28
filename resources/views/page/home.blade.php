@@ -32,7 +32,7 @@
         <div class="wrapper">
             <div class="row album-row min-[880px]:flex flex-row w-full flex-nowrap">
                 <div class="col-md-6">
-                    <div class="home-album h-[560px]">
+                    <div class="home-album">
                         <div></div>
                         <img src="assets/img/album-cover.jpg" alt="" class="alb-img">
 
@@ -331,178 +331,138 @@
                         <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
-
-                        <div class="social rel-card-link">
-
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
-                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                        </div>
-
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                            </div>
+                        
                             <div class="social rel-card-link">
-
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                        class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
-                                    <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                        class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                    target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                        class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
                             </div>
-                        </div>
+                            
+                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
+                            </div>
+                            </div>
                     </div>
                     <h3>So what's next?</h3>
                     <h4>So what's next?</h4>
-
+                        
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                        <div></div>
-                        <div class="image">
+                    <div></div>
+                    <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
-                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
+                                            </div>
+                                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
                             </div>
-                            <div class="social rel-card-link">
-
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                        class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
-                                    <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                        class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                    target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                        class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
                             </div>
-                        </div>
-                    </div>
-                    <h3>Friendly Walk</h3>
-                    <h4>So What's next?</h4>
+                                        </div>
+                                        <h3>Friendly Walk</h3>
+                                        <h4>So What's next?</h4>
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                        <div></div>
-                        <div class="image">
+                    <div></div>
+                    <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
-                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
+                                            </div>
+                                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
                             </div>
-                            <div class="social rel-card-link">
-
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                        class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
-                                    <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                        class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                    target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                        class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
                             </div>
-                        </div>
-                    </div>
-                    <h3>when you touch the sky</h3>
-                    <h4>So What's next ?</h4>
+                                        </div>
+                                        <h3>when you touch the sky</h3>
+                                        <h4>So What's next ?</h4>
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                        <div></div>
-                        <div class="image">
+                    <div></div>
+                    <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
-                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
+                                            </div>
+                                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                                                
                             </div>
-                            <div class="social rel-card-link">
-
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                        class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
-                                    <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                        class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                    target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                        class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
                             </div>
-                        </div>
-                    </div>
-                    <h3>One step away from dark shadow</h3>
-                    <h4>So What's next ?</h4>
+                                        </div>
+                                        <h3>One step away from dark shadow</h3>
+                                        <h4>So What's next ?</h4>
                 </div>
             </div>
         </div>
