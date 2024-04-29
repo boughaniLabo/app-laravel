@@ -15,7 +15,7 @@
             height: 50,
             cursorWidth: 0,
         });
-        let elementToshow = document.getElementById('soundPlayerBig') ; 
+        let elementToshow = document.getElementById('costumeWave') ; 
         console.log(elementToshow);
         elementToshow.style.display = "block"; // Corrected variable name
         document.getElementById('song-name').innerText = song.title;
