@@ -5,10 +5,8 @@
 <script>
  
  function playAudio(song) {
-        if (wavesurfer) {
-        wavesurfer.destroy();
-    }
-        const wavesurfer = WaveSurfer.create({
+    if (typeof wavesurfer === 'undefined') {
+        wavesurfer = WaveSurfer.create({
             container: '#waveform-two',
             waveColor: '#B5D9D9',
             progressColor: '#1E96A6',
@@ -16,6 +14,10 @@
             height: 50,
             cursorWidth: 0,
         });
+    } else {
+        // If wavesurfer is already initialized, destroy the existing instance
+        wavesurfer.destroy();
+    }
         let elementToshow = document.getElementById('costumeWave') ; 
         console.log(elementToshow);
         elementToshow.style.display = "block"; // Corrected variable name
