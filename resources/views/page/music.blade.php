@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js" integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    
+ 
     function playAudio(song) {
         console.log(song);
         const wavesurfer = WaveSurfer.create({
@@ -14,10 +14,12 @@
             height: 50,
             cursorWidth: 0,
         });
-
+        let elementToshow = document.getElementById('costumeWave') ; 
+        console.log(elementToshow);
+        elementToshow.style.display = "block"; // Corrected variable name
         document.getElementById('song-name').innerText = song.title;
-        const elementToshow = document.getElementById('soundPlayerBig') ; 
-        elementToShow.style.display = "block";
+        
+       
         // Load audio from the audio element
         wavesurfer.load(song.url);
 
@@ -27,7 +29,6 @@
         // Set the song title
      
   
-    }
 
     function closeElement(element) {
         console.log("Function called.");
@@ -40,6 +41,7 @@
             console.log("Parent element not found.");
         }
     }
+} 
 </script>
 
 <section class="album">
