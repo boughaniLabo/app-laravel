@@ -19,20 +19,16 @@
         console.log(elementToshow);
         elementToshow.style.display = "block"; // Corrected variable name
         document.getElementById('song-name').innerText = song.title;
-        const audio = new Audio(song.url);
-        audio.crossOrigin = "anonymous";
 
         // Load audio from the audio element
-        wavesurfer.load(audio);
-        // Play the audio
-        wavesurfer.play();
+        wavesurfer.load(song.url);
         wavesurfer.on('ready', () => {
-                var totalDuration = wavesurfer.getDuration();
-                var minutes = Math.floor((totalDuration % 3600) / 60);
-                var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
-                let totalTime = `${minutes}:${secondes}`;
-                document.getElementById('time-total').innerText = totalTime;
-        })
+    var totalDuration = wavesurfer.getDuration();
+    var minutes = Math.floor((totalDuration % 3600) / 60);
+    var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+    let totalTime = `${minutes}:${secondes}`;
+    document.getElementById('time-total').innerText = totalTime;
+})
 
         // Play the audio
         wavesurfer.play();
