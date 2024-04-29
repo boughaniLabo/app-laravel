@@ -9,7 +9,6 @@
                 <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
             </div>
             <div class="player top-player">
-
                 <div class="song-name">01. So What's next ?</div>
                 <div class="timer">
                     <span class="start-two" id="time-current-two">00:00</span>
@@ -34,20 +33,19 @@
                 <div class="col-md-6">
                     <div class="home-album">
                         <div></div>
-                        <img src="assets/img/album-cover.jpg" alt="" class="alb-img">
+                        <img src="{{ $mainSong->cover }}" alt="" class="alb-img h-[300px] w-auto">
 
                         <div class="social album-home-cover-link">
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"
-                                class="social-link"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"
-                                class="social-link"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank" class="social-link"> <i class="fa-brands fa-amazon" aria-hidden="true"></i>
-                            </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"
-                                class="social-link"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[4]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[3]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[2]['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                    aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[1]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[0]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
 
                         </div>
                         <div class="overlay">
@@ -56,18 +54,16 @@
                                 <button class="play-overlay"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
                             </div>
                             <div class="social album-home-cover-link">
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"
-                                    class="social-link"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"
-                                    class="social-link"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                        class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                    target="_blank" class="social-link"> <i class="fa-brands fa-amazon"
+                                <a href="{{ $mainSong->links[4]['url'] }}" target="_blank" class="social-link"> <i
+                                        class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                                <a href="{{ $mainSong->links[3]['url'] }}" target="_blank" class="social-link"> <i
+                                        class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                                <a href="{{ $mainSong->links[2]['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
                                         aria-hidden="true"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"
-                                    class="social-link"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
+                                <a href="{{ $mainSong->links[1]['url'] }}" target="_blank" class="social-link"> <i
+                                        class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
+                                <a href="{{ $mainSong->links[0]['url'] }}" target="_blank" class="social-link"> <i
+                                        class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
                             </div>
                         </div>
 
@@ -75,19 +71,19 @@
                     <div class="home-album youtube-frame">
 
                         <iframe width="500" height="350" frameborder="0" allowfullscreen="" id="wnframe"
-                            allow="autoplay"></iframe>
+                            allow="autoplay">
+                        </iframe>
                         <div class="social album-home-cover-link">
-                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"
-                                class="social-link"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"
-                                class="social-link"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                    class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                                target="_blank" class="social-link"> <i class="fa-brands fa-amazon"
+                            <a href="{{ $mainSong->links[4]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[3]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[2]['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
                                     aria-hidden="true"></i> </a>
-                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"
-                                class="social-link"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[1]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
+                            <a href="{{ $mainSong->links[0]['url'] }}" target="_blank" class="social-link"> <i
+                                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
 
                         </div>
                         <div class="overlay">
@@ -117,17 +113,15 @@
                     <h2 class="nw-albm">new album</h2>
                     <div class="album-tit">
                         <h1 class="alb-title">
-                            so, what’s <br> next?
+                            {{ $mainSong->title }}
                         </h1>
                     </div>
                     <p>
-                        Composed by Rafaël Dato during his health crisis and the constraints that beset him, the album "So
-                        What's Next?" frees itself from the boundaries between musical genres, to offer a sonic synthesis
-                        with jazz accents, capable of seducing an audience of profane and discerning music lovers alike.
+                        {{ $mainSong->description }}
                     </p>
                     <div class="audio-player-mini h-fit">
                         <div class="player top-player">
-                            <div class="song-name">01. So What's next ?</div>
+                            <div class="song-name">{{ $mainSong->title }}</div>
                             <div class="timer">
                                 <span class="start" id="time-current">00:00</span>
                                 <span class="slash">/</span>
@@ -140,7 +134,7 @@
                                 <button><i class="fa-solid fa-play" aria-hidden="true"></i></button>
                                 <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
                             </div>
-                            <div id="waveform">
+                            <div id="waveform-main-song">
                                 <div></div>
                             </div>
                             <div class="control"><button><i class="fa-solid fa-volume-high"
@@ -331,138 +325,178 @@
                         <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
-                        
+
+                        <div class="social rel-card-link">
+
+                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                    class="fa-brands fa-spotify"></i> </a>
+                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
+                                    class="fa-brands fa-apple"></i> </a>
+                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                    class="fa-brands fa-deezer"></i> </a>
+                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                    class="fa-brands fa-youtube"></i> </a>
+
+                        </div>
+
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play"></i></button>
+                            </div>
                             <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
+
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                        class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
+                                    <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                        class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                    target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                        class="fa-brands fa-youtube"></i> </a>
+
                             </div>
-                            
-                            <div class="overlay rel-card">
-                                <div></div>
-                                <div>
-                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
-                                </div>
-                                <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
-                            </div>
-                            </div>
+                        </div>
                     </div>
                     <h3>So what's next?</h3>
                     <h4>So what's next?</h4>
-                        
+
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                    <div></div>
-                    <div class="image">
+                        <div></div>
+                        <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
-                                            </div>
-                                            <div class="overlay rel-card">
-                                <div></div>
-                                <div>
-                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
-                                </div>
-                                <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
+
+                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                    class="fa-brands fa-spotify"></i> </a>
+                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
+                                    class="fa-brands fa-apple"></i> </a>
+                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                    class="fa-brands fa-deezer"></i> </a>
+                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                    class="fa-brands fa-youtube"></i> </a>
+
+                        </div>
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play"></i></button>
                             </div>
+                            <div class="social rel-card-link">
+
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                        class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
+                                    <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                        class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                    target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                        class="fa-brands fa-youtube"></i> </a>
+
                             </div>
-                                        </div>
-                                        <h3>Friendly Walk</h3>
-                                        <h4>So What's next?</h4>
+                        </div>
+                    </div>
+                    <h3>Friendly Walk</h3>
+                    <h4>So What's next?</h4>
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                    <div></div>
-                    <div class="image">
+                        <div></div>
+                        <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
-                                            </div>
-                                            <div class="overlay rel-card">
-                                <div></div>
-                                <div>
-                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
-                                </div>
-                                <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
+
+                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                    class="fa-brands fa-spotify"></i> </a>
+                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
+                                    class="fa-brands fa-apple"></i> </a>
+                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                    class="fa-brands fa-deezer"></i> </a>
+                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                    class="fa-brands fa-youtube"></i> </a>
+
+                        </div>
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play"></i></button>
                             </div>
+                            <div class="social rel-card-link">
+
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                        class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
+                                    <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                        class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                    target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                        class="fa-brands fa-youtube"></i> </a>
+
                             </div>
-                                        </div>
-                                        <h3>when you touch the sky</h3>
-                                        <h4>So What's next ?</h4>
+                        </div>
+                    </div>
+                    <h3>when you touch the sky</h3>
+                    <h4>So What's next ?</h4>
                 </div>
                 <div class="col-md-3">
                     <div class="rel-card">
-                    <div></div>
-                    <div class="image">
+                        <div></div>
+                        <div class="image">
                             <img src="assets/img/album-cover.jpg" alt="">
                         </div>
                         <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
-                                            </div>
-                                            <div class="overlay rel-card">
-                                <div></div>
-                                <div>
-                                    <button class="play-big"><i class="fa-solid fa-play"></i></button>
-                                </div>
-                                <div class="social rel-card-link">
-                                
-                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i class="fa-brands fa-spotify"></i> </a>
-                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i class="fa-brands fa-apple"></i> </a>
-                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i class="fa-brands fa-deezer"></i> </a>
-                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
-                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
-                                                
+
+                            <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                    class="fa-brands fa-spotify"></i> </a>
+                            <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
+                                    class="fa-brands fa-apple"></i> </a>
+                            <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                    class="fa-brands fa-deezer"></i> </a>
+                            <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                            <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                    class="fa-brands fa-youtube"></i> </a>
+
+                        </div>
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big"><i class="fa-solid fa-play"></i></button>
                             </div>
+                            <div class="social rel-card-link">
+
+                                <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
+                                        class="fa-brands fa-spotify"></i> </a>
+                                <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
+                                    <i class="fa-brands fa-apple"></i> </a>
+                                <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
+                                        class="fa-brands fa-deezer"></i> </a>
+                                <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
+                                    target="_blank"> <i class="fa-brands fa-amazon"></i> </a>
+                                <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
+                                        class="fa-brands fa-youtube"></i> </a>
+
                             </div>
-                                        </div>
-                                        <h3>One step away from dark shadow</h3>
-                                        <h4>So What's next ?</h4>
+                        </div>
+                    </div>
+                    <h3>One step away from dark shadow</h3>
+                    <h4>So What's next ?</h4>
                 </div>
             </div>
         </div>
@@ -477,79 +511,36 @@
             <div class="row">
 
                 <div class="col-md-6 frame-div">
-                    <iframe class="youframe" width="683" height="383"
-                        src="https://www.youtube.com/embed/UcWu4IhHb9Q?enablejsapi=1&amp;showinfo=0&amp;controls=0&amp;autohide=1; modestbranding"
+                    <iframe class="youframe" width="683" height="383" src="{{ $videos[0]['url'] }}"
                         frameborder="0" allowfullscreen="" id="youtube-select">
                     </iframe>
-                    <h2 class="frame-title">so, what's next ?</h2>
+                    <h2 class="frame-title">{{ $videos[0]['title'] }}</h2>
 
                 </div>
-
-                <!-- <div class="overlay video-overlay">
-                    <div></div>
-                        <div>
-                            <button class="play-overlay"><i class="fa-solid fa-play"></i></button>
-                            <button class="pause-overlay"><i class="fa-solid fa-pause"></i></button>
-                        </div>
-                    <div></div>
-                </div>
-                     -->
                 <div class="col-md-5 video-list">
-                    <div class="video-select">
-                        <div>
-                            <img src="/assets/img/thumb1.jpg" alt="">
-                        </div>
-                        <div>
-                            <h3 class="thumb-title">Rafaël Dato - So, What's Next?</h3>
-                            <p>Piano, composition &amp; production: Rafaël Dato <br>
-                                Fretless Bass: Antoine Leiser <br>
-                                Drums &amp; percussions: Timothée Garson</p>
-                        </div>
+                    @foreach ($videos as $video)
+                        <div class="video-select hover:bg-slate-200 cursor-pointer">
+                            <div class="flex items-center justify-center">
+                                <?php
+                                // Extract video ID from URL
+                                $videoId = '';
+                                preg_match('/(?:embed\/|v=)([a-zA-Z0-9_-]{11})/', $video['url'], $matches);
+                                if (isset($matches[1])) {
+                                    $videoId = $matches[1];
+                                }
+                                
+                                // Construct thumbnail URL
+                                $thumbnailUrl = "https://img.youtube.com/vi/{$videoId}/mqdefault.jpg";
+                                ?>
+                                <img class="w-auto h-auto" src="{{ $thumbnailUrl }}" alt="">
+                            </div>
+                            <div>
+                                <h3 class="thumb-title">{{ $video['title'] }}</h3>
+                                <p>{{ $video['description'] }}</p>
+                            </div>
 
-                    </div>
-                    <div class="video-select">
-                        <div>
-                            <img src="/assets/img/thumb2.jpg" alt="">
                         </div>
-                        <div>
-                            <h3 class="thumb-title">Rafaël Dato - Friendly Walk</h3>
-                            <p>Recorded live with my regular trio at Espace Bernard Mantiennes in Verrières-Le-Buisson...
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="video-select">
-                        <div>
-                            <img src="/assets/img/thumb3.jpg" alt="">
-                        </div>
-                        <div>
-                            <h3 class="thumb-title">Rafaël Dato - Fake Plastic Trees live</h3>
-                            <p>Recorded live with my regular trio at Espace Bernard Mantiennes in Verrières-Le-Buisson...
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="video-select">
-                        <div>
-                            <img src="/assets/img/thumb4.jpg" alt="">
-                        </div>
-                        <div>
-                            <h3 class="thumb-title">Rafaël Dato - One Step Away From Dark Shadows</h3>
-                            <p>Recorded live with my regular trio at Espace Bernard Mantiennes in Verrières-Le-Buisson...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="video-select">
-                        <div>
-                            <img src="/assets/img/thumb5.jpg" alt="">
-                        </div>
-                        <div>
-                            <h3 class="thumb-title">Rafaël Dato - All The Things You Are (live)</h3>
-                            <p>I'm glad to share with you new video excerpt of the live I did with my trio last 14th
-                                November.</p>
-                        </div>
-
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -563,74 +554,74 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-row-1">
-                    @if(isset($gallerie1[0]))
-                    <img src="{{$gallerie1[0]}}" class="sm-img" alt="">
+                    @if (isset($gallerie1[0]))
+                        <img src="{{ $gallerie1[0] }}" class="sm-img" alt="">
                     @endif
 
-                    @if(isset($gallerie1[1]))
-                    <img src="{{$gallerie1[1]}}" class="lg-img" alt="">
+                    @if (isset($gallerie1[1]))
+                        <img src="{{ $gallerie1[1] }}" class="lg-img" alt="">
                     @endif
                 </div>
                 <div class="gallery-row-2">
-                    @if(isset($gallerie2[0]))
-                    <img src="{{$gallerie2[0]}}" class="lg-img" alt="">
+                    @if (isset($gallerie2[0]))
+                        <img src="{{ $gallerie2[0] }}" class="lg-img" alt="">
                     @endif
 
-                    @if(isset($gallerie2[1]))
-                    <img src="{{$gallerie2[1]}}" class="sm-img" alt="">
+                    @if (isset($gallerie2[1]))
+                        <img src="{{ $gallerie2[1] }}" class="sm-img" alt="">
                     @endif
                 </div>
             </div>
             <div class="mobile-gallery">
                 <div class="row">
-                    @if(isset($gal[0]))
-                          <div class="col-md-3 card-img">
-                        <div class="gal-image">
-                            <img src="{{$gal[0]}}" alt="">
-                        </div>
-                   
+                    @if (isset($gal[0]))
+                        <div class="col-md-3 card-img">
+                            <div class="gal-image">
+                                <img src="{{ $gal[0] }}" alt="">
+                            </div>
+
                         </div>
                     @endif
-                    @if(isset($gal[1]))
+                    @if (isset($gal[1]))
                         <div class="col-md-3 card-img">
-                        <div class="gal-image">
-                            <img src="{{$gal[1]}}" alt="">
+                            <div class="gal-image">
+                                <img src="{{ $gal[1] }}" alt="">
+                            </div>
+
                         </div>
-                
-                        </div>
-                  @endif
+                    @endif
                 </div>
                 <div class="row">
-                    @if(isset($gal[2]))
-                    <div class="gal-image-big">
-                        <img src="{{$gal[2]}}" alt="">
-                    </div>
+                    @if (isset($gal[2]))
+                        <div class="gal-image-big">
+                            <img src="{{ $gal[2] }}" alt="">
+                        </div>
                     @endif
                 </div>
                 <div class="row-grid">
-                    @if(isset($gal[3]))
-                    <div class="gal-image gr-1">
-                        <img src="{{$gal[3]}}" alt="">
-                    </div>
+                    @if (isset($gal[3]))
+                        <div class="gal-image gr-1">
+                            <img src="{{ $gal[3] }}" alt="">
+                        </div>
                     @endif
 
-                    @if(isset($gal[4]))
-                    <div class="gal-image gr-2">
-                        <img src="{{$gal[4]}}" alt="">
-                    </div>
+                    @if (isset($gal[4]))
+                        <div class="gal-image gr-2">
+                            <img src="{{ $gal[4] }}" alt="">
+                        </div>
                     @endif
 
-                    @if(isset($gal[5]))
-                    <div class="gal-image gr-3">
-                        <img src="{{$gal[5]}}" alt="">
-                    </div>
+                    @if (isset($gal[5]))
+                        <div class="gal-image gr-3">
+                            <img src="{{ $gal[5] }}" alt="">
+                        </div>
                     @endif
                 </div>
                 <div class="row">
-                    @if(isset($gal[6]))
-                    <div class="gal-image-big">
-                        <img src="{{$gal[6]}}" alt="">
-                    </div>
+                    @if (isset($gal[6]))
+                        <div class="gal-image-big">
+                            <img src="{{ $gal[6] }}" alt="">
+                        </div>
                     @endif
                 </div>
             </div>
@@ -644,17 +635,11 @@
             </div>
             <ul class="tourlist">
                 <div class="tour-date-mobile">
-
-
                     <li>
                         <div class="day">
                             <span>29</span>
-
                         </div>
                         <div class="monthy">
-
-
-
                             <p>june 2017</p>
                             <div class="place">
                                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
@@ -728,10 +713,6 @@
                 <h1>Previous appearances</h1>
                 <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
             </div>
-
-
-
-
             <ul class="tourlist">
                 <li>
                     <div class="tour-date">
@@ -789,18 +770,16 @@
         let startBigPlayer = document.querySelectorAll('.play-big');
         let songName = document.querySelector('.song-name');
         let closePlayer = document.querySelector('.close-player');
-        let iframe = document.getElementsByTagName('iframe')[0]
+        let iframe = document.querySelector('#wnframe');
 
 
-        playOverlay[0].addEventListener('click', function() {
+        playOverlay[0].addEventListener('click', () => {
             if (window.getComputedStyle(document.querySelector('.home-album')).display === 'flex') {
                 playOverlay[0].style.display = "none"
                 pauseOverlay[0].style.display = "block"
                 document.querySelector('.youtube-frame').style.display = 'flex';
                 document.querySelector('.home-album').style.display = 'none';
-                iframe.setAttribute('src', "https://www.youtube.com/embed/UcWu4IhHb9Q?autoplay=1")
-                console.log(
-                    'lol') // document.getElementsByTagName('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*')
+                iframe.setAttribute('src', "{{ $mainSong->video }}");
             }
 
         });
@@ -817,19 +796,19 @@
         });
     </script>
     <script type="module">
-        import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
-
-        const wavesurfer = WaveSurfer.create({
-            container: '#waveform',
+        import WaveSurfer from 'https://unpkg.com/wavesurfer5.js@7/dist/wavesurfer5.esm.js'
+        const wavesurfer5 = wavesurfer5.create({
+            container: '#waveform-main-song',
             waveColor: '#B5D9D9',
             progressColor: '#1E96A6',
-            url: 'assets/audio.mp3',
             barWidth: 2,
             barRadius: 10,
             height: 40,
             cursorWidth: 0,
-        })
-        const wavesurfer2 = WaveSurfer.create({
+            url: '{{ $mainSong->audio }}',
+        });
+
+        const wavesurfer2 = wavesurfer5.create({
             container: '#waveform-two',
             waveColor: '#B5D9D9',
             progressColor: '#1E96A6',
@@ -838,8 +817,8 @@
             height: 50,
             cursorWidth: 0,
         })
-        wavesurfer.on('ready', () => {
-            var totalDuration = wavesurfer.getDuration();
+        wavesurfer5.on('ready', () => {
+            var totalDuration = wavesurfer5.getDuration();
             var minutes = Math.floor((totalDuration % 3600) / 60);
             var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
             let totalTime = `${minutes}:${secondes}`;
@@ -867,10 +846,10 @@
             btns[i].addEventListener('click', function() {
                 switch (i) {
                     case 0:
-                        wavesurfer.seekTo(0);
+                        wavesurfer5.seekTo(0);
                         break;
                     case 1:
-                        wavesurfer.playPause();
+                        wavesurfer5.playPause();
                         if (icon[1].className === 'fa-solid fa-play') {
                             icon[1].className = 'fa-solid fa-pause'
                         } else {
@@ -878,14 +857,14 @@
                         }
                         break;
                     case 2:
-                        wavesurfer.skip(2);
+                        wavesurfer5.skip(2);
                         break;
                     case 3:
-                        if (wavesurfer.getMuted() && icon[3].className === 'fa-solid fa-volume-xmark') {
+                        if (wavesurfer5.getMuted() && icon[3].className === 'fa-solid fa-volume-xmark') {
                             icon[3].className = 'fa-solid fa-volume-high'
-                            wavesurfer.setMuted(false);
+                            wavesurfer5.setMuted(false);
                         } else {
-                            wavesurfer.setMuted(true);
+                            wavesurfer5.setMuted(true);
                             icon[3].className = 'fa-solid fa-volume-xmark'
                         }
 
@@ -987,10 +966,10 @@
             })
         }
 
-        wavesurfer.on('audioprocess', function() {
+        wavesurfer5.on('audioprocess', function() {
 
-            if (wavesurfer.isPlaying()) {
-                var currentTime = wavesurfer.getCurrentTime();
+            if (wavesurfer5.isPlaying()) {
+                var currentTime = wavesurfer5.getCurrentTime();
                 var minutes = Math.floor((currentTime % 3600) / 60);
                 var secondes = ('00' + Math.floor(currentTime % 60)).slice(-2);
                 let current = `${minutes}:${secondes}`;
@@ -1009,38 +988,7 @@
             }
         });
 
-        let select = document.querySelectorAll('.video-select');
-        let frameSelect = document.getElementById('youtube-select');
-        let thumbTitle = document.querySelectorAll('.thumb-title');
-        let frameTitle = document.querySelector('.frame-title');
 
-        for (let i = 0; i < select.length; i++) {
-            select[i].addEventListener('click', function() {
-                if (i === 0) {
-                    frameSelect.src =
-                        'https://www.youtube.com/embed/UcWu4IhHb9Q?enablejsapi=1&showinfo=0&controls=0&autohide=1'
-                    frameTitle.innerText = thumbTitle[0].innerText
-                } else if (i === 1) {
-                    frameSelect.src =
-                        'https://www.youtube.com/embed/BQ9E8idV0Ps?enablejsapi=1&showinfo=0&controls=0&autohide=1'
-                    frameTitle.innerText = thumbTitle[1].innerText
-                } else if (i === 2) {
-                    frameSelect.src =
-                        'https://www.youtube.com/embed/WlltN3tWK-8?enablejsapi=1&showinfo=0&controls=0&autohide=1'
-                    frameTitle.innerText = thumbTitle[2].innerText
-                } else if (i === 3) {
-                    frameSelect.src =
-                        'https://www.youtube.com/embed/fS_XyRgpXgc?enablejsapi=1&showinfo=0&controls=0&autohide=1'
-                    frameTitle.innerText = thumbTitle[3].innerText
-                } else if (i === 4) {
-                    frameSelect.src =
-                        'https://www.youtube.com/embed/krIQbEGZBp0?enablejsapi=1&showinfo=0&controls=0&autohide=1'
-                    frameTitle.innerText = thumbTitle[4].innerText
-                } else {
-                    console.log('no')
-                }
-            })
-        }
 
         let navEl = document.querySelectorAll(".nav a")
         navEl[0].classList.add('active')
@@ -1049,5 +997,27 @@
         playSng.addEventListener('click', function() {
             console.log('hi')
         })
+    </script>
+
+    <script>
+        let select = document.querySelectorAll('.video-select');
+        let frameSelect = document.getElementById('youtube-select');
+        let thumbTitle = document.querySelectorAll('.thumb-title');
+        let frameTitle = document.querySelector('.frame-title');
+
+        for (let i = 0; i < select.length; i++) {
+            select[i].addEventListener('click', () => {
+                @foreach ($videos as $index => $video)
+                if (i === {{$index}}) {
+                    frameSelect.src =
+                        "{{$video['url']}}"
+                    frameTitle.innerText = thumbTitle[{{$index}}].innerText
+                } else 
+                @endforeach
+                {
+                    console.log('no')
+                }
+            })
+        }
     </script>
 @endsection
