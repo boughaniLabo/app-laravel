@@ -24,6 +24,8 @@
         wavesurfer.load(song.url);
         wavesurfer.on('ready', () => {
             console.log("helo");
+               // Play the audio
+        wavesurfer.play();
     var totalDuration = wavesurfer.getDuration();
     var minutes = Math.floor((totalDuration % 3600) / 60);
     var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
@@ -31,8 +33,7 @@
     document.getElementById('time-total').innerText = totalTime;
 })
 
-        // Play the audio
-        wavesurfer.play();
+     
 
         // Set the song title
     }
