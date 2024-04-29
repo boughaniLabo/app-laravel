@@ -22,6 +22,13 @@
 
         // Load audio from the audio element
         wavesurfer.load(song.url);
+        wavesurfer.on('ready', () => {
+    var totalDuration = wavesurfer.getDuration();
+    var minutes = Math.floor((totalDuration % 3600) / 60);
+    var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+    let totalTime = `${minutes}:${secondes}`;
+    document.getElementById('time-total').innerText = totalTime;
+})
 
         // Play the audio
         wavesurfer.play();
