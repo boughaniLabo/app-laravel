@@ -17,7 +17,7 @@ Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/music', [MusicController::class, 'index'])->name('music');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour', [TourController::class, 'index'])->name('tour');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+// Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::post('/lang', function(Request $request){
     return App::currentLocale();

@@ -630,6 +630,11 @@ video {
   justify-content: center !important;
 }
 
+.py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem !important;
 }

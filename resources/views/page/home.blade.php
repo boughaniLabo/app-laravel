@@ -640,7 +640,7 @@
         <div class="wrapper">
             <div class="title">
                 <h1>Previous appearances</h1>
-                <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
+                <a href="?lng=en&amp;p=Tour" class="cta-video py-0">see more</a>
             </div>
             <ul class="tourlist">
                 <div class="tour-date-mobile">

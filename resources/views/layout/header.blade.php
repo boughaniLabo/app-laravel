@@ -28,7 +28,7 @@
                                     <a href="/services">Services</a>
                                     <a href="/music">Music</a>
                                     <a href="/tour">Tour</a>
-                                    <a href="/blog">Blog</a>
+                                    <a class="hidden" hidden href="/blog">Blog</a>
                                     <a href="/contact">Contact</a>
                                 </nav>
                             </div>
@@ -94,7 +94,7 @@
                                     <a href="/services">Services</a>
                                     <a href="/music">Music</a>
                                     <a href="/tour">Tour</a>
-                                    <a href="/blog">Blog</a>
+                                    <a class="hidden" hidden href="/blog">Blog</a>
                                     <a href="/contact">Contact</a>
                                 </nav>
                             </div>
@@ -164,7 +164,7 @@
                             <a href="/services" class="active">Services</a>
                             <a href="/music">Music</a>
                             <a href="/tour">Tour</a>
-                            <a href="/blog">Blog</a>
+                            <a class="hidden" hidden href="/blog">Blog</a>
                             <a href="/contact">Contact</a>
                             <!--<a href="?lng=fr&p=Contact">Contact</a>  -->
                         </nav>
@@ -198,7 +198,7 @@
                             <a href="/services">Services</a>
                             <a href="/music">Music</a>
                             <a href="/tour">Tour</a>
-                            <a href="/blog">Blog</a>
+                            <a class="hidden" hidden href="/blog">Blog</a>
                             <a href="/contact">Contact</a>
                         </nav>
                     </div>
@@ -236,7 +236,7 @@
                             <a href="/services">Services</a>
                             <a href="/music">Music</a>
                             <a href="/tour">Tour</a>
-                            <a href="/blog" class="active">Blog</a>
+                            <a class="hidden" hidden href="/blog" class="active">Blog</a>
                             <a href="/contact">Contact</a>
                         </nav>
                     </div>
