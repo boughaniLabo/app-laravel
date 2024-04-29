@@ -14,12 +14,10 @@
             height: 50,
             cursorWidth: 0,
         });
-        const audio = new Audio(song.url);
-        audio.crossOrigin = "anonymous";
-        console.log(audio);
+
         document.getElementById('song-name').innerText = song.title;
         // Load audio from the audio element
-        wavesurfer.load(audio);
+        wavesurfer.load(song.url);
 
         // Play the audio
         wavesurfer.play();
