@@ -5,9 +5,9 @@
 <script>
  
  function playAudio(song) {
-        let displaySound = document.getElementById('waveform-two') ; 
-        displaySound.innerHTML = "<div></div>";
-        console.log(song);
+        if (wavesurfer) {
+        wavesurfer.destroy();
+    }
         const wavesurfer = WaveSurfer.create({
             container: '#waveform-two',
             waveColor: '#B5D9D9',
