@@ -17,6 +17,14 @@
     } else {
         // If wavesurfer is already initialized, destroy the existing instance
         wavesurfer.destroy();
+        wavesurfer = WaveSurfer.create({
+            container: '#waveform-two',
+            waveColor: '#B5D9D9',
+            progressColor: '#1E96A6',
+            barWidth: 2,
+            height: 50,
+            cursorWidth: 0,
+        });
     }
         let elementToshow = document.getElementById('costumeWave') ; 
         console.log(elementToshow);
