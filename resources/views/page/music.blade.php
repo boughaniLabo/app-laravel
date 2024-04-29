@@ -16,6 +16,8 @@
         });
 
         document.getElementById('song-name').innerText = song.title;
+        const elementToshow = document.getElementById('soundPlayerBig') ; 
+        elementToShow.style.display = "block";
         // Load audio from the audio element
         wavesurfer.load(song.url);
 
@@ -45,7 +47,7 @@
         <div>
             <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
         </div>
-    <div class="player top-player">
+    <div class="player top-player" id="soundPlayerBig">
 
                         <div class="song-name" id="song-name">01. So What's next ?</div>
                         <div class="timer">
