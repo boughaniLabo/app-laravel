@@ -8,7 +8,7 @@
     
         console.log(song);
         const wavesurfer = WaveSurfer.create({
-            container: '#waveform',
+            container: '#costumeWave',
             waveColor: '#B5D9D9',
             progressColor: '#1E96A6',
             barWidth: 2,
