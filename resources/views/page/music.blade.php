@@ -673,17 +673,7 @@
     let btns2 = document.querySelectorAll('.control-two button')
     let icon2 = document.querySelectorAll('.control-two button i')
     let closePlayer = document.querySelector('.close-player');
-        closePlayer.addEventListener('click', function () {
-            if (window.getComputedStyle(document.querySelector('.big-player')).display === 'block') {
-                document.querySelector('.big-player').style.display = 'none';
-                icon2[1].className = 'fa-solid fa-play'
-                wavesurfer2.stop()
-                }})
   
-  
-    
-    
-
         let albumDetail = document.querySelectorAll('.albumDetails') ;
         console.log("#####album",albumDetail);
         albumDetail.forEach(element => {
