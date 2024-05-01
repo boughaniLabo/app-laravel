@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('title', 'Tour')
 @section('content')
-    <section class="showcase tour-showcase"
+    <section class="showcase tour-showcase min-h-[600px] h-fit pb-10"
         style="background-image: linear-gradient(180deg, #41414196 0%, #41414196 100%),url('assets/img/landing2.jpg');">
         <div class="topbar">
             <div class="wrapper">
@@ -44,20 +44,22 @@
                 <div class="tour-page-wrapper">
                     <div class="row tour-page">
                         <div class="col-lg-4">
-                            @foreach ($tours as $item)
-                                <div class="tour-deets">
-                                    <div class="tour-location">
+                            @foreach ($tours as $index => $item)
+                                <div class="tour-deets" style="display: {{$index === 0 ? 'flex' : 'none'}};">
+                                    <div class="tour-location" >
                                         <h2>“{{ $item['title'] }}”</h2>
-                                        <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }} {{ $item['time'] }}</p>
+                                        <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}
+                                            {{ $item['time'] }}</p>
                                     </div>
 
                                     <div class="tour-desc">
                                         <p>
-                                            {{ $item['description']}}
+                                            {{ $item['description'] }}
                                         </p>
 
                                     </div>
-                                    <div style="background: url('{{$item['photo']}}')no-repeat !important;background-size: cover !important;" class="tour-img zero">
+                                    <div style="background: url('{{ $item['photo'] }}')no-repeat !important;background-size: cover !important;"
+                                        class="tour-img zero">
 
                                     </div>
                                 </div>
@@ -73,13 +75,15 @@
                                         <div class="tour-date">
                                             <h1>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('j') }}</h1>
                                             <div class="day-h">
-                                                <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}</p>
+                                                <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}
+                                                </p>
                                                 <p>{{ $item['time'] }}</p>
                                             </div>
                                         </div>
                                         <div class="tour-loc">
                                             <p>{{ $item['title'] }}</p>
-                                            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ $item['location'] }}
+                                            <p><i class="fa-solid fa-location-dot"
+                                                    aria-hidden="true"></i>{{ $item['location'] }}
                                             </p>
                                         </div>
                                         <a href="#" class="cta-video">stock epuisé</a>
@@ -95,21 +99,13 @@
             </section>
             <section class="mobile-tour-section">
                 <div class="wrapper">
-
-
                     <ul class="tourlist">
                         <div class="tour-date-mobile mobile-tour-page">
-
-
                             <li>
                                 <div class="day">
                                     <span>29</span>
-
                                 </div>
                                 <div class="monthy">
-
-
-
                                     <p>june 2017</p>
                                     <div class="place">
                                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
@@ -232,54 +228,14 @@
         let select = document.querySelectorAll('.tour-page li')
         for (let i = 0; i < select.length; i++) {
             select[i].addEventListener('click', function() {
-                if (i === 0) {
-                    divs[0].style.display = "flex";
-                    select[3].classList.remove("active")
-                    select[2].classList.remove("active")
-                    select[1].classList.remove("active")
-                    select[0].classList.add("active")
-                    divs[1].style.display = "none";
-                    divs[2].style.display = "none";
-                    divs[3].style.display = "none";
-                    console.log(i)
-
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
                 }
-                if (i === 1) {
-                    divs[0].style.display = "none";
-                    divs[1].style.display = "flex";
-                    divs[2].style.display = "none";
-                    divs[3].style.display = "none";
-                    select[2].classList.remove("active")
-                    select[3].classList.remove("active")
-                    select[0].classList.remove("active")
-                    select[1].classList.add("active")
-                    console.log(i)
-
+                for (let i = 0; i < divs.select; i++) {
+                    select[i].classList.remove("active");
                 }
-                if (i === 2) {
-                    divs[0].style.display = "none";
-                    divs[1].style.display = "none";
-                    divs[2].style.display = "flex";
-                    divs[3].style.display = "none";
-                    select[1].classList.remove("active")
-                    select[3].classList.remove("active")
-                    select[0].classList.remove("active")
-                    select[2].classList.add("active")
-                    console.log(i)
-
-                }
-                if (i === 3) {
-                    divs[0].style.display = "none";
-                    divs[1].style.display = "none";
-                    divs[2].style.display = "none";
-                    divs[3].style.display = "flex";
-                    select[2].classList.remove("active")
-                    select[0].classList.remove("active")
-                    select[1].classList.remove("active")
-                    select[3].classList.add("active")
-                    console.log(i)
-
-                }
+                divs[i].style.display = "flex";
+                select[i].classList.add("active")
             })
         }
 
