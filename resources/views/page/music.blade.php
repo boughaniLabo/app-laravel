@@ -147,7 +147,7 @@
     <section class="releases music-page">
         <div class="wrapper">
             <div class="title">
-                <h1>Latest releases</h1>
+                <h1>DERNIÈRES PUBLICATIONS</h1>
             </div>
 
 

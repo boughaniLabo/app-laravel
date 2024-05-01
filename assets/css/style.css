@@ -848,6 +848,24 @@ margin: 0 auto ;
     url(/photos/bio/tinist1.jpg);
   background-size: cover;
 }
+
+.card-4 {
+  background: linear-gradient(180deg, rgba(19, 17, 18, 0) 0%, #131112 100%),
+    url(/assets/1.png);
+  background-size: cover;
+}
+
+.card-5 {
+  background: linear-gradient(180deg, rgba(19, 17, 18, 0) 0%, #131112 100%),
+    url(/assets/2.png);
+  background-size: cover;
+}
+
+.card-6 {
+  background: linear-gradient(180deg, rgba(19, 17, 18, 0) 0%, #131112 100%),
+    url(/assets/3.png);
+  background-size: cover;
+}
 .art-card p {
   display: inline;
   padding: 7px 5.5px;

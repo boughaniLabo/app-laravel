@@ -84,7 +84,7 @@
     <section class="releases">
         <div class="wrapper">
             <div class="title">
-                <h1>Latest releases</h1>
+                <h1>DERNIÈRES PUBLICATIONS</h1>
             </div>
             <div class="mobile-row">
                 <div class="col-md-3 card">
@@ -441,7 +441,7 @@
     <section class="gallery">
         <div class="wrapper">
             <div class="title title-wrapper">
-                <h1>Gallery</h1>
+                <h1>GALERIE</h1>
                 <a href="https://www.instagram.com/rafael_dato/" target="_blank" class="cta-video">see more</a>
             </div>
             <div class="gallery-grid">
@@ -522,7 +522,7 @@
     <section class="mobile-tour">
         <div class="wrapper">
             <div class="title">
-                <h1>Previous appearances</h1>
+                <h1>APPARITIONS PRÉCÉDENTES</h1>
                 <a href="?lng=en&amp;p=Tour" class="cta-video py-0">see more</a>
             </div>
             <ul class="tourlist">
@@ -602,7 +602,7 @@
     <section class="tour">
         <div class="wrapper tour-section">
             <div class="title">
-                <h1>Previous appearances</h1>
+                <h1>APPARITIONS PRÉCÉDENTES</h1>
                 <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
             </div>
             <ul class="tourlist">
