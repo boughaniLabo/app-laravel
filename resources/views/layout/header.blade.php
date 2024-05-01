@@ -40,9 +40,9 @@
                     <div class="header-title-wrapper w-fit sm:pb-40 pb-5">
                         <div class="hero-title">
                             <p class="artist-name">rafaËl dato</p>
-                            <h2 class="artist-instru">pianist</h2>
-                            <h2 class="artist-comp">composer &amp; arranger</h2>
-                            <a class="cta-header" href="#album">new album</a>
+                            <h2 class="artist-instru">pianiste</h2>
+                            <h2 class="artist-comp">compositeur &amp; arrangeur</h2>
+                            <a class="cta-header" href="#album">Nouvel album</a>
                         </div>
                         <div class="social-header">
 
