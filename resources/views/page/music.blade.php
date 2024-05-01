@@ -490,86 +490,72 @@
              @endforeach
     </div>
 </section>
-<section class="song-page">
+<section class="song-page" id="specialPupUp">
     <div class="wrapper">
           <div class="title">
               <h1>Nos pistes</h1>
-              <a class="cta-header music-cta close-cta" href="javascript:void(0)">close</a>
+              <a class="cta-header music-cta close-cta" href="javascript:void(0)" id="main-popup">close</a>
           </div>
           <div class="row best-songs dispaly-flex">
-            @foreach($songs as $value)
-            <div class="col-md-3">
-                <div class="rel-card">
-                    <div class="image">
-                        <img src="{{$value['cover']}}" alt="">
-                    </div>
-                    <div class="social rel-card-link">
-                            
-                        @foreach($value['links'] as $link)
-                        @switch($link['link']) 
-                            @case('youtube')
-                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                            @break
-                            @case('spotify')
-                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-
-
-                            @break
-                            @case('itunes')
-                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-
-
-                            @break
-                            @case('deezer')
-                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                            @break
-                            @case('amazon')
-                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                            @break
-                            @endswitch
-                        @endforeach
-                                            
-                                        </div>
-                                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                            </div>
-                            <div class="social rel-card-link">
-                            
-                                @foreach($value['links'] as $link)
+          @foreach($songs as $value)
+                <div class="col-md-3">
+                    <div class="rel-card">
+                        <div class="image">
+                            <img src="{{$value['cover']}}" alt="">
+                        </div>
+                        <div class="social rel-card-link">
+                            @foreach($value['links'] as $link)
                                 @switch($link['link']) 
                                     @case('youtube')
-                                    <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-        
-                                    @break
+                                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('spotify')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-        
-        
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('itunes')
-                                    <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-        
-        
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('deezer')
-                                    <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                        @break
                                     @case('amazon')
-                                    <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                    @break
+                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                        @break
+                                @endswitch
+                            @endforeach
+                        </div>
+                        <div class="overlay rel-card">
+                            <div></div>
+                            <div>
+                                <button class="play-big" id="play-button-{{$loop->index}}" onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="social rel-card-link">
+                                @foreach($value['links'] as $link)
+                                    @switch($link['link']) 
+                                        @case('youtube')
+                                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('spotify')
+                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('itunes')
+                                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('deezer')
+                                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
+                                            @break
+                                        @case('amazon')
+                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
+                                            @break
                                     @endswitch
                                 @endforeach
-                                            
+                            </div>
                         </div>
-                        </div>
+                    </div>
+                    <h3 class="song-title">{{$value['title']}}</h3>
+                    <h4>{{$value['description']}}</h4>
                 </div>
-                <h3 class="song-title">{{$value['title']}}</h3>
-                <h4>{{$value['description']}}</h4>
-            </div>
-           @endforeach    
+             @endforeach  
           </div>
 
       </div>
@@ -684,7 +670,7 @@
     let btns2 = document.querySelectorAll('.control-two button')
     let icon2 = document.querySelectorAll('.control-two button i')
     let closePlayer = document.querySelector('.close-player');
-  
+    let mainCLosePuP = document.getElementById('main-popup') ; 
         let albumDetail = document.querySelectorAll('.albumDetails') ;
         console.log("#####album",albumDetail);
         albumDetail.forEach(element => {
@@ -737,6 +723,12 @@
         let elementToshow = document.getElementById('costumeWave') ; 
         elementToshow.style.display = "none";
         wavesurfer.destroy();
+    })
+    mainCLosePuP.addEventListener('click',function($event){
+        console.log("test test test ");
+        let ele = document.getElementById('specialPupUp');
+        console.log(ele);
+        ele.style.display = "none";
     })
   
         
