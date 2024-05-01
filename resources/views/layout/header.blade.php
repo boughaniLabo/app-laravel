@@ -23,10 +23,10 @@
                             <div class="navbar" id="menu">
                                 <nav class="nav nav-home">
                                     <!-- <div id="marker"></div> -->
-                                    <a href="/">Home</a>
+                                    <a href="/">accueil</a>
                                     <a href="/bio">Bio</a>
-                                    <a href="/services">Services</a>
-                                    <a href="/music">Music</a>
+                                    <a href="/services">prestation</a>
+                                    <a href="/music">Musique</a>
                                     <a href="/tour">Tour</a>
                                     <a class="hidden" hidden href="/blog">Blog</a>
                                     <a href="/contact">Contact</a>
@@ -89,10 +89,10 @@
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav arti-nav">
-                                    <a href="/">Home</a>
+                                    <a href="/">accueil</a>
                                     <a href="/bio">Bio</a>
-                                    <a href="/services">Services</a>
-                                    <a href="/music">Music</a>
+                                    <a href="/services">prestation</a>
+                                    <a href="/music">Musique</a>
                                     <a href="/tour">Tour</a>
                                     <a class="hidden" hidden href="/blog">Blog</a>
                                     <a href="/contact">Contact</a>
@@ -159,10 +159,10 @@
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav arti-nav">
-                            <a href="/">Home</a>
+                            <a href="/">accueil</a>
                             <a href="/bio">Bio</a>
-                            <a href="/services" class="active">Services</a>
-                            <a href="/music">Music</a>
+                            <a href="/services" class="active">prestation</a>
+                            <a href="/music">Musique</a>
                             <a href="/tour">Tour</a>
                             <a class="hidden" hidden href="/blog">Blog</a>
                             <a href="/contact">Contact</a>
@@ -193,10 +193,10 @@
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav music-nav">
-                            <a href="/">Home</a>
+                            <a href="/">accueil</a>
                             <a href="/bio">Bio</a>
-                            <a href="/services">Services</a>
-                            <a href="/music">Music</a>
+                            <a href="/services">prestation</a>
+                            <a href="/music">Musique</a>
                             <a href="/tour">Tour</a>
                             <a class="hidden" hidden href="/blog">Blog</a>
                             <a href="/contact">Contact</a>
@@ -231,12 +231,12 @@
                     <div class="navbar" id="menu">
 
                         <nav class="nav arti-nav">
-                            <a href="/">Home</a>
+                            <a href="/">accueil</a>
                             <a href="/bio">Bio</a>
-                            <a href="/services">Services</a>
-                            <a href="/music">Music</a>
+                            <a href="/services">prestation</a>
+                            <a href="/music">Musique</a>
                             <a href="/tour">Tour</a>
-                            <a class="hidden" hidden href="/blog" class="active">Blog</a>
+                            <a hidden href="/blog" class="active hidden">Blog</a>
                             <a href="/contact">Contact</a>
                         </nav>
                     </div>

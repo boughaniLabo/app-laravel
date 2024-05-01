@@ -8,12 +8,12 @@
                 <h3 class="menu-title">menu</h3>
                 <ul>
                     <li>
-                        <a href="?lng=en&amp;p=Home">Home</a>
+                        <a href="?lng=en&amp;p=Home">accueil</a>
                         <a href="?lng=en&amp;p=Bio">Bio</a>
-                        <a href="?lng=en&amp;p=Services">Services</a>
-                        <a href="?lng=en&amp;p=Music">Music</a>
+                        <a href="?lng=en&amp;p=Services">prestation</a>
+                        <a href="?lng=en&amp;p=Music">Musique</a>
                         <a href="?lng=en&amp;p=Tour">Tour</a>
-                        <a href="?lng=en&amp;p=Blog">Blog</a>
+                        <a href="?lng=en&amp;p=Blog" class="hidden">Blog</a>
                         <a href="?lng=en&amp;p=Contact">Contact</a>
                     </li>
                 </ul>
@@ -36,7 +36,6 @@
                 <ul>
                     <li>
                         <a href="#">so what's next</a>
-
                     </li>
                 </ul>
             </div>
@@ -65,10 +64,10 @@
                             <option value="placeholder" class="language" disabled="" selected="">select lang
                             </option>
                             <option value="fr" class="language">
-                                français 1
+                                français
                             </option>
                             <option value="en" class="language">
-                                english 2
+                                english
                             </option>
                         </select>
                     </form>
