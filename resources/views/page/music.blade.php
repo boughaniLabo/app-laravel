@@ -205,7 +205,7 @@
     <section class="releases">
         <div class="wrapper desktop-row">
             <div class="title">
-                <h1>our best songs</h1>
+                <h1>NOS MEILLEURES CHANSONS</h1>
                 <a class="cta-header music-cta" href="javascript:void(0)">see more</a>
             </div>
             <div class="row best-songs">
