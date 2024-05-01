@@ -177,7 +177,6 @@
 
         console.log(artBtn, artRow)
         artBtn[2].addEventListener('click', function() {
-            alert('clicked')
             artRow.style.display = "flex";
         })
 
