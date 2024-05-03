@@ -39,8 +39,7 @@
         </div>
         <div class="home-album youtube-frame">
 
-            <iframe width="500" height="350" frameborder="0" allowfullscreen="" id="wnframe"
-                allow="autoplay">
+            <iframe width="500" height="350" frameborder="0" allowfullscreen="" id="wnframe" allow="autoplay">
             </iframe>
             <div class="social album-home-cover-link">
                 <a href="{{ $mainSong->links[4]['url'] }}" target="_blank" class="social-link"> <i
@@ -58,8 +57,7 @@
             <div class="overlay">
                 <div></div>
                 <div>
-                    <button class="pause-overlay"><i class="fa-solid fa-pause"
-                            aria-hidden="true"></i></button>
+                    <button class="pause-overlay"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
                 </div>
                 <div class="social album-home-cover-link">
                     <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"
@@ -68,9 +66,8 @@
                         class="social-link"> <i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
                     <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
                             class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                    <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                        target="_blank" class="social-link"> <i class="fa-brands fa-amazon"
-                            aria-hidden="true"></i> </a>
+                    <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank"
+                        class="social-link"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
                     <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"
                         class="social-link"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
 
@@ -106,9 +103,39 @@
                 <div id="waveform-main-song">
                     <div></div>
                 </div>
-                <div class="control"><button><i class="fa-solid fa-volume-high"
-                            aria-hidden="true"></i></button></div>
+                <div class="control"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row album-row-mobile">
+    <div class="col-xs-12 home-album">
+
+        <div class="play-song">
+            <img src="{{ $mainSong->cover }}" alt="">
+        </div>
+        <div class="social album-home-cover-link">
+            <a href="{{ $mainSong->links[4]['url'] }}" target="_blank" class="social-link"> <i
+                    class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
+            <a href="{{ $mainSong->links[3]['url'] }}" target="_blank" class="social-link"> <i
+                    class="fa-brands fa-apple" aria-hidden="true"></i> </a>
+            <a href="{{ $mainSong->links[2]['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                    aria-hidden="true"></i> </a>
+            <a href="{{ $mainSong->links[1]['url'] }}" target="_blank" class="social-link"> <i
+                    class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
+            <a href="{{ $mainSong->links[0]['url'] }}" target="_blank" class="social-link"> <i
+                    class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
+        </div>
+    </div>
+    <div class="col-xs-8">
+        <div class="title mobile-titles">
+            <h1 class="alb-title">
+                {{ $mainSong->title }}
+            </h1>
+            <p >{{ Str::limit($mainSong->description,100,'...') }}</p>
         </div>
     </div>
 </div>
@@ -144,4 +171,18 @@
             // document.getElementsByTagName('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*')
         }
     });
+</script>
+
+<script type="module">
+     import WaveSurfer from 'https://unpkg.com/wavesurfer5.js@7/dist/wavesurfer5.esm.js'
+        const wavesurfer5 = wavesurfer5.create({
+            container: '#waveform-main-song',
+            waveColor: '#B5D9D9',
+            progressColor: '#1E96A6',
+            barWidth: 2,
+            barRadius: 10,
+            height: 40,
+            cursorWidth: 0,
+            url: '{{ $mainSong->audio }}',
+        });
 </script>

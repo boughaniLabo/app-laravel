@@ -34,7 +34,7 @@
                         </nav>
                     </div>
                 </div>
-                <div class="row head-row flex flex-row items-center justify-center">
+                <div class="row head-row flex flex-row items-center justify-center w-full">
                     <div class="flex-1"></div>
                     <div class="header-title-wrapper w-fit sm:pb-40 pb-5 pl-6">
                         <div class="hero-title">

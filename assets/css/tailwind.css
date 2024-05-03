@@ -634,6 +634,10 @@ video {
   height: 8rem !important;
 }
 
+.h-7 {
+  height: 1.75rem !important;
+}
+
 .min-h-\[600px\] {
   min-height: 600px !important;
 }
@@ -683,6 +687,10 @@ video {
   width: 16.666667% !important;
 }
 
+.w-7 {
+  width: 1.75rem !important;
+}
+
 .max-w-72 {
   max-width: 18rem !important;
 }
@@ -717,6 +725,10 @@ video {
 
 .rounded {
   border-radius: 0.25rem !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
 }
 
 .bg-cover {

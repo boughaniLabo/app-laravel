@@ -115,56 +115,8 @@
             </div>
         </div>
         <div class="wrapper">
-
-
             {{-- main song  --}}
             @include('components.main-song')
-
-
-            <div class="row album-row-mobile">
-                <div class="col-xs-12 home-album">
-
-                    <div class="play-song">
-                        <!-- <button class="play-song-mobile"><i class="fa-solid fa-play"></i></button> -->
-                        <img src="assets/img/album-cover.jpg" alt="">
-                    </div>
-                    <div class="social album-home-cover-link">
-
-                        <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
-                                class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                        <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank"> <i
-                                class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                        <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
-                                class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                        <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank">
-                            <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
-                        <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
-                                class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
-                    </div>
-
-                </div>
-                <div class="col-xs-8">
-
-                    <div class="title mobile-titles">
-                        <h1 class="alb-title">
-                            so, what’s next?
-
-                        </h1>
-                        <p>
-                            Composed by Rafaël Dato during the health crisis and the constraints that plag ued him, the
-                            album “So What's Next?.” </p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="row mobile">
-                <p class="mobile-p">
-                    split the boundaries between musical genres, in order to offer a sound synthesis with jazz accents, able
-                    to attract an audience of both profane and knowledgeable music lovers </p>
-                <p></p>
-            </div>
         </div>
     </section>
     <section class="releases">
@@ -565,10 +517,11 @@
                                 </div>
                             </div>
                             <div class="hour">
-                                <p>{{ $tour['time'] }} p.m.</p>
+                                <p>{{ $tour['time'] }}</p>
                             </div>
                         </li>
-                        <a href="" class="cta-mobile-ticket">out of stock</a>
+                        <a href="@isset($tour['link']) {{ $tour['link'] }} @else # @endisset"
+                            class="cta-mobile-ticket">out of stock</a>
                     </div>
                 @endforeach
 
@@ -584,20 +537,20 @@
             </div>
             <ul class="tourlist">
                 @foreach ($tours as $tour)
-                    :
                     <li>
                         <div class="tour-date">
                             <h1>{{ \Carbon\Carbon::parse($tour['date'])->format('d') }}</h1>
                             <div class="day-h">
                                 <p>{{ \Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y') }}</p>
-                                <p>{{ $tour['time'] }} pm</p>
+                                <p>{{ $tour['time'] }}</p>
                             </div>
                         </div>
                         <div class="tour-loc">
-                            <p>les rendez vous d'ailleurs</p>
+                            <p>{{ $tour['title'] }}</p>
                             <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ $tour['location'] }}</p>
                         </div>
-                        <a href="#" class="cta-video">out of stock</a>
+                        <a href="@isset($tour['link']) {{ $tour['link'] }} @else # @endisset"
+                            class="cta-video">out of stock</a>
                     </li>
                 @endforeach
             </ul>
@@ -605,17 +558,6 @@
     </section>
 
     <script type="module">
-        import WaveSurfer from 'https://unpkg.com/wavesurfer5.js@7/dist/wavesurfer5.esm.js'
-        const wavesurfer5 = wavesurfer5.create({
-            container: '#waveform-main-song',
-            waveColor: '#B5D9D9',
-            progressColor: '#1E96A6',
-            barWidth: 2,
-            barRadius: 10,
-            height: 40,
-            cursorWidth: 0,
-            url: '{{ $mainSong->audio }}',
-        });
 
         const wavesurfer2 = wavesurfer5.create({
             container: '#waveform-two',
