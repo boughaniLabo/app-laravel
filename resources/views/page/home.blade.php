@@ -255,9 +255,8 @@
                                     @endswitch
                                 @endforeach
                             </div>
-                            <div class="overlay rel-card pb-3">
-                                <div></div>
-                                <div>
+                            <div class="overlay rel-card">
+                                <div class="h-[167px] max-[1366px]:h-[130px]">
                                     <button class="play-big" id="play-button-{{ $loop->index }}"
                                         onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
                                             aria-hidden="true"></i></button>
