@@ -344,11 +344,14 @@
                 @endforeach
             </div>
         </div>
-        <div class="mobile-row music-page-row">
+        <div class="mobile-row music-page-row" style="padding:5px 15px !important;">
             @foreach ($values as $value)
                 <div class="col-md-3">
                     <div class="rel-card">
                         <div class="image">
+                        <button class="play-song-mobile" id="play-button-{{ $loop->index }}"
+                                    onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
+                                        aria-hidden="true"></i></button>
                             <img src="{{ $value['cover'] }}" alt="">
                         </div>
                         <div class="social rel-card-link">
@@ -381,44 +384,7 @@
                                 @endswitch
                             @endforeach
                         </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big" id="play-button-{{ $loop->index }}"
-                                    onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
-                                        aria-hidden="true"></i></button>
-                            </div>
-                            <div class="social rel-card-link">
-                                @foreach ($value['links'] as $link)
-                                    @switch($link['link'])
-                                        @case('youtube')
-                                            <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
-                                                    aria-hidden="true"></i> </a>
-                                        @break
-
-                                        @case('spotify')
-                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
-                                                    aria-hidden="true"></i> </a>
-                                        @break
-
-                                        @case('itunes')
-                                            <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
-                                                    aria-hidden="true"></i> </a>
-                                        @break
-
-                                        @case('deezer')
-                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
-                                                    aria-hidden="true"></i> </a>
-                                        @break
-
-                                        @case('amazon')
-                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
-                                                    aria-hidden="true"></i></a>
-                                        @break
-                                    @endswitch
-                                @endforeach
-                            </div>
-                        </div>
+                        
                     </div>
                     <h3 class="song-title">{{ $value['title'] }}</h3>
                     <h4>{{ $value['description'] }}</h4>
@@ -628,6 +594,8 @@
     @endforeach
 
     <script type="module">
+        let navEl = document.querySelectorAll(".nav a")
+        navEl[3].classList.add('active-white')
         var musCta = document.getElementById('seeMoreSection');
         console.log(musCta);
         console.log("#######edfdfsfds#####", musCta)
