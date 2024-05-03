@@ -3,6 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js" integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
  var play= false ; 
@@ -487,74 +488,26 @@
                 <a href="?lng=en&amp;p=Tour" class="cta-video py-0">see more</a>
             </div>
             <ul class="tourlist">
+            @foreach($tours as $tour):
                 <div class="tour-date-mobile">
                     <li>
                         <div class="day">
-                            <span>29</span>
+                            <span>{{\Carbon\Carbon::parse($tour['date'])->format('d')}}</span>
                         </div>
                         <div class="monthy">
-                            <p>june 2017</p>
+                            <p>{{\Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y')}}</p>
                             <div class="place">
                                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                <span class="place"> Paris, France</span>
+                                <span class="place"> {{$tour['location']}}</span>
                             </div>
                         </div>
                         <div class="hour">
-                            <p>8:00 p.m.</p>
+                            <p>{{$tour['time']}} p.m.</p>
                         </div>
                     </li>
                     <a href="" class="cta-mobile-ticket">out of stock</a>
                 </div>
-                <div class="tour-date-mobile">
-
-
-                    <li>
-                        <div class="day">
-                            <span>29</span>
-
-                        </div>
-                        <div class="monthy">
-
-
-
-                            <p>june 2017</p>
-                            <div class="place">
-                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                <span class="place"> Paris, France</span>
-                            </div>
-                        </div>
-                        <div class="hour">
-                            <p>8:00 p.m.</p>
-                        </div>
-                    </li>
-                    <a href="" class="cta-mobile-ticket">out of stock</a>
-                </div>
-                <div class="tour-date-mobile">
-
-
-                    <li>
-                        <div class="day">
-                            <span>29</span>
-
-                        </div>
-                        <div class="monthy">
-
-
-
-                            <p>june 2017</p>
-                            <div class="place">
-                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                <span class="place"> Paris, France</span>
-                            </div>
-                        </div>
-                        <div class="hour">
-                            <p>8:00 p.m.</p>
-                        </div>
-                    </li>
-                    <a href="" class="cta-mobile-ticket">out of stock</a>
-                </div>
-
-
+            @endforeach   
 
             </ul>
 
@@ -567,49 +520,22 @@
                 <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
             </div>
             <ul class="tourlist">
+                @foreach($tours as $tour):
                 <li>
                     <div class="tour-date">
-                        <h1>29</h1>
+                        <h1>{{\Carbon\Carbon::parse($tour['date'])->format('d')}}</h1>
                         <div class="day-h">
-                            <p>june 2017</p>
-                            <p>8:00 pm</p>
+                            <p>{{\Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y')}}</p>
+                            <p>{{$tour['time']}} pm</p>
                         </div>
                     </div>
                     <div class="tour-loc">
                         <p>les rendez vous d'ailleurs</p>
-                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> paris, france, FR</p>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{$tour['location']}}</p>
                     </div>
                     <a href="#" class="cta-video">out of stock</a>
                 </li>
-                <li>
-                    <div class="tour-date">
-                        <h1>09</h1>
-                        <div class="day-h">
-                            <p>February 2017</p>
-                            <p>10:00 pm</p>
-                        </div>
-                    </div>
-                    <div class="tour-loc">
-                        <p>espace ararat</p>
-                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> paris, france, FR</p>
-                    </div>
-                    <a href="#" class="cta-video">out of stock</a>
-                </li>
-                <li>
-                    <div class="tour-date">
-                        <h1>17</h1>
-                        <div class="day-h">
-                            <p>novembre 2017</p>
-                            <p>7:00 pm</p>
-                        </div>
-                    </div>
-                    <div class="tour-loc">
-                        <p>centre culturel "isadora duncan"</p>
-                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Igny, france, FR</p>
-                    </div>
-                    <a href="#" class="cta-video">out of stock</a>
-                </li>
-
+                @endforeach
             </ul>
         </div>
     </section>
