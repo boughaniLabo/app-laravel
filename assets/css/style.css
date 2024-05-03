@@ -849,6 +849,25 @@ margin: 0 auto ;
   background-size: cover;
 }
 
+.page-numbers {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.page-numbers li a {
+  font-size: 14px;
+  color: #d8d8d8;
+  text-decoration: none;
+}
+
+.page-active {
+  padding: 10px 15px;
+  background-color: #d8d8d8;
+  border-radius: 5px;
+  color: #242424 !important;
+}
+
 .card-4 {
   background: linear-gradient(180deg, rgba(19, 17, 18, 0) 0%, #131112 100%),
     url(/assets/1.png);

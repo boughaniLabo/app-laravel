@@ -44,19 +44,17 @@
                 <div class="tour-page-wrapper">
                     <div class="row tour-page">
                         <div class="col-lg-4">
-                            @foreach ($tours as $index => $item)
-                                <div class="tour-deets" style="display: {{$index === 0 ? 'flex' : 'none'}};">
-                                    <div class="tour-location" >
+                            @foreach ($tours as $item)
+                                <div class="tour-deets" style="display: {{ $loop->index === 0 ? 'flex' : 'none' }};">
+                                    <div class="tour-location">
                                         <h2>“{{ $item['title'] }}”</h2>
                                         <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}
                                             {{ $item['time'] }}</p>
                                     </div>
-
                                     <div class="tour-desc">
                                         <p>
                                             {{ $item['description'] }}
                                         </p>
-
                                     </div>
                                     <div style="background: url('{{ $item['photo'] }}')no-repeat !important;background-size: cover !important;"
                                         class="tour-img zero">
@@ -64,11 +62,8 @@
                                     </div>
                                 </div>
                             @endforeach
-
                         </div>
                         <div class="col-lg-8 ">
-
-
                             <ul class="tourlist tour-page">
                                 @foreach ($tours as $item)
                                     <li>
@@ -86,17 +81,41 @@
                                                     aria-hidden="true"></i>{{ $item['location'] }}
                                             </p>
                                         </div>
-                                        <a href="#" class="cta-video">stock epuisé</a>
+                                        <a href="@isset($item['link']) {{$item['link']}} @else # @endisset" class="cta-video">stock epuisé</a>
                                     </li>
                                 @endforeach
-
-
                             </ul>
                         </div>
                     </div>
+                </div>
 
+                <div class="pages max-w-72 mx-auto">
+                    <ul class="page-numbers">
+                        <!-- Previous page link -->
+                        @if ($tours->currentPage() > 1)
+                            <li>
+                                <a href="{{ $tours->previousPageUrl() }}" class="page-active">&laquo;</a>
+                            </li>
+                        @endif
+
+                        <!-- Pagination links -->
+                        @for ($i = max(1, $tours->currentPage() - 2); $i <= min($tours->currentPage() + 2, $tours->lastPage()); $i++)
+                            <li>
+                                <a href="{{ $tours->url($i) }}"
+                                    class="{{ $tours->currentPage() == $i ? 'page-active' : '' }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+
+                        <!-- Next page link -->
+                        @if ($tours->hasMorePages())
+                            <li>
+                                <a href="{{ $tours->nextPageUrl() }}" class="page-active">&raquo;</a>
+                            </li>
+                        @endif
+                    </ul>
                 </div>
             </section>
+
             <section class="mobile-tour-section">
                 <div class="wrapper">
                     <ul class="tourlist">
@@ -197,27 +216,27 @@
                 </div>
                 <div class="pages">
                     <ul class="page-numbers">
-                        <li>
-                            <a href="" class="page-active">1</a>
-                        </li>
-                        <li>
-                            <a href="">2</a>
-                        </li>
-                        <li>
-                            <a href="">3</a>
-                        </li>
-                        <li>
-                            <a href="">...</a>
-                        </li>
-                        <li>
-                            <a href="">8</a>
-                        </li>
-                        <li>
-                            <a href="">9</a>
-                        </li>
-                        <li>
-                            <a href="">10</a>
-                        </li>
+                        <!-- Previous page link -->
+                        @if ($tours->currentPage() > 1)
+                            <li>
+                                <a href="{{ $tours->previousPageUrl() }}" class="page-active">&laquo;</a>
+                            </li>
+                        @endif
+
+                        <!-- Pagination links -->
+                        @for ($i = max(1, $tours->currentPage() - 2); $i <= min($tours->currentPage() + 2, $tours->lastPage()); $i++)
+                            <li>
+                                <a href="{{ $tours->url($i) }}"
+                                    class="{{ $tours->currentPage() == $i ? 'page-active' : '' }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+
+                        <!-- Next page link -->
+                        @if ($tours->hasMorePages())
+                            <li>
+                                <a href="{{ $tours->nextPageUrl() }}" class="page-active">&raquo;</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </section>
