@@ -350,7 +350,7 @@
         <div class="wrapper">
             <div class="title title-wrapper">
                 <h1>GALERIE</h1>
-                <a href="https://www.instagram.com/rafael_dato/" target="_blank" class="cta-video">see more</a>
+                <a href="https://www.instagram.com/rafael_dato/" target="_blank" class="cta-video">voir plus</a>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-row-1">
