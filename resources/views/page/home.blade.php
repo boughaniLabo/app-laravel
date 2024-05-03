@@ -127,7 +127,7 @@
             <div class="mobile-row">
                 @foreach ($latestMobile as $value)
                     <div class="col-md-3">
-                        <div class="rel-card">
+                        <div class="rel-card pb-3">
                             <div class="image">
                                 <img src="{{ $value['cover'] }}" alt="">
                             </div>
@@ -161,7 +161,7 @@
                                     @endswitch
                                 @endforeach
                             </div>
-                            <div class="overlay rel-card">
+                            <div class="overlay rel-card pb-3">
                                 <div></div>
                                 <div>
                                     <button class="play-big" id="play-button-{{ $loop->index }}"
@@ -208,7 +208,7 @@
             <div class="mobile-row">
                 @foreach ($latestMobile2 as $value)
                     <div class="col-md-3">
-                        <div class="rel-card">
+                        <div class="rel-card pb-3">
                             <div class="image">
                                 <img src="{{ $value['cover'] }}" alt="">
                             </div>
@@ -242,7 +242,7 @@
                                     @endswitch
                                 @endforeach
                             </div>
-                            <div class="overlay rel-card">
+                            <div class="overlay rel-card pb-3">
                                 <div></div>
                                 <div>
                                     <button class="play-big" id="play-button-{{ $loop->index }}"
@@ -323,7 +323,7 @@
                                     @endswitch
                                 @endforeach
                             </div>
-                            <div class="overlay rel-card">
+                            <div class="overlay rel-card pb-3">
                                 <div></div>
                                 <div>
                                     <button class="play-big" id="play-button-{{ $loop->index }}"
@@ -379,7 +379,7 @@
             <div class="row">
 
                 <div class="col-md-6 mr-5 frame-div">
-                    <iframe class="youframe" width="683" height="383" src="{{ $videos[0]['url'] }}"
+                    <iframe class="youframe" width="600" height="383" src="{{ $videos[0]['url'] }}"
                         frameborder="0" allowfullscreen="" id="youtube-select">
                     </iframe>
                     <h2 class="frame-title">{{ $videos[0]['title'] }}</h2>
@@ -558,6 +558,8 @@
     </section>
 
     <script type="module">
+        let navEl = document.querySelectorAll(".nav a")
+        navEl[0].classList.add('active')
 
         const wavesurfer2 = wavesurfer5.create({
             container: '#waveform-two',
@@ -733,10 +735,7 @@
             }
         });
 
-
-
-        let navEl = document.querySelectorAll(".nav a")
-        navEl[0].classList.add('active')
+        
 
         let playSng = document.querySelector('.play-song-mobile')
         playSng.addEventListener('click', function() {

@@ -169,9 +169,6 @@
     <script>
         let navEl = document.querySelectorAll(".nav a")
         navEl[1].classList.add('active')
-
-
-
         let artBtn = document.querySelectorAll(".cta-arti")
         let artRow = document.querySelector(".second-art-row")
 
@@ -257,7 +254,6 @@
                 mobArt.style.display = 'none'
                 mobTxt.style.display = 'block'
             }
-
         })
         artBtns[0].addEventListener('click', function() {
 
@@ -272,18 +268,5 @@
 
         })
 
-        // biOverlay.addEventListener("touchmove", (e) => {
-        //         var touch = e.touches[0] || e.changedTouches[0];
-        //         x = touch.pageX;
-        //         y = touch.pageY;
-
-        //         if (y < 900) {
-        //             biOverlay.classList.add('fade');
-        //             biOverlay.style.display = 'none'
-        //         }
-
-        //     }
-
-        // );
     </script>
 @endsection

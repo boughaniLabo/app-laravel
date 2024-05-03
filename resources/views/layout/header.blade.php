@@ -15,7 +15,7 @@
 
                                 <img src="assets/img/mobile.svg" alt="">
                             </a>
-                            <button type="button" id="menu-btn">
+                            <button type="button" class="z-[999999999999]" id="menu-btn">
                                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -79,7 +79,7 @@
                             <a href="/?lng=fr">
                                 <img src="assets/img/mobile.svg" alt="">
                             </a>
-                            <button type="button" id="menu-btn">
+                            <button type="button" class="z-[999999999999]"  id="menu-btn">
                                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -147,7 +147,7 @@
                     <a href="/?lng=fr">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" id="menu-btn">
+                    <button type="button" class="z-[999999999999]"  id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -183,7 +183,7 @@
                     <a href="/?lng=en">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" id="menu-btn">
+                    <button type="button" class="z-[999999999999]"  id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -220,7 +220,7 @@
                     <a href="/?lng=fr">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" id="menu-btn">
+                    <button type="button" class="z-[999999999999]"  id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
