@@ -100,9 +100,9 @@
                     </div>
                     <div class="player bottom-player">
                         <div class="control">
-                            <button><i class="fa-solid fa-backward-step " aria-hidden="true"></i></button>
+                           
                             <button id="play-stop-button2"><i class="fa-solid fa-play" id="wave-play-two2" aria-hidden="true" ></i></button>
-                            <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
+                     
                         </div>
                         <div id="waveform"><div></div></div>
                         <div class="control"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button></div>
