@@ -2,9 +2,9 @@
 @if ($currentRoute == 'bio' || $currentRoute == 'home')
     <section class="showcase h-fit" style="background-image: url('{{ $image }}');background-size: cover;">
         @if ($currentRoute == 'home')
-            <div class="topbar">
-                <div class="wrapper">
-                    <div class="content">
+            <div class="topbar w-full">
+                <div class="wrapper w-full">
+                    <div class="content w-full">
                         <div class="logo">
                             <a href="/?lng=en">
                                 <img src="assets/img/logo.svg" alt="Logo">
@@ -22,7 +22,6 @@
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav nav-home">
-                                    <!-- <div id="marker"></div> -->
                                     <a href="/">accueil</a>
                                     <a href="/bio">Bio</a>
                                     <a href="/services">prestation</a>
@@ -37,7 +36,7 @@
                 </div>
                 <div class="row head-row flex flex-row items-center justify-center">
                     <div class="flex-1"></div>
-                    <div class="header-title-wrapper w-fit sm:pb-40 pb-5">
+                    <div class="header-title-wrapper w-fit sm:pb-40 pb-5 pl-6">
                         <div class="hero-title">
                             <p class="artist-name">rafaËl dato</p>
                             <h2 class="artist-instru">pianiste</h2>
@@ -45,7 +44,6 @@
                             <a class="cta-header" href="#album">Nouvel album</a>
                         </div>
                         <div class="social-header">
-
                             <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i
                                     class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
                             <a href=" https://music.apple.com/us/artist/rafa%C3%ABl-dato/1589922420 " target="_blank">
@@ -57,7 +55,6 @@
                                 <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
                             <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
                                     class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-
                         </div>
                     </div>
                     <div class="flex-1"></div>

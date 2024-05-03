@@ -4,116 +4,118 @@
 
 @section('content')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js" integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
- var play= false ; 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js"
+        integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var play = false;
 
- function playAudio(song) {
-    var playButton = document.getElementById('wave-play-two') ; 
-    
-    if (typeof wavesurfer === 'undefined') {
-        wavesurfer = WaveSurfer.create({
-            container: '#waveform-two',
-            waveColor: '#B5D9D9',
-            progressColor: '#1E96A6',
-            barWidth: 2,
-            height: 50,
-            cursorWidth: 0,
-        });
-    } else {
-        // If wavesurfer is already initialized, destroy the existing instance
-        wavesurfer.destroy();
-        wavesurfer = WaveSurfer.create({
-            container: '#waveform-two',
-            waveColor: '#B5D9D9',
-            progressColor: '#1E96A6',
-            barWidth: 2,
-            height: 50,
-            cursorWidth: 0,
-        });
-    }
-        let elementToshow = document.getElementById('costumeWave') ; 
-        console.log(elementToshow);
-        elementToshow.style.display = "block"; // Corrected variable name
-        document.getElementById('song-name').innerText = song.title;
+        function playAudio(song) {
+            var playButton = document.getElementById('wave-play-two');
 
-        // Load audio from the audio element
-        wavesurfer.load(song.url);
-        wavesurfer.on('ready', () => {
-            console.log("helo");
-               // Play the audio
-        wavesurfer.play();
-        var totalDuration = wavesurfer.getDuration();
-        var minutes = Math.floor((totalDuration % 3600) / 60);
-        var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
-        let totalTime = `${minutes}:${secondes}`;
-        var currentTime = wavesurfer.getCurrentTime();
-        const totaTime = document.getElementById('time-total').innerText = totalTime;
-        wavesurfer.on('audioprocess', function () {
+            if (typeof wavesurfer === 'undefined') {
+                wavesurfer = WaveSurfer.create({
+                    container: '#waveform-two',
+                    waveColor: '#B5D9D9',
+                    progressColor: '#1E96A6',
+                    barWidth: 2,
+                    height: 50,
+                    cursorWidth: 0,
+                });
+            } else {
+                // If wavesurfer is already initialized, destroy the existing instance
+                wavesurfer.destroy();
+                wavesurfer = WaveSurfer.create({
+                    container: '#waveform-two',
+                    waveColor: '#B5D9D9',
+                    progressColor: '#1E96A6',
+                    barWidth: 2,
+                    height: 50,
+                    cursorWidth: 0,
+                });
+            }
+            let elementToshow = document.getElementById('costumeWave');
+            console.log(elementToshow);
+            elementToshow.style.display = "block"; // Corrected variable name
+            document.getElementById('song-name').innerText = song.title;
+
+            // Load audio from the audio element
+            wavesurfer.load(song.url);
+            wavesurfer.on('ready', () => {
+                console.log("helo");
+                // Play the audio
+                wavesurfer.play();
+                var totalDuration = wavesurfer.getDuration();
+                var minutes = Math.floor((totalDuration % 3600) / 60);
+                var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+                let totalTime = `${minutes}:${secondes}`;
+                var currentTime = wavesurfer.getCurrentTime();
+                const totaTime = document.getElementById('time-total').innerText = totalTime;
+                wavesurfer.on('audioprocess', function() {
                     var currentTime = wavesurfer.getCurrentTime();
                     updateTimeDisplay(currentTime);
-        });
-        playButton.classList.remove('fa-play');
-        playButton.classList.add('fa-pause');
-        play = true ; 
+                });
+                playButton.classList.remove('fa-play');
+                playButton.classList.add('fa-pause');
+                play = true;
 
-})
+            })
 
-        // Set the song title
-    }
-    function updateTimeDisplay(currentTime) {
+            // Set the song title
+        }
+
+        function updateTimeDisplay(currentTime) {
             var minutes = Math.floor(currentTime / 60);
             var seconds = Math.floor(currentTime % 60);
             var formattedTime = padZero(minutes) + ':' + padZero(seconds);
             document.getElementById('time-current-two').textContent = formattedTime;
         }
-            
+
         function padZero(number) {
             return (number < 10 ? '0' : '') + number;
-        }   
-
-    function closeElement(element) {
-        console.log("Function called.");
-        var parent = element.parentElement.parentElement.parentElement;
-        console.log("Parent element:", parent);
-        if (parent) {
-            parent.style.display = 'none';
-            console.log("Parent element hidden.");
-        } else {
-            console.log("Parent element not found.");
         }
-    }
 
-   
-
-
-</script>
+        function closeElement(element) {
+            console.log("Function called.");
+            var parent = element.parentElement.parentElement.parentElement;
+            console.log("Parent element:", parent);
+            if (parent) {
+                parent.style.display = 'none';
+                console.log("Parent element hidden.");
+            } else {
+                console.log("Parent element not found.");
+            }
+        }
+    </script>
     <section class="album" id="album">
-    <div class="big-player" id="costumeWave">
-        <div>
-            <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
-        </div>
-    <div class="player top-player" id="soundPlayerBig">
+        <div class="big-player" id="costumeWave">
+            <div>
+                <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
+            </div>
+            <div class="player top-player" id="soundPlayerBig">
 
-                        <div class="song-name" id="song-name">01. So What's next ?</div>
-                        <div class="timer">
-                            <span class="start-two" id="time-current-two">00:00</span>
-                            <span class="slash-two">/</span>
-                            <span class="finish-two" id="time-total-two">4:03</span>
-                        </div>
-                    </div>
-                    <div class="player bottom-player">
-                        <div class="control-two">
-                            <button><i class="fa-solid fa-backward-step " aria-hidden="true"></i></button>
-                            <button id="play-stop-button"><i class="fa-solid fa-play" aria-hidden="true" id="wave-play-two"></i></button>
-                            <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
-                        </div>
-                        <div id="waveform-two"><div></div></div>
-                        <div class="control-two"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button></div>
-                    </div>
-    </div>
+                <div class="song-name" id="song-name">01. So What's next ?</div>
+                <div class="timer">
+                    <span class="start-two" id="time-current-two">00:00</span>
+                    <span class="slash-two">/</span>
+                    <span class="finish-two" id="time-total-two">4:03</span>
+                </div>
+            </div>
+            <div class="player bottom-player">
+                <div class="control-two">
+                    <button><i class="fa-solid fa-backward-step " aria-hidden="true"></i></button>
+                    <button id="play-stop-button"><i class="fa-solid fa-play" aria-hidden="true"
+                            id="wave-play-two"></i></button>
+                    <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
+                </div>
+                <div id="waveform-two">
+                    <div></div>
+                </div>
+                <div class="control-two"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button></div>
+            </div>
+        </div>
         <div class="wrapper">
-        
+
 
             {{-- main song  --}}
             @include('components.main-song')
@@ -134,8 +136,8 @@
                                 class="fa-brands fa-apple" aria-hidden="true"></i> </a>
                         <a href=" https://www.deezer.com/fr/artist/148176002 " target="_blank"> <i
                                 class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                        <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato"
-                            target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
+                        <a href=" https://www.amazon.com/music/player/artists/B09J8PVLDZ/rafa%C3%ABl-dato" target="_blank">
+                            <i class="fa-brands fa-amazon" aria-hidden="true"></i> </a>
                         <a href=" https://www.youtube.com/channel/UCnFpQRhaeI8DuDMYvYAWKNg" target="_blank"> <i
                                 class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
 
@@ -171,187 +173,247 @@
                 <h1>DERNIÈRES PUBLICATIONS</h1>
             </div>
             <div class="mobile-row">
-            @foreach($latestMobile as $value)
-                <div class="col-md-3">
-                    <div class="rel-card">
-                        <div class="image">
-                            <img src="{{$value['cover']}}" alt="">
-                        </div>
-                        <div class="social rel-card-link">
-                            @foreach($value['links'] as $link)
-                                @switch($link['link']) 
-                                    @case('youtube')
-                                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('spotify')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('itunes')
-                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('deezer')
-                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('amazon')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                        @break
-                                @endswitch
-                            @endforeach
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big" id="play-button-{{$loop->index}}" onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                @foreach ($latestMobile as $value)
+                    <div class="col-md-3">
+                        <div class="rel-card">
+                            <div class="image">
+                                <img src="{{ $value['cover'] }}" alt="">
                             </div>
                             <div class="social rel-card-link">
-                                @foreach($value['links'] as $link)
-                                    @switch($link['link']) 
+                                @foreach ($value['links'] as $link)
+                                    @switch($link['link'])
                                         @case('youtube')
-                                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('spotify')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('itunes')
-                                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('deezer')
-                                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('amazon')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                    aria-hidden="true"></i></a>
+                                        @break
                                     @endswitch
                                 @endforeach
                             </div>
+                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big" id="play-button-{{ $loop->index }}"
+                                        onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
+                                            aria-hidden="true"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                    @foreach ($value['links'] as $link)
+                                        @switch($link['link'])
+                                            @case('youtube')
+                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('spotify')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('itunes')
+                                                <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('deezer')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('amazon')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                        aria-hidden="true"></i></a>
+                                            @break
+                                        @endswitch
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
+                        <h3 class="song-title">{{ $value['title'] }}</h3>
+                        <h4>{{ $value['description'] }}</h4>
                     </div>
-                    <h3 class="song-title">{{$value['title']}}</h3>
-                    <h4>{{$value['description']}}</h4>
-                </div>
-             @endforeach  
+                @endforeach
             </div>
             <div class="mobile-row">
-            @foreach($latestMobile2 as $value)
-                <div class="col-md-3">
-                    <div class="rel-card">
-                        <div class="image">
-                            <img src="{{$value['cover']}}" alt="">
-                        </div>
-                        <div class="social rel-card-link">
-                            @foreach($value['links'] as $link)
-                                @switch($link['link']) 
-                                    @case('youtube')
-                                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('spotify')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('itunes')
-                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('deezer')
-                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('amazon')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                        @break
-                                @endswitch
-                            @endforeach
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big" id="play-button-{{$loop->index}}" onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                @foreach ($latestMobile2 as $value)
+                    <div class="col-md-3">
+                        <div class="rel-card">
+                            <div class="image">
+                                <img src="{{ $value['cover'] }}" alt="">
                             </div>
                             <div class="social rel-card-link">
-                                @foreach($value['links'] as $link)
-                                    @switch($link['link']) 
+                                @foreach ($value['links'] as $link)
+                                    @switch($link['link'])
                                         @case('youtube')
-                                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('spotify')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('itunes')
-                                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('deezer')
-                                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('amazon')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                    aria-hidden="true"></i></a>
+                                        @break
                                     @endswitch
                                 @endforeach
                             </div>
+                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big" id="play-button-{{ $loop->index }}"
+                                        onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
+                                            aria-hidden="true"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                    @foreach ($value['links'] as $link)
+                                        @switch($link['link'])
+                                            @case('youtube')
+                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('spotify')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('itunes')
+                                                <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('deezer')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('amazon')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                        aria-hidden="true"></i></a>
+                                            @break
+                                        @endswitch
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
+                        <h3 class="song-title">{{ $value['title'] }}</h3>
+                        <h4>{{ $value['description'] }}</h4>
                     </div>
-                    <h3 class="song-title">{{$value['title']}}</h3>
-                    <h4>{{$value['description']}}</h4>
-                </div>
-             @endforeach  
+                @endforeach
             </div>
             <div class="row desktop-row">
-            @foreach($latests as $value)
-                <div class="col-md-3">
-                    <div class="rel-card">
-                        <div class="image">
-                            <img src="{{$value['cover']}}" alt="">
-                        </div>
-                        <div class="social rel-card-link">
-                            @foreach($value['links'] as $link)
-                                @switch($link['link']) 
-                                    @case('youtube')
-                                        <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('spotify')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('itunes')
-                                        <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('deezer')
-                                        <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                        @break
-                                    @case('amazon')
-                                        <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                        @break
-                                @endswitch
-                            @endforeach
-                        </div>
-                        <div class="overlay rel-card">
-                            <div></div>
-                            <div>
-                                <button class="play-big" id="play-button-{{$loop->index}}" onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                @foreach ($latests as $value)
+                    <div class="col-md-3">
+                        <div class="rel-card">
+                            <div class="image">
+                                <img src="{{ $value['cover'] }}" alt="">
                             </div>
                             <div class="social rel-card-link">
-                                @foreach($value['links'] as $link)
-                                    @switch($link['link']) 
+                                @foreach ($value['links'] as $link)
+                                    @switch($link['link'])
                                         @case('youtube')
-                                            <a href="{{$link['link']}}" target="_blank"> <i class="fa-brands fa-youtube" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('spotify')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-spotify" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('itunes')
-                                            <a href="{{$link['url']}}" target="_blank"><i class="fa-brands fa-apple" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('deezer')
-                                            <a href="{{$link['url']}}" target="_blank">  <i class="fa-brands fa-deezer" aria-hidden="true"></i> </a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                    aria-hidden="true"></i> </a>
+                                        @break
+
                                         @case('amazon')
-                                            <a href="{{$link['url']}}" target="_blank"> <i class="fa-brands fa-amazon" aria-hidden="true"></i></a>
-                                            @break
+                                            <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                    aria-hidden="true"></i></a>
+                                        @break
                                     @endswitch
                                 @endforeach
                             </div>
+                            <div class="overlay rel-card">
+                                <div></div>
+                                <div>
+                                    <button class="play-big" id="play-button-{{ $loop->index }}"
+                                        onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
+                                            aria-hidden="true"></i></button>
+                                </div>
+                                <div class="social rel-card-link">
+                                    @foreach ($value['links'] as $link)
+                                        @switch($link['link'])
+                                            @case('youtube')
+                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('spotify')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-spotify"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('itunes')
+                                                <a href="{{ $link['url'] }}" target="_blank"><i class="fa-brands fa-apple"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('deezer')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-deezer"
+                                                        aria-hidden="true"></i> </a>
+                                            @break
+
+                                            @case('amazon')
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-amazon"
+                                                        aria-hidden="true"></i></a>
+                                            @break
+                                        @endswitch
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
+                        <h3 class="song-title">{{ $value['title'] }}</h3>
+                        <h4>{{ $value['description'] }}</h4>
                     </div>
-                    <h3 class="song-title">{{$value['title']}}</h3>
-                    <h4>{{$value['description']}}</h4>
-                </div>
-             @endforeach  
+                @endforeach
             </div>
         </div>
     </section>
@@ -364,7 +426,7 @@
             </div>
             <div class="row">
 
-                <div class="col-md-6 frame-div">
+                <div class="col-md-6 mr-5 frame-div">
                     <iframe class="youframe" width="683" height="383" src="{{ $videos[0]['url'] }}"
                         frameborder="0" allowfullscreen="" id="youtube-select">
                     </iframe>
@@ -374,21 +436,21 @@
                 <div class="col-md-5 video-list">
                     @foreach ($videos as $video)
                         <div class="video-select hover:bg-slate-200 cursor-pointer">
-                            <div class="flex items-center justify-center">
-                                <?php
-                                // Extract video ID from URL
-                                $videoId = '';
-                                preg_match('/(?:embed\/|v=)([a-zA-Z0-9_-]{11})/', $video['url'], $matches);
-                                if (isset($matches[1])) {
-                                    $videoId = $matches[1];
-                                }
-                                
-                                // Construct thumbnail URL
-                                $thumbnailUrl = "https://img.youtube.com/vi/{$videoId}/mqdefault.jpg";
-                                ?>
-                                <img class="w-auto h-auto" src="{{ $thumbnailUrl }}" alt="">
+                            <?php
+                            //Extract video ID from URL
+                            $videoId = '';
+                            preg_match('/(?:embed\/|v=)([a-zA-Z0-9_-]{11})/', $video['url'], $matches);
+                            if (isset($matches[1])) {
+                                $videoId = $matches[1];
+                            }
+                            
+                            // Construct thumbnail URL
+                            $thumbnailUrl = "https://img.youtube.com/vi/{$videoId}/mqdefault.jpg";
+                            ?>
+                            <div class="w-32 h-32 bg-cover bg-center rounded overflow-hidden"
+                                style="background: url('{{ $thumbnailUrl }}')">
                             </div>
-                            <div>
+                            <div class="flex-1">
                                 <h3 class="thumb-title">{{ $video['title'] }}</h3>
                                 <p>{{ $video['description'] }}</p>
                             </div>
@@ -488,26 +550,27 @@
                 <a href="?lng=en&amp;p=Tour" class="cta-video py-0">see more</a>
             </div>
             <ul class="tourlist">
-            @foreach($tours as $tour):
-                <div class="tour-date-mobile">
-                    <li>
-                        <div class="day">
-                            <span>{{\Carbon\Carbon::parse($tour['date'])->format('d')}}</span>
-                        </div>
-                        <div class="monthy">
-                            <p>{{\Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y')}}</p>
-                            <div class="place">
-                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                <span class="place"> {{$tour['location']}}</span>
+                @foreach ($tours as $tour)
+                    :
+                    <div class="tour-date-mobile">
+                        <li>
+                            <div class="day">
+                                <span>{{ \Carbon\Carbon::parse($tour['date'])->format('d') }}</span>
                             </div>
-                        </div>
-                        <div class="hour">
-                            <p>{{$tour['time']}} p.m.</p>
-                        </div>
-                    </li>
-                    <a href="" class="cta-mobile-ticket">out of stock</a>
-                </div>
-            @endforeach   
+                            <div class="monthy">
+                                <p>{{ \Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y') }}</p>
+                                <div class="place">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                    <span class="place"> {{ $tour['location'] }}</span>
+                                </div>
+                            </div>
+                            <div class="hour">
+                                <p>{{ $tour['time'] }} p.m.</p>
+                            </div>
+                        </li>
+                        <a href="" class="cta-mobile-ticket">out of stock</a>
+                    </div>
+                @endforeach
 
             </ul>
 
@@ -520,21 +583,22 @@
                 <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
             </div>
             <ul class="tourlist">
-                @foreach($tours as $tour):
-                <li>
-                    <div class="tour-date">
-                        <h1>{{\Carbon\Carbon::parse($tour['date'])->format('d')}}</h1>
-                        <div class="day-h">
-                            <p>{{\Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y')}}</p>
-                            <p>{{$tour['time']}} pm</p>
+                @foreach ($tours as $tour)
+                    :
+                    <li>
+                        <div class="tour-date">
+                            <h1>{{ \Carbon\Carbon::parse($tour['date'])->format('d') }}</h1>
+                            <div class="day-h">
+                                <p>{{ \Carbon\Carbon::parse($tour['date'])->locale('fr')->translatedFormat('F Y') }}</p>
+                                <p>{{ $tour['time'] }} pm</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tour-loc">
-                        <p>les rendez vous d'ailleurs</p>
-                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{$tour['location']}}</p>
-                    </div>
-                    <a href="#" class="cta-video">out of stock</a>
-                </li>
+                        <div class="tour-loc">
+                            <p>les rendez vous d'ailleurs</p>
+                            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ $tour['location'] }}</p>
+                        </div>
+                        <a href="#" class="cta-video">out of stock</a>
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -747,40 +811,38 @@
         for (let i = 0; i < select.length; i++) {
             select[i].addEventListener('click', () => {
                 @foreach ($videos as $index => $video)
-                if (i === {{$index}}) {
-                    frameSelect.src =
-                        "{{$video['url']}}"
-                    frameTitle.innerText = thumbTitle[{{$index}}].innerText
-                } else 
-                @endforeach
-                {
+                    if (i === {{ $index }}) {
+                        frameSelect.src =
+                            "{{ $video['url'] }}"
+                        frameTitle.innerText = thumbTitle[{{ $index }}].innerText
+                    } else
+                @endforeach {
                     console.log('no')
                 }
             })
         }
-        
     </script>
     <script type="module">
-    var musCta = document.getElementById('seeMoreSection');
-    console.log(musCta);
-    console.log("#######edfdfsfds#####" , musCta)
-    musCta.addEventListener('click', function() {
-        let songPage = document.getElementById('specialPupUp');
-        console.log(songPage);
-        
+        var musCta = document.getElementById('seeMoreSection');
+        console.log(musCta);
+        console.log("#######edfdfsfds#####", musCta)
+        musCta.addEventListener('click', function() {
+            let songPage = document.getElementById('specialPupUp');
+            console.log(songPage);
+
             songPage.classList.add('appear')
             songPage.classList.remove('fade')
             songPage.style.display = "block"
-        
-    })
-    let btns = document.querySelectorAll('.control button')
-    console.log("######",btns);
-    let icon = document.querySelectorAll('.control button i')
-    let btns2 = document.querySelectorAll('.control-two button')
-    let icon2 = document.querySelectorAll('.control-two button i')
-    let mainCLosePuP = document.getElementById('main-popup') ; 
-        let albumDetail = document.querySelectorAll('.albumDetails') ;
-        console.log("#####album",albumDetail);
+
+        })
+        let btns = document.querySelectorAll('.control button')
+        console.log("######", btns);
+        let icon = document.querySelectorAll('.control button i')
+        let btns2 = document.querySelectorAll('.control-two button')
+        let icon2 = document.querySelectorAll('.control-two button i')
+        let mainCLosePuP = document.getElementById('main-popup');
+        let albumDetail = document.querySelectorAll('.albumDetails');
+        console.log("#####album", albumDetail);
         albumDetail.forEach(element => {
             element.addEventListener('click', function(e) {
                 console.log(element.id);
@@ -804,84 +866,80 @@
         let musCta = document.querySelectorAll('.music-cta')
         let playSng = document.querySelector('.play-song-mobile')
         let iframe = document.getElementsByTagName('iframe')[0]
-        const playStopAction = document.getElementById('play-stop-button') ; 
-       
+        const playStopAction = document.getElementById('play-stop-button');
+
         playStopAction.addEventListener('click', function(event) {
             // Your event handling code here
-            const  playButton = document.getElementById('wave-play-two') ; 
+            const playButton = document.getElementById('wave-play-two');
             console.log('Play button clicked!');
-            if(play == true ){
+            if (play == true) {
                 playButton.classList.remove('fa-pause');
                 playButton.classList.add('fa-play');
-                play = false ; 
+                play = false;
                 wavesurfer.pause();
-                
 
-            }else {
+
+            } else {
                 playButton.classList.remove('fa-play');
                 playButton.classList.add('fa-pause');
-                play = true ; 
+                play = true;
                 wavesurfer.play();
-              
+
             }
         });
-    mainCLosePuP.addEventListener('click',function($event){
-        console.log("test test test ");
-        let ele = document.getElementById('specialPupUp');
-        console.log(ele);
-        ele.style.display = "none";
-    })
-  
-        
+        mainCLosePuP.addEventListener('click', function($event) {
+            console.log("test test test ");
+            let ele = document.getElementById('specialPupUp');
+            console.log(ele);
+            ele.style.display = "none";
+        })
     </script>
     <script type="module">
-    let btns = document.querySelectorAll('.control button')
-    console.log("######",btns);
-    let icon = document.querySelectorAll('.control button i')
-    let btns2 = document.querySelectorAll('.control-two button')
-    let icon2 = document.querySelectorAll('.control-two button i')
-    let closePlayer = document.querySelector('.close-player');
+        let btns = document.querySelectorAll('.control button')
+        console.log("######", btns);
+        let icon = document.querySelectorAll('.control button i')
+        let btns2 = document.querySelectorAll('.control-two button')
+        let icon2 = document.querySelectorAll('.control-two button i')
+        let closePlayer = document.querySelector('.close-player');
         let playOverlay = document.querySelectorAll('.play-overlay');
         let pauseOverlay = document.querySelectorAll('.pause-overlay');
         let startBigPlayer = document.querySelectorAll('.play-big');
         let songName = document.querySelector('.song-name');
         let songTitle = document.querySelectorAll('.song-title')
-      
+
         let clsPage = document.querySelector('.close-cta');
         let clsPan = document.querySelector('.cls-pan');
-      
-        
+
+
         let playSng = document.querySelector('.play-song-mobile')
         let iframe = document.getElementsByTagName('iframe')[0]
-        const playStopAction = document.getElementById('play-stop-button') ; 
-       
+        const playStopAction = document.getElementById('play-stop-button');
+
         playStopAction.addEventListener('click', function(event) {
             // Your event handling code here
-            const  playButton = document.getElementById('wave-play-two') ; 
+            const playButton = document.getElementById('wave-play-two');
             console.log('Play button clicked!');
-            if(play == true ){
+            if (play == true) {
                 playButton.classList.remove('fa-pause');
                 playButton.classList.add('fa-play');
-                play = false ; 
+                play = false;
                 wavesurfer.pause();
-                
 
-            }else {
+
+            } else {
                 playButton.classList.remove('fa-play');
                 playButton.classList.add('fa-pause');
-                play = true ; 
+                play = true;
                 wavesurfer.play();
-              
+
             }
         });
-        
-    closePlayer.addEventListener('click', function($event){
-        console.log("testest");
-        let elementToshow = document.getElementById('costumeWave') ; 
-        elementToshow.style.display = "none";
-        wavesurfer.destroy();
-    })
-   
-        
+
+        closePlayer.addEventListener('click', function($event) {
+            console.log("testest");
+            let elementToshow = document.getElementById('costumeWave');
+            elementToshow.style.display = "none";
+            wavesurfer.destroy();
+        })
     </script>
 @endsection

@@ -22,7 +22,6 @@
                     </div>
                     <nav class="topnav">
                         <div class="navbar" id="menu">
-
                             <nav class="nav music-nav">
                                 <a href="/" class="active">accueil</a>
                                 <a href="/bio">Bio</a>
@@ -31,9 +30,7 @@
                                 <a href="tour">Tour</a>
                                 <a href="blog" class="hidden">Blog</a>
                                 <a href="contact">Contact</a>
-
                             </nav>
-
                         </div>
                     </nav>
                 </div>
