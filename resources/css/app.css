@@ -15,6 +15,12 @@
     color: #414141;
     overflow-x: hidden;
   }
+  .mobile-logo, .mobile-logo button{
+    z-index: 999999 !important;
+  }
+  #menu-btn{
+    z-index: 9999999999 !important;
+  }
   .album-row-mobile,
   .mobile,
   .mobile-row,
@@ -79,6 +85,7 @@
     color: #fff;
     background-color: transparent;
     cursor: pointer;
+    z-index: 99999999999 !important;
     font-size: 2em;
   }
   
@@ -111,6 +118,7 @@
   
   .topbar {
     width: 100%;
+    z-index: 99999999 !important;
   }
   .topbar .wrapper {
     max-width: 1920px;
@@ -135,6 +143,7 @@
   
   .topnav {
     display: flex;
+    z-index: 999 !important;
     justify-content: flex-start;
     align-items: center;
   }

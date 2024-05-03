@@ -588,6 +588,10 @@ video {
   }
 }
 
+.z-\[999999999999\] {
+  z-index: 999999999999 !important;
+}
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -758,6 +762,10 @@ video {
 
 .pl-6 {
   padding-left: 1.5rem !important;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem !important;
 }
 
 .text-5xl {
