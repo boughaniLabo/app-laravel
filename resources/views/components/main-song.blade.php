@@ -1,3 +1,7 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.4/wavesurfer.min.js"
+        integrity="sha512-mhqErQ0f2UqnbsjgKpM96XfxVjVMnXpszEXKmnJk8467vR8h0MpiPauil8TKi5F5DldQGqNUO/XTyWbQku22LQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <div class="row album-row min-[880px]:flex flex-row w-full flex-nowrap">
     <div class="col-md-6">
         <div class="home-album">
@@ -85,28 +89,25 @@
         <p>
             {{ $mainSong->description }}
         </p>
-        <div class="audio-player-mini h-fit">
-            <div class="player top-player">
-                <div class="song-name">{{ $mainSong->title }}</div>
-                <div class="timer">
-                    <span class="start" id="time-current">00:00</span>
-                    <span class="slash">/</span>
-                    <span class="finish" id="time-total">4:03</span>
+        <div class="audio-player-mini">
+                    <div class="player top-player">
+                        <div class="song-name">01. So What's next ?</div>
+                        <div class="timer">
+                            <span class="start" id="time-current">00:00</span>
+                            <span class="slash">/</span>
+                            <span class="finish" id="time-total">4:03</span>
+                        </div>
+                    </div>
+                    <div class="player bottom-player">
+                        <div class="control">
+                            <button><i class="fa-solid fa-backward-step " aria-hidden="true"></i></button>
+                            <button id="play-stop-button2"><i class="fa-solid fa-play" id="wave-play-two2" aria-hidden="true" ></i></button>
+                            <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="waveform"><div></div></div>
+                        <div class="control"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button></div>
+                    </div>
                 </div>
-            </div>
-            <div class="player bottom-player">
-                <div class="control">
-                    <button><i class="fa-solid fa-backward-step " aria-hidden="true"></i></button>
-                    <button><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-                    <button><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
-                </div>
-                <div id="waveform-main-song">
-                    <div></div>
-                </div>
-                <div class="control"><button><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -173,16 +174,51 @@
     });
 </script>
 
-<script type="module">
-     import WaveSurfer from 'https://unpkg.com/wavesurfer5.js@7/dist/wavesurfer5.esm.js'
-        const wavesurfer5 = wavesurfer5.create({
-            container: '#waveform-main-song',
+<script>
+        console.log("test 12 12 ",document.getElementById("waveform-main-song"));
+           const wavesurfer5 = WaveSurfer.create({
+            container: '#waveform',
             waveColor: '#B5D9D9',
             progressColor: '#1E96A6',
             barWidth: 2,
-            barRadius: 10,
-            height: 40,
+            height: 50,
             cursorWidth: 0,
-            url: '{{ $mainSong->audio }}',
+         
+        });
+        const mainMusic = '{{ $mainSong->audio }}' ; 
+        console.log(mainMusic);
+        wavesurfer5.load(mainMusic)
+        wavesurfer5.on('ready', () => {
+        })
+        wavesurfer5.on('audioprocess', function() {
+                    var currentTime = wavesurfer5.getCurrentTime();
+                    updateTimeDisplay2(currentTime);
+                });
+        function updateTimeDisplay2(currentTime) {
+            var minutes = Math.floor(currentTime / 60);
+            var seconds = Math.floor(currentTime % 60);
+            var formattedTime = padZero(minutes) + ':' + padZero(seconds);
+            document.getElementById('time-current').textContent = formattedTime;
+        }
+        const playStopAction = document.getElementById('play-stop-button2');
+        console.log("what is this " , playStopAction);
+        playStopAction.addEventListener('click', function(event) {
+            // Your event handling code here
+            const playButton = document.getElementById('wave-play-two2');
+            console.log('Play button clicked!');
+            if (play == true) {
+                playButton.classList.remove('fa-pause');
+                playButton.classList.add('fa-play');
+                play = false;
+                wavesurfer5.pause();
+
+
+            } else {
+                playButton.classList.remove('fa-play');
+                playButton.classList.add('fa-pause');
+                play = true;
+                wavesurfer5.play();
+
+            }
         });
 </script>
