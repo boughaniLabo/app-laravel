@@ -189,6 +189,12 @@
         console.log(mainMusic);
         wavesurfer5.load(mainMusic)
         wavesurfer5.on('ready', () => {
+            var totalDuration = wavesurfer5.getDuration();
+                var minutes = Math.floor((totalDuration % 3600) / 60);
+                var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
+                let totalTime = `${minutes}:${secondes}`;
+                var currentTime = wavesurfer5.getCurrentTime();
+                const totaTime = document.getElementById('time-total').innerText = totalTime;
         })
         wavesurfer5.on('audioprocess', function() {
                     var currentTime = wavesurfer5.getCurrentTime();

@@ -47,7 +47,7 @@
                 var secondes = ('00' + Math.floor(totalDuration % 60)).slice(-2);
                 let totalTime = `${minutes}:${secondes}`;
                 var currentTime = wavesurfer.getCurrentTime();
-                const totaTime = document.getElementById('time-total').innerText = totalTime;
+                const totaTime = document.getElementById('time-total-two').innerText = totalTime;
                 wavesurfer.on('audioprocess', function() {
                     var currentTime = wavesurfer.getCurrentTime();
                     updateTimeDisplay(currentTime);
