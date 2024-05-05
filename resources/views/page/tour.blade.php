@@ -39,8 +39,8 @@
 
             <section class="tour">
                 <div class="tour-page-wrapper">
-                    <div class="row tour-page">
-                        <div class="col-lg-4">
+                    <div class="row tour-page gap-10 flex-nowrap">
+                        <div class="col-lg-6">
                             @foreach ($tours as $item)
                                 <div class="tour-deets" style="display: {{ $loop->index === 0 ? 'flex' : 'none' }};">
                                     <div class="tour-location">
@@ -60,7 +60,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="col-lg-8 ">
+                        <div class="flex-1">
                             <ul class="tourlist tour-page">
                                 @foreach ($tours as $item)
                                     <li>
@@ -78,7 +78,7 @@
                                                     aria-hidden="true"></i>{{ $item['location'] }}
                                             </p>
                                         </div>
-                                        <a href="@isset($item['link']) {{$item['link']}} @else # @endisset" class="cta-video">stock epuisé</a>
+                                        <a href="@isset($item['link']) {{$item['link']}} @else # @endisset" class="cta-video py-1 text-center">stock epuisé</a>
                                     </li>
                                 @endforeach
                             </ul>

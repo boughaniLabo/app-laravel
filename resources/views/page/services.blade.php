@@ -52,7 +52,7 @@ Il cherche à apporter une dimension unique à travers sa musique. Que ce soit p
             </div>
         </div>
         <div class="service-cta">
-        <a class="cta-header article-cta" href="?lng=fr&amp;p=Contact">Contact</a>
+        <a class="cta-header article-cta" href="/contact">Contact</a>
         </div>
         
     </div>
@@ -88,7 +88,7 @@ Il cherche à apporter une dimension unique à travers sa musique. Que ce soit p
             </div>
         </div>
         <div class="service-cta-mobile">
-        <a class="cta-header article-cta" href="?lng=fr&amp;p=Contact">Contact</a>
+        <a class="cta-header article-cta" href="/contact">Contact</a>
     </div>
 </section>
 

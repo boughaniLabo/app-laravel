@@ -683,6 +683,10 @@ video {
   flex-direction: column !important;
 }
 
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
 .flex-nowrap {
   flex-wrap: nowrap !important;
 }
@@ -701,6 +705,18 @@ video {
 
 .gap-\[20px\] {
   gap: 20px !important;
+}
+
+.gap-11 {
+  gap: 2.75rem !important;
+}
+
+.gap-8 {
+  gap: 2rem !important;
+}
+
+.gap-10 {
+  gap: 2.5rem !important;
 }
 
 .overflow-hidden {
@@ -724,6 +740,11 @@ video {
   padding-bottom: 0px !important;
 }
 
+.py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem !important;
 }
@@ -740,9 +761,17 @@ video {
   padding-left: 1.5rem !important;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 .text-5xl {
   font-size: 3rem !important;
   line-height: 1 !important;
+}
+
+.normal-case {
+  text-transform: none !important;
 }
 
 .hover\:bg-slate-200:hover {

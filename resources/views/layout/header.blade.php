@@ -113,8 +113,8 @@
                         Autant dire
                         qu’il n’a pas fini de chercher, pour le plus grand bonheur des mélomanes.</p>
                     <div>
-                        <a class="cta-header" download="bio-fr.pdf" href="/assets/docs/bio-fr.pdf">En savoir plus</a>
-                        <a class="cta-header" href="#see-article">Articles</a>
+                        <a class="cta-header normal-case" download="bio-fr.pdf" href="/assets/docs/bio-fr.pdf">en savoir plus</a>
+                        <a class="cta-header normal-case" href="#see-article">articles</a>
                     </div>
                 </div>
                 <div class="row mobile-bio-title">

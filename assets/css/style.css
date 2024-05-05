@@ -1069,7 +1069,7 @@ margin: 0 auto ;
   background-color: #795d43;
 }
 .tour-deets {
-  width: 423px;
+  width: 100% !important;
   height: 592px;
   display: flex;
   flex-direction: column;
