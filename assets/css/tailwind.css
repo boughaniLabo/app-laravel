@@ -597,12 +597,12 @@ video {
   margin-right: auto !important;
 }
 
-.mr-5 {
-  margin-right: 1.25rem !important;
-}
-
 .mb-0 {
   margin-bottom: 0px !important;
+}
+
+.mr-5 {
+  margin-right: 1.25rem !important;
 }
 
 .block {
@@ -697,10 +697,6 @@ video {
 
 .justify-around {
   justify-content: space-around !important;
-}
-
-.justify-evenly {
-  justify-content: space-evenly !important;
 }
 
 .gap-\[20px\] {

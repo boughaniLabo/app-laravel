@@ -257,7 +257,7 @@
                             </div>
                             <div class="overlay rel-card">
                                 <div class="h-[167px] max-[1366px]:h-[130px]">
-                                    <button class="play-big" id="play-button-{{ $loop->index }}"
+                                    <button class="play-big" style="font-size: 105px;"  id="play-button-{{ $loop->index }}"
                                         onclick="playAudio({{ json_encode($value) }})"><i class="fa-solid fa-play"
                                             aria-hidden="true"></i></button>
                                 </div>
@@ -265,7 +265,7 @@
                                     @foreach ($value['links'] as $link)
                                         @switch($link['link'])
                                             @case('youtube')
-                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-youtube"
                                                         aria-hidden="true"></i> </a>
                                             @break
 

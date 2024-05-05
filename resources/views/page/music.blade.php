@@ -227,7 +227,7 @@
                                     @foreach ($value['links'] as $link)
                                         @switch($link['link'])
                                             @case('youtube')
-                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-youtube"
                                                         aria-hidden="true"></i> </a>
                                             @break
 
@@ -309,7 +309,7 @@
                                     @foreach ($value['links'] as $link)
                                         @switch($link['link'])
                                             @case('youtube')
-                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-youtube"
                                                         aria-hidden="true"></i> </a>
                                             @break
 
@@ -445,7 +445,7 @@
                                     @foreach ($value['links'] as $link)
                                         @switch($link['link'])
                                             @case('youtube')
-                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-youtube"
                                                         aria-hidden="true"></i> </a>
                                             @break
 
@@ -508,7 +508,7 @@
                                     @foreach ($value['links'] as $link)
                                         @switch($link['link'])
                                             @case('youtube')
-                                                <a href="{{ $link['link'] }}" target="_blank"> <i class="fa-brands fa-youtube"
+                                                <a href="{{ $link['url'] }}" target="_blank"> <i class="fa-brands fa-youtube"
                                                         aria-hidden="true"></i> </a>
                                             @break
 
