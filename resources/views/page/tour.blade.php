@@ -39,8 +39,8 @@
 
             <section class="tour w-full">
                 <div class="tour-page-wrapper w-full m-0 p-5 max-w-[unset]">
-                    <div class="row tour-page gap-10 flex-wrap w-full justify-center">
-                        <div class="col-4">
+                    <div class="row tour-page flex-wrap w-full justify-around">
+                        <div class="w-[35%]">
                             @foreach ($tours as $item)
                                 <div class="tour-deets" style="display: {{ $loop->index === 0 ? 'flex' : 'none' }};">
                                     <div class="tour-location">
@@ -60,19 +60,19 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="col-auto">
-                            <ul class="tourlist tour-page min-w-fit w-fit">
+                        <div class="w-[60%] min-w-[unset]">
+                            <ul class="tourlist tour-page min-w-[unset] w-fit">
                                 @foreach ($tours as $item)
-                                    <li class="flex flex-row items-center justify-around">
-                                        <div class="tour-date flex-1 w-auto">
+                                    <li class="flex flex-row min-w-[unset] items-center justify-around">
+                                        <div class="tour-date flex-1 w-auto min-w-[unset]">
                                             <h1>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('j') }}</h1>
-                                            <div class="day-h">
+                                            <div class="day-h"> 
                                                 <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}
                                                 </p>
                                                 <p>{{ $item['time'] }}</p>
                                             </div>
                                         </div>
-                                        <div class="tour-loc flex-1 w-auto">
+                                        <div class="tour-loc flex-1 w-auto min-w-[unset]">
                                             <p>{{ $item['title'] }}</p>
                                             <p><i class="fa-solid fa-location-dot"
                                                     aria-hidden="true"></i>{{ $item['location'] }}
