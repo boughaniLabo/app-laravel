@@ -592,10 +592,6 @@ video {
   z-index: 999999999999 !important;
 }
 
-.col-auto {
-  grid-column: auto !important;
-}
-
 .m-0 {
   margin: 0px !important;
 }
@@ -658,6 +654,14 @@ video {
   width: 8rem !important;
 }
 
+.w-\[35\%\] {
+  width: 35% !important;
+}
+
+.w-\[60\%\] {
+  width: 60% !important;
+}
+
 .w-auto {
   width: auto !important;
 }
@@ -669,19 +673,6 @@ video {
 
 .w-full {
   width: 100% !important;
-}
-
-.w-\[35\%\] {
-  width: 35% !important;
-}
-
-.w-\[60\%\] {
-  width: 60% !important;
-}
-
-.min-w-fit {
-  min-width: -moz-fit-content !important;
-  min-width: fit-content !important;
 }
 
 .min-w-\[unset\] {
@@ -698,6 +689,10 @@ video {
 
 .flex-1 {
   flex: 1 1 0% !important;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
 .cursor-pointer {
@@ -728,24 +723,12 @@ video {
   justify-content: center !important;
 }
 
-.justify-between {
-  justify-content: space-between !important;
-}
-
 .justify-around {
   justify-content: space-around !important;
 }
 
-.gap-3 {
-  gap: 0.75rem !important;
-}
-
 .gap-\[20px\] {
   gap: 20px !important;
-}
-
-.gap-0 {
-  gap: 0px !important;
 }
 
 .overflow-hidden {
@@ -807,9 +790,39 @@ video {
   text-transform: none !important;
 }
 
+.transition-all {
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer !important;
+}
+
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-slate-50\/25:hover {
+  background-color: rgb(248 250 252 / 0.25) !important;
+}
+
+.hover\:bg-slate-50\/5:hover {
+  background-color: rgb(248 250 252 / 0.05) !important;
+}
+
+.hover\:bg-black\/5:hover {
+  background-color: rgb(0 0 0 / 0.05) !important;
+}
+
+.hover\:bg-black\/20:hover {
+  background-color: rgb(0 0 0 / 0.2) !important;
+}
+
+.hover\:bg-black\/30:hover {
+  background-color: rgb(0 0 0 / 0.3) !important;
 }
 
 @media (max-width: 1366px) {
@@ -827,19 +840,5 @@ video {
 @media (min-width: 880px) {
   .min-\[880px\]\:flex {
     display: flex !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:gap-10 {
-    gap: 2.5rem !important;
-  }
-
-  .lg\:gap-5 {
-    gap: 1.25rem !important;
-  }
-
-  .lg\:gap-0 {
-    gap: 0px !important;
   }
 }

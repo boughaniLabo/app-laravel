@@ -5,7 +5,7 @@
             <div class="topbar w-full">
                 <div class="wrapper w-full">
                     <div class="content w-full">
-                        <div class="logo">
+                        <div class="logo" style="transform: translate(-36px, 0px);">
                             <a href="/?lng=en">
                                 <img src="assets/img/logo.svg" alt="Logo">
                             </a>
@@ -34,10 +34,10 @@
                         </nav>
                     </div>
                 </div>
-                <div class="row head-row flex flex-row items-center justify-center w-full">
+                <div style="transform: translate(-36px, 20px);" class="row head-row flex flex-row items-center justify-center w-full">
                     <div class="flex-1"></div>
                     <div class="header-title-wrapper w-fit sm:pb-40 pb-5 pl-6">
-                        <div class="hero-title">
+                        <div class="hero-title" style="font-size: 44px !important;">
                             <p class="artist-name">rafaËl dato</p>
                             <h2 class="artist-instru">pianiste</h2>
                             <h2 class="artist-comp">compositeur &amp; arrangeur</h2>

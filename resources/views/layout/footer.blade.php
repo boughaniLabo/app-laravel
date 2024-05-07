@@ -58,16 +58,14 @@
                 </div>
 
                 <div class="lang">
-                    <form id="translationForm" method="POST" action="{{ route('lang') }}">
+                    <form id="translationForm#" class="w-full" method="POST" action="{{ route('lang') }}">
                         @csrf
-                        <select id="languageSelect" name="lang">
-                            <option value="placeholder" class="language" disabled="" selected="">select lang
-                            </option>
+                        <select class="w-full" id="languageSelect" value="fr" name="lang">
                             <option value="fr" class="language">
-                                français
+                                Français
                             </option>
                             <option value="en" class="language">
-                                english
+                                English
                             </option>
                         </select>
                     </form>

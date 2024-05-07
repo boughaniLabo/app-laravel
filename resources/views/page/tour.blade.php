@@ -63,7 +63,7 @@
                         <div class="w-[60%] min-w-[unset]">
                             <ul class="tourlist tour-page min-w-[unset] w-fit">
                                 @foreach ($tours as $item)
-                                    <li class="flex flex-row min-w-[unset] items-center justify-around">
+                                    <li class="flex flex-row min-w-[unset] items-center hover:cursor-pointer hover:bg-black/30 transition-all justify-around">
                                         <div class="tour-date flex-1 w-auto min-w-[unset]">
                                             <h1>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('j') }}</h1>
                                             <div class="day-h"> 
@@ -247,7 +247,7 @@
                 for (let i = 0; i < divs.length; i++) {
                     divs[i].style.display = "none";
                 }
-                for (let i = 0; i < divs.select; i++) {
+                for (let i = 0; i < select.length; i++) {
                     select[i].classList.remove("active");
                 }
                 divs[i].style.display = "flex";
