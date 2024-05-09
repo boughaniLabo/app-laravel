@@ -16,7 +16,7 @@
 
                             <img src="assets/img/mobile.svg" alt="">
                         </a>
-                        <button type="button" id="menu-btn">
+                        <button type="button"  class="z-[999999999999]" id="menu-btn">
                             <i class="fa-solid fa-bars" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -63,10 +63,11 @@
                         <div class="w-[60%] min-w-[unset]">
                             <ul class="tourlist tour-page min-w-[unset] w-fit">
                                 @foreach ($tours as $item)
-                                    <li class="flex flex-row min-w-[unset] items-center hover:cursor-pointer hover:bg-black/30 transition-all justify-around">
+                                    <li
+                                        class="flex flex-row min-w-[unset] items-center hover:cursor-pointer hover:bg-black/30 transition-all justify-around">
                                         <div class="tour-date flex-1 w-auto min-w-[unset]">
                                             <h1>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('j') }}</h1>
-                                            <div class="day-h"> 
+                                            <div class="day-h">
                                                 <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}
                                                 </p>
                                                 <p>{{ $item['time'] }}</p>
@@ -78,7 +79,8 @@
                                                     aria-hidden="true"></i>{{ $item['location'] }}
                                             </p>
                                         </div>
-                                        <a href="@isset($item['link']) {{$item['link']}} @else # @endisset" class="cta-video py-1 text-center">stock epuisé</a>
+                                        <a href="@isset($item['link']) {{ $item['link'] }} @else # @endisset"
+                                            class="cta-video py-1 text-center uppercase">Acheter un <br> billet</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -116,96 +118,27 @@
             <section class="mobile-tour-section">
                 <div class="wrapper">
                     <ul class="tourlist">
-                        <div class="tour-date-mobile mobile-tour-page">
-                            <li>
-                                <div class="day">
-                                    <span>29</span>
-                                </div>
-                                <div class="monthy">
-                                    <p>june 2017</p>
-                                    <div class="place">
-                                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                        <span class="place"> Paris, France</span>
+                        @foreach ($tours as $item)
+                            <div class="tour-date-mobile mobile-tour-page">
+                                <li>
+                                    <div class="day">
+                                        <span>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('j') }}</span>
                                     </div>
-                                </div>
-                                <div class="hour">
-                                    <p>8:00 p.m.</p>
-                                </div>
-                            </li>
-                            <a href="" class="cta-mobile-ticket">acheter ticket</a>
-                        </div>
-                        <div class="tour-date-mobile mobile-tour-page">
-
-
-                            <li>
-                                <div class="day">
-                                    <span>29</span>
-
-                                </div>
-                                <div class="monthy">
-
-
-
-                                    <p>june 2017</p>
-                                    <div class="place">
-                                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                        <span class="place"> Paris, France</span>
+                                    <div class="monthy">
+                                        <p>{{ Carbon\Carbon::createFromTimestamp($item['date'])->format('F Y') }}</p>
+                                        <div class="place">
+                                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                            <span class="place">{{ $item['location'] }}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="hour">
-                                    <p>8:00 p.m.</p>
-                                </div>
-                            </li>
-                            <a href="" class="cta-mobile-ticket">acheter ticket</a>
-                        </div>
-                        <div class="tour-date-mobile mobile-tour-page">
-
-
-                            <li>
-                                <div class="day">
-                                    <span>29</span>
-
-                                </div>
-                                <div class="monthy">
-
-
-
-                                    <p>june 2017</p>
-                                    <div class="place">
-                                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                        <span class="place"> Paris, France</span>
+                                    <div class="hour">
+                                        <p>{{ $item['time'] }}</p>
                                     </div>
-                                </div>
-                                <div class="hour">
-                                    <p>8:00 p.m.</p>
-                                </div>
-                            </li>
-                            <a href="" class="cta-mobile-ticket">acheter ticket</a>
-                        </div>
-                        <div class="tour-date-mobile mobile-tour-page">
+                                </li>
+                                <a href="@isset($item['link']) {{ $item['link'] }} @else # @endisset" class="cta-mobile-ticket">acheter ticket</a>
+                            </div>
+                        @endforeach
 
-
-                            <li>
-                                <div class="day">
-                                    <span>29</span>
-
-                                </div>
-                                <div class="monthy">
-
-
-
-                                    <p>june 2017</p>
-                                    <div class="place">
-                                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                                        <span class="place"> Paris, France</span>
-                                    </div>
-                                </div>
-                                <div class="hour">
-                                    <p>8:00 p.m.</p>
-                                </div>
-                            </li>
-                            <a href="" class="cta-mobile-ticket">acheter ticket</a>
-                        </div>
 
 
                     </ul>

@@ -426,7 +426,7 @@ margin: 0 auto ;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 0px 0;
 }
 .big-player {
   display: none;
@@ -437,9 +437,10 @@ margin: 0 auto ;
   width: 100%;
   position: fixed;
   bottom: 0;
+  padding: 20px 70px !important;
 }
 .big-player .top-player {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 25px;
 }
 .top-player {
@@ -486,7 +487,10 @@ margin: 0 auto ;
   width: 250px;
 }
 #waveform-two {
-  width: 1200px;
+  width: 1000px;
+}
+.control-two{
+  min-width: fit-content;
 }
 .control button,
 .control-two button {
@@ -496,11 +500,12 @@ margin: 0 auto ;
   cursor: pointer;
 }
 .close-player {
-  position: relative;
   cursor: pointer;
-  top: 12px;
-  left: 1480px;
   border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
   font-size: 24px;
   background-color: #f6f5f3;
 }

@@ -52,17 +52,11 @@
     height: 295px;
   }
   .big-player {
-    padding: 20px 150px;
+    padding: 0px 150px;
   }
-  .control-two:nth-child(1) {
-    width: 185px;
-  }
-  .close-player {
-    bottom: 6px;
-    left: 1433px;
-  }
+
   .big-player .top-player {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 25px;
   }
   .big-circle {
@@ -98,17 +92,12 @@
     gap: 45px;
   }
   .big-player {
-    padding: 20px 60px;
+    padding: 0px 60px;
   }
-  .control-two:nth-child(1) {
-    width: 185px;
-  }
-  .close-player {
-    bottom: 6px;
-    left: 1470px;
-  }
+
+
   .big-player .top-player {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 25px;
   }
   .big-circle {
@@ -131,12 +120,9 @@
   .arti-header div {
     margin-top: 0;
   }
-  .close-player {
-    bottom: 6px;
-    left: 1332px;
-  }
+
   .big-player {
-    padding: 20px 110px;
+    padding: 0px 110px;
   }
   .logo img {
     width: 60px;
@@ -177,10 +163,7 @@
     height: 383px;
     background-color: #4141419c;
   }
-  .close-player {
-    bottom: 6px;
-    left: 1320px;
-  }
+
   .showcase {
     background-size: contain;
     height: 852px;
@@ -277,10 +260,7 @@
   .tour-page {
     margin: 0;
   }
-  .close-player {
-    bottom: 6px;
-    left: 1275px;
-  }
+
 }
 
 @media screen and (max-width: 1366px) {
@@ -290,10 +270,7 @@
   .wrapper {
     width: 922px;
   }
-  .close-player {
-    bottom: 6px;
-    left: 1235px;
-  }
+
   .showcase {
     background-size: cover;
     height: 600px;
@@ -554,10 +531,7 @@
   .topbar .wrapper {
     width: 1312px;
   }
-  .close-player {
-    bottom: 6px;
-    left: 1155px;
-  }
+
   .tour-page {
     width: 847px !important;
   }
@@ -1179,17 +1153,14 @@
     left: 16px;
   }
   .big-player {
-    padding: 20px 10px;
+    padding: 0px 10px;
   }
   .big-player .top-player {
-    padding: 5px;
+    padding: 0px;
     font-size: 16px;
   }
   .big-player .bottom-player {
     padding: 5px;
-  }
-  .control-two:nth-child(1) {
-    width: 290px;
   }
   .control-two button {
     font-size: 11px;
@@ -1200,11 +1171,7 @@
     height: 20px;
     left: 0px;
   }
-  .close-player {
-    left: 360px;
-    top: -10px;
-    font-size: 16px;
-  }
+
   .rel-card .overlay {
     height: 167px;
     width: 158px;
@@ -1872,10 +1839,7 @@
   .bio-overlay img {
     width: 21px;
   }
-  .close-player {
-    left: 330px;
-    font-size: 16px;
-  }
+
 }
 
 @media screen and (max-width: 319px) {

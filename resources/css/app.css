@@ -467,7 +467,7 @@
     bottom: 0;
   }
   .big-player .top-player {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 25px;
   }
   .top-player {
@@ -514,7 +514,7 @@
     width: 250px;
   }
   #waveform-two {
-    width: 1200px;
+    width: 1000px;
   }
   .control button,
   .control-two button {
@@ -524,10 +524,11 @@
     cursor: pointer;
   }
   .close-player {
-    position: relative;
     cursor: pointer;
-    top: 12px;
-    left: 1480px;
+    display: flex;
+    width: 100% !important;
+    justify-content: flex-end;
+    align-items: center;
     border: none;
     font-size: 24px;
     background-color: #f6f5f3;

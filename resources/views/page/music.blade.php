@@ -88,7 +88,7 @@
     <section class="album">
         <div class="big-player" id="costumeWave">
             <div>
-                <button class="close-player"><i class="fa-solid fa-x" aria-hidden="true"></i></button>
+                <button class="close-player"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i></button>
             </div>
             <div class="player top-player" id="soundPlayerBig">
 
