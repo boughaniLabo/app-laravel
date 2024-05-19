@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
 class Localization
@@ -16,20 +17,16 @@ class Localization
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if the language is set in the request body
-        if ($request->isMethod('post') && $request->has('lang')) {
-            $locale = $request->get('lang');
-            if (! in_array($locale, ['en', 'fr'])) {
-                abort(400);
-            }
-            App::setLocale($locale);
+        if ($request->has('lang')) {
+            $language = $request->get('lang');
+            Session::put('locale', $language);
+        } else {
+            $language = Session::get('locale', config('app.locale'));
         }
+        
+        // dd($language);
+        App::setLocale($language);
 
-        return $next($request)
-              ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', '*')
-            ->header('Access-Control-Allow-Credentials', true)
-            ->header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,X-Token-Auth,Authorization')
-            ->header('Accept', 'application/json');
+        return $next($request);
     }
 }

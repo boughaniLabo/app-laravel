@@ -87,6 +87,7 @@
             }
         }
     </script>
+
     <section class="album" id="album">
         <div class="big-player" id="costumeWave">
             <div>

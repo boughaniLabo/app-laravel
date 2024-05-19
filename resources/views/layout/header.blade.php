@@ -22,13 +22,13 @@
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav nav-home">
-                                    <a href="/">accueil</a>
-                                    <a href="/bio">Bio</a>
-                                    <a href="/services">prestation</a>
-                                    <a href="/music">Musique</a>
-                                    <a href="/tour">Tour</a>
-                                    <a class="hidden" hidden href="/blog">Blog</a>
-                                    <a href="/contact">Contact</a>
+                                    <a href="/">{{__('general.home')}}</a>
+                                    <a href="/bio">{{__('general.bio')}}</a>
+                                    <a href="/services">{{__('general.services')}}</a>
+                                    <a href="/music">{{__('general.music')}}</a>
+                                    <a href="/tour">{{__('general.tour')}}</a>
+                                    <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
+                                    <a href="/contact">{{__('general.contact')}}</a>
                                 </nav>
                             </div>
                         </nav>
@@ -86,13 +86,13 @@
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav arti-nav">
-                                    <a href="/">accueil</a>
-                                    <a href="/bio">Bio</a>
-                                    <a href="/services">prestation</a>
-                                    <a href="/music">Musique</a>
-                                    <a href="/tour">Tour</a>
-                                    <a class="hidden" hidden href="/blog">Blog</a>
-                                    <a href="/contact">Contact</a>
+                                    <a href="/">{{__('general.home')}}</a>
+                                    <a href="/bio">{{__('general.bio')}}</a>
+                                    <a href="/services">{{__('general.services')}}</a>
+                                    <a href="/music">{{__('general.music')}}</a>
+                                    <a href="/tour">{{__('general.tour')}}</a>
+                                    <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
+                                    <a href="/contact">{{__('general.contact')}}</a>
                                 </nav>
                             </div>
                         </nav>
@@ -156,14 +156,14 @@
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav arti-nav">
-                            <a href="/">accueil</a>
-                            <a href="/bio">Bio</a>
-                            <a href="/services" class="active">prestation</a>
-                            <a href="/music">Musique</a>
-                            <a href="/tour">Tour</a>
-                            <a class="hidden" hidden href="/blog">Blog</a>
-                            <a href="/contact">Contact</a>
-                            <!--<a href="?lng=fr&p=Contact">Contact</a>  -->
+                            <a href="/">{{__('general.home')}}</a>
+                            <a href="/bio">{{__('general.bio')}}</a>
+                            <a href="/services" class="active">{{__('general.services')}}</a>
+                            <a href="/music">{{__('general.music')}}</a>
+                            <a href="/tour">{{__('general.tour')}}</a>
+                            <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
+                            <a href="/contact">{{__('general.contact')}}</a>
+                            <!--<a href="?lng=fr&p={{__('general.contact')}}">{{__('general.contact')}}</a>  -->
                         </nav>
                     </div>
                 </nav>
@@ -190,13 +190,13 @@
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav music-nav">
-                            <a href="/">accueil</a>
-                            <a href="/bio">Bio</a>
-                            <a href="/services">prestation</a>
-                            <a href="/music">Musique</a>
-                            <a href="/tour">Tour</a>
-                            <a class="hidden" hidden href="/blog">Blog</a>
-                            <a href="/contact">Contact</a>
+                            <a href="/">{{__('general.home')}}</a>
+                            <a href="/bio">{{__('general.bio')}}</a>
+                            <a href="/services">{{__('general.services')}}</a>
+                            <a href="/music">{{__('general.music')}}</a>
+                            <a href="/tour">{{__('general.tour')}}</a>
+                            <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
+                            <a href="/contact">{{__('general.contact')}}</a>
                         </nav>
                     </div>
                 </nav>
@@ -228,13 +228,13 @@
                     <div class="navbar" id="menu">
 
                         <nav class="nav arti-nav">
-                            <a href="/">accueil</a>
-                            <a href="/bio">Bio</a>
-                            <a href="/services">prestation</a>
-                            <a href="/music">Musique</a>
-                            <a href="/tour">Tour</a>
-                            <a hidden href="/blog" class="active hidden">Blog</a>
-                            <a href="/contact">Contact</a>
+                            <a href="/">{{__('general.home')}}</a>
+                            <a href="/bio">{{__('general.bio')}}</a>
+                            <a href="/services">{{__('general.services')}}</a>
+                            <a href="/music">{{__('general.music')}}</a>
+                            <a href="/tour">{{__('general.tour')}}</a>
+                            <a hidden href="/blog" class="active hidden">{{__('general.blog')}}</a>
+                            <a href="/contact">{{__('general.contact')}}</a>
                         </nav>
                     </div>
                 </nav>

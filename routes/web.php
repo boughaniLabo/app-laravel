@@ -19,6 +19,6 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour', [TourController::class, 'index'])->name('tour');
 // Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-Route::post('/lang', function(Request $request){
-    return App::currentLocale();
+Route::post('/language', function(Request $request){
+    return back();
 })->name('lang');

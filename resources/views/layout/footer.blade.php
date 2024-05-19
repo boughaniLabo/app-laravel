@@ -49,22 +49,20 @@
             </div>
             <div class="social-lang">
                 <div class="footer-social">
-                    <a  href="https://www.facebook.com/RafaelDatoPiano/" target="_blank"><i class="fa-brands fa-facebook"
+                    <a href="https://www.facebook.com/RafaelDatoPiano/" target="_blank"><i class="fa-brands fa-facebook"
                             aria-hidden="true"></i></a>
-                    <a  href="https://www.instagram.com/rafael_dato/" target="_blank"><i class="fa-brands fa-instagram"
+                    <a href="https://www.instagram.com/rafael_dato/" target="_blank"><i class="fa-brands fa-instagram"
                             aria-hidden="true"></i></a>
-                    <a  href="https://fr.linkedin.com/in/rafa%C3%ABl-dato-6292a51a9" target="_blank"><i
+                    <a href="https://fr.linkedin.com/in/rafa%C3%ABl-dato-6292a51a9" target="_blank"><i
                             class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
-
                 <div class="lang">
-                    <form id="translationForm#" class="w-full" method="POST" action="{{ route('lang') }}">
-                        @csrf
-                        <select class="w-full" id="languageSelect" value="fr" name="lang">
-                            <option value="fr" class="language">
+                    <form id="translationForm" class="w-full" method="GET">
+                        <select class="w-full" id="languageSelect" value="{{ App::currentLocale() }}" name="lang">
+                            <option value="fr" class="language" {{App::isLocale('fr') ? 'selected' : ''}}>
                                 Français
                             </option>
-                            <option value="en" class="language">
+                            <option value="en" class="language" {{App::isLocale('en') ? 'selected' : ''}}>
                                 English
                             </option>
                         </select>
