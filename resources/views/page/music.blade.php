@@ -119,7 +119,7 @@
     <section class="releases music-page">
         <div class="wrapper">
             <div class="title">
-                <h1>Latest releases</h1>
+                <h1>Dernier Album</h1>
             </div>
 
 
@@ -177,7 +177,7 @@
     <section class="releases">
         <div class="wrapper desktop-row">
             <div class="title">
-                <h1>our best songs</h1>
+                <h1>Nos plus belles chansons</h1>
                 <a class="cta-header music-cta" href="javascript:void(0)" id="seeMoreSection">see more</a>
             </div>
             <div class="row best-songs">

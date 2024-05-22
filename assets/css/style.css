@@ -98,6 +98,7 @@ z-index: 1000000000 !important;
   padding: 16px 33px;
   background-color: #1e96a6;
   border-radius: 5px;
+  height: 54px;
 }
 .swiper-slide {
   width: auto;
@@ -163,7 +164,6 @@ margin: 0 auto ;
 .hero-title {
   color: #434343;
   font-size: 61px;
-  text-transform: capitalize;
   line-height: 1.5;
   margin-top: 200px;
 }
@@ -423,10 +423,15 @@ margin: 0 auto ;
   margin-top: 18px;
 }
 .player {
+    /*
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 0;
+  padding: 0px 0;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 .big-player {
   display: none;
@@ -561,7 +566,6 @@ margin: 0 auto ;
   justify-content: flex-start;
 }
 .col-md-3 h3 {
-  font-family: "DM Sans", serif;
   font-size: 1.1em;
   color: #d8d8d8;
   font-weight: 400;
@@ -569,7 +573,6 @@ margin: 0 auto ;
   margin: 16px 0;
 }
 .col-md-3 h4 {
-  font-family: "DM Sans", serif;
   font-size: 0.8em;
   color: #d8d8d87a;
   font-weight: 400;
@@ -627,7 +630,10 @@ margin: 0 auto ;
   color: #242424;
 }
 .title-wrapper {
-  padding: 40px 0;
+  /*padding: 40px 118px;
+  display: flex;
+  align-items: center;*/
+  padding: 0% 8%;
   display: flex;
   align-items: center;
 }
@@ -769,7 +775,8 @@ margin: 0 auto ;
   margin: 0;
 }
 .arti-bio-row {
-  padding: 64px 0;
+  /* padding: 64px 118px; */
+  padding: 5% 7%;
 }
 .arti-bio-row p {
   color: #414141;
@@ -822,8 +829,11 @@ margin: 0 auto ;
   margin-top: 85px;
 }
 .article-wrapper {
-  margin: 0;
+  /*margin: 0;
+  max-width: 1500px;*/
+  margin-left: 8%;
   max-width: 1500px;
+  margin-right: 8%;
 }
 .art-card {
   display: flex;

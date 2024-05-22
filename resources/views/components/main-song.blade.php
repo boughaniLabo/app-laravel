@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <h2 class="nw-albm">new album</h2>
+        <h2 class="nw-albm">nouvel album</h2>
         <div class="album-tit">
             <h1 class="alb-title w-1/2">
                 {{ $mainSong->title }}
