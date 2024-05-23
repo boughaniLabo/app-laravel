@@ -23,13 +23,13 @@
                     <nav class="topnav">
                         <div class="navbar" id="menu">
                             <nav class="nav music-nav">
-                                <a href="/" class="active">accueil</a>
-                                <a href="/bio">Bio</a>
-                                <a href="services">prestation</a>
-                                <a href="music">Musique</a>
-                                <a href="tour">Tour</a>
-                                <a href="blog" class="hidden">Blog</a>
-                                <a href="contact">Contact</a>
+                                <a href="/" class="active">{{ __('general.home') }}</a>
+                                <a href="/bio">{{ __('general.bio') }}</a>
+                                <a href="services">{{ __('general.services') }}</a>
+                                <a href="music">{{ __('general.music') }}</a>
+                                <a href="tour">{{ __('general.tour') }}</a>
+                                <a href="blog" class="hidden">{{ __('general.blog') }}</a>
+                                <a href="contact">{{ __('general.contact') }}</a>
                             </nav>
                         </div>
                     </nav>
@@ -80,7 +80,7 @@
                                             </p>
                                         </div>
                                         <a href="@isset($item['link']) {{ $item['link'] }} @else # @endisset"
-                                            class="cta-video py-1 text-center uppercase">Acheter un <br> billet</a>
+                                            class="cta-video py-1 text-center uppercase">{!!__('general.buy')!!}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -135,7 +135,7 @@
                                         <p>{{ $item['time'] }}</p>
                                     </div>
                                 </li>
-                                <a href="@isset($item['link']) {{ $item['link'] }} @else # @endisset" class="cta-mobile-ticket">acheter ticket</a>
+                                <a href="@isset($item['link']) {{ $item['link'] }} @else # @endisset" class="cta-mobile-ticket">{!!__('general.buy')!!}</a>
                             </div>
                         @endforeach
 

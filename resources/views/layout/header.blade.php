@@ -22,19 +22,20 @@
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav nav-home">
-                                    <a href="/">{{__('general.home')}}</a>
-                                    <a href="/bio">{{__('general.bio')}}</a>
-                                    <a href="/services">{{__('general.services')}}</a>
-                                    <a href="/music">{{__('general.music')}}</a>
-                                    <a href="/tour">{{__('general.tour')}}</a>
-                                    <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
-                                    <a href="/contact">{{__('general.contact')}}</a>
+                                    <a href="/">{{ __('general.home') }}</a>
+                                    <a href="/bio">{{ __('general.bio') }}</a>
+                                    <a href="/services">{{ __('general.services') }}</a>
+                                    <a href="/music">{{ __('general.music') }}</a>
+                                    <a href="/tour">{{ __('general.tour') }}</a>
+                                    <a class="hidden" hidden href="/blog">{{ __('general.blog') }}</a>
+                                    <a href="/contact">{{ __('general.contact') }}</a>
                                 </nav>
                             </div>
                         </nav>
                     </div>
                 </div>
-                <div style="transform: translate(-36px, 20px);" class="row head-row flex flex-row items-center justify-center w-full">
+                <div style="transform: translate(-36px, 20px);"
+                    class="row head-row flex flex-row items-center justify-center w-full">
                     <div class="flex-1"></div>
                     <div class="header-title-wrapper w-fit sm:pb-40 pb-5 pl-6">
                         <div class="hero-title" style="font-size: 44px !important;">
@@ -79,20 +80,20 @@
                             <a href="/?lng=fr">
                                 <img src="assets/img/mobile.svg" alt="">
                             </a>
-                            <button type="button" class="z-[999999999999]"  id="menu-btn">
+                            <button type="button" class="z-[999999999999]" id="menu-btn">
                                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
                             </button>
                         </div>
                         <nav class="topnav">
                             <div class="navbar" id="menu">
                                 <nav class="nav arti-nav">
-                                    <a href="/">{{__('general.home')}}</a>
-                                    <a href="/bio">{{__('general.bio')}}</a>
-                                    <a href="/services">{{__('general.services')}}</a>
-                                    <a href="/music">{{__('general.music')}}</a>
-                                    <a href="/tour">{{__('general.tour')}}</a>
-                                    <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
-                                    <a href="/contact">{{__('general.contact')}}</a>
+                                    <a href="/">{{ __('general.home') }}</a>
+                                    <a href="/bio">{{ __('general.bio') }}</a>
+                                    <a href="/services">{{ __('general.services') }}</a>
+                                    <a href="/music">{{ __('general.music') }}</a>
+                                    <a href="/tour">{{ __('general.tour') }}</a>
+                                    <a href="/blog" class="hidden" hidden >{{ __('general.blog') }}</a>
+                                    <a href="/contact">{{ __('general.contact') }}</a>
                                 </nav>
                             </div>
                         </nav>
@@ -103,31 +104,19 @@
                 <div class="col-md-5 blank"></div>
                 <div class="col-md-5 hero-title arti-header">
                     <p class="artist-name arti-name text-5xl">rafaël dato</p>
-                    <p class="arti-intro">À la recherche d’une utopique synthèse de toutes les musiques, Rafaël Dato
-                        explore, depuis
-                        sa petite enfance, les sons, les rythmes et les mélodies qui composent le paysage sonore de
-                        l’humanité. Son
-                        répertoire, à la fois éclectique et cohérent, s’inspire de Bach et de Gogo Penguin, de Mozart et
-                        de Brad
-                        Mehldau, mais aussi de John Williams et de Radiohead, de Gabriel Fauré, et même de Nirvana…
-                        Autant dire
-                        qu’il n’a pas fini de chercher, pour le plus grand bonheur des mélomanes.</p>
+                    <p class="arti-intro">{{ __('bio.hero') }}</p>
                     <div>
-                        <a class="cta-header normal-case" download="bio-fr.pdf" href="/assets/docs/bio-fr.pdf">en savoir plus</a>
+                        <a class="cta-header normal-case" download="bio-fr.pdf" href="/assets/docs/bio-fr.pdf">{{__('general.know_more_about_me')}}</a>
                         <a class="cta-header normal-case" href="#see-article">articles</a>
                     </div>
                 </div>
                 <div class="row mobile-bio-title">
-
-
                     <div class="col-md-6">
-
                     </div>
                     <div class="mobile-link">
-                        <a href="#" class="cta-arti mobile-cta">En savoir plus</a>
+                        <a href="#" class="cta-arti mobile-cta">{{ __('general.know_more_about_me') }}</a>
                         <a href="#" class="cta-arti mobile-cta">Articles</a>
                     </div>
-
                 </div>
             </div>
         @endif
@@ -147,7 +136,7 @@
                     <a href="/?lng=fr">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" class="z-[999999999999]"  id="menu-btn">
+                    <button type="button" class="z-[999999999999]" id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -156,14 +145,14 @@
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav arti-nav">
-                            <a href="/">{{__('general.home')}}</a>
-                            <a href="/bio">{{__('general.bio')}}</a>
-                            <a href="/services" class="active">{{__('general.services')}}</a>
-                            <a href="/music">{{__('general.music')}}</a>
-                            <a href="/tour">{{__('general.tour')}}</a>
-                            <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
-                            <a href="/contact">{{__('general.contact')}}</a>
-                            <!--<a href="?lng=fr&p={{__('general.contact')}}">{{__('general.contact')}}</a>  -->
+                            <a href="/">{{ __('general.home') }}</a>
+                            <a href="/bio">{{ __('general.bio') }}</a>
+                            <a href="/services" class="active">{{ __('general.services') }}</a>
+                            <a href="/music">{{ __('general.music') }}</a>
+                            <a href="/tour">{{ __('general.tour') }}</a>
+                            <a class="hidden" hidden href="/blog">{{ __('general.blog') }}</a>
+                            <a href="/contact">{{ __('general.contact') }}</a>
+                            <!--<a href="?lng=fr&p={{ __('general.contact') }}">{{ __('general.contact') }}</a>  -->
                         </nav>
                     </div>
                 </nav>
@@ -183,20 +172,20 @@
                     <a href="/?lng=en">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" class="z-[999999999999]"  id="menu-btn">
+                    <button type="button" class="z-[999999999999]" id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
                 <nav class="topnav ">
                     <div class="navbar" id="menu">
                         <nav class="nav music-nav">
-                            <a href="/">{{__('general.home')}}</a>
-                            <a href="/bio">{{__('general.bio')}}</a>
-                            <a href="/services">{{__('general.services')}}</a>
-                            <a href="/music">{{__('general.music')}}</a>
-                            <a href="/tour">{{__('general.tour')}}</a>
-                            <a class="hidden" hidden href="/blog">{{__('general.blog')}}</a>
-                            <a href="/contact">{{__('general.contact')}}</a>
+                            <a href="/">{{ __('general.home') }}</a>
+                            <a href="/bio">{{ __('general.bio') }}</a>
+                            <a href="/services">{{ __('general.services') }}</a>
+                            <a href="/music">{{ __('general.music') }}</a>
+                            <a href="/tour">{{ __('general.tour') }}</a>
+                            <a class="hidden" hidden href="/blog">{{ __('general.blog') }}</a>
+                            <a href="/contact">{{ __('general.contact') }}</a>
                         </nav>
                     </div>
                 </nav>
@@ -220,7 +209,7 @@
                     <a href="/?lng=fr">
                         <img src="assets/img/mobile.svg" alt="">
                     </a>
-                    <button type="button" class="z-[999999999999]"  id="menu-btn">
+                    <button type="button" class="z-[999999999999]" id="menu-btn">
                         <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -228,13 +217,13 @@
                     <div class="navbar" id="menu">
 
                         <nav class="nav arti-nav">
-                            <a href="/">{{__('general.home')}}</a>
-                            <a href="/bio">{{__('general.bio')}}</a>
-                            <a href="/services">{{__('general.services')}}</a>
-                            <a href="/music">{{__('general.music')}}</a>
-                            <a href="/tour">{{__('general.tour')}}</a>
-                            <a hidden href="/blog" class="active hidden">{{__('general.blog')}}</a>
-                            <a href="/contact">{{__('general.contact')}}</a>
+                            <a href="/">{{ __('general.home') }}</a>
+                            <a href="/bio">{{ __('general.bio') }}</a>
+                            <a href="/services">{{ __('general.services') }}</a>
+                            <a href="/music">{{ __('general.music') }}</a>
+                            <a href="/tour">{{ __('general.tour') }}</a>
+                            <a href="/blog" hidden class="active hidden">{{ __('general.blog') }}</a>
+                            <a href="/contact">{{ __('general.contact') }}</a>
                         </nav>
                     </div>
                 </nav>

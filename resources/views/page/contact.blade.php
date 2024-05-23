@@ -23,13 +23,13 @@
                     <div class="navbar " id="menu">
 
                         <nav class="nav music-nav">
-                            <a href="/" class="active">Home</a>
-                            <a href="/bio">Bio</a>
-                            <a href="services">Services</a>
-                            <a href="music">Music</a>
-                            <a href="tour">Tour</a>
-                            <a href="blog" class="hidden">Blog</a>
-                            <a href="contact">Contact</a>
+                            <a href="/" class="active">{{ __('general.home') }}</a>
+                            <a href="/bio">{{ __('general.bio') }}</a>
+                            <a href="services">{{ __('general.services') }}</a>
+                            <a href="music">{{ __('general.music') }}</a>
+                            <a href="tour">{{ __('general.tour') }}</a>
+                            <a href="blog" class="hidden">{{ __('general.blog') }}</a>
+                            <a href="contact">{{ __('general.contact') }}</a>
                         </nav>
 
                     </div>
@@ -41,14 +41,15 @@
             <section class="contact-page">
                 <div class="contact-details">
                     <!-- Contactez-nous -->
-                    <h1>Contactez-nous</h1>
+                    <h1>{{__('contact.contact')}}</h1>
                     <div class="contact-form">
                         <div class="contact-details-container">
                             <div class="contact-details-text">
                                 <h2 class="contact-details-title">
-                                    Coordonnées </h2>
+                                    {{__('contact.info')}} </h2>
                                 <p class="contact-p">
-                                    N’hésitez pas à nous joindre à tout moment </p>
+                                    {{__('contact.info_desc')}}
+                                </p>
                             </div>
                             <div class="contact-details-info">
                                 <div class="contact-info">
@@ -70,12 +71,12 @@
                         <form action="post">
                             <div class="form-parts">
                                 <div class="form-elemnt">
-                                    <label for="name">nom</label>
-                                    <input type="text" name="name" id="name" placeholder="nom">
+                                    <label for="name">{{__('contact.name')}}</label>
+                                    <input type="text" name="name" id="name" placeholder="{{__('contact.name')}}">
                                 </div>
                                 <div class="form-elemnt">
-                                    <label for="first-name">prénom</label>
-                                    <input type="text" name="first-name" id="first-name" placeholder="prénom">
+                                    <label for="first-name">{{__('contact.firstName')}}</label>
+                                    <input type="text" name="first-name" id="first-name" placeholder="{{__('contact.firstName')}}">
                                 </div>
                             </div>
                             <div class="form-parts">
@@ -85,14 +86,14 @@
                                     <input type="email" name="email" id="email" placeholder="E-mail">
                                 </div>
                                 <div class="form-elemnt">
-                                    <label for="phone">Numéro de téléphone</label>
+                                    <label for="phone">{{__('contact.number')}}</label>
                                     <input type="text" name="phone" id="phone" placeholder="+1 234 567 890">
                                 </div>
                             </div>
                             <div class="form-parts">
 
                                 <div class="subject">
-                                    <p>Sujet?</p>
+                                    <p>{{__('contact.subject')}}?</p>
                                 </div>
                             </div>
                             <div class="form-parts">
@@ -100,29 +101,29 @@
                                 <div class="radio-choice">
                                     <div>
                                         <input type="radio" checked="" class="radio">
-                                        <label for="benefit">Préstation</label>
+                                        <label for="benefit">{{__('contact.subject1')}}</label>
                                     </div>
                                     <div>
 
                                         <input type="radio" class="radio">
-                                        <label for="benefit">Demande d’information</label>
+                                        <label for="benefit">{{__('contact.subject2')}}</label>
                                     </div>
                                     <div>
 
                                         <input type="radio" class="radio">
-                                        <label for="benefit">collaboration</label>
+                                        <label for="benefit">{{__('contact.subject3')}}</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-parts">
 
                                 <div class="form-elemnt msg-box">
-                                    <label for="message">message</label>
-                                    <input type="text" placeholder="Ecrivez votre message..." class="msg-box">
+                                    <label for="message">{{__('contact.message')}}</label>
+                                    <input type="text" placeholder="{{__('contact.message_placeholder')}}" class="msg-box">
                                 </div>
                             </div>
                             <div class="cta-div">
-                                <a class="cta-header form-cta" href="#">envoyer</a>
+                                <a class="cta-header form-cta" href="#">{{__('contact.send')}}</a>
                             </div>
                         </form>
 

@@ -5,21 +5,21 @@
                 <img src="assets/img/logow.svg" alt="Logo">
             </div>
             <div class="footer-menu">
-                <h3 class="menu-title">menu</h3>
+                <h3 class="menu-title">{{__('general.menu')}}</h3>
                 <ul>
                     <li>
-                        <a href="?lng=en&amp;p=Home">accueil</a>
-                        <a href="?lng=en&amp;p=Bio">Bio</a>
-                        <a href="?lng=en&amp;p=Services">prestation</a>
-                        <a href="?lng=en&amp;p=Music">Musique</a>
-                        <a href="?lng=en&amp;p=Tour">Tour</a>
-                        <a href="?lng=en&amp;p=Blog" class="hidden">Blog</a>
-                        <a href="?lng=en&amp;p=Contact">Contact</a>
+                        <a href="/">{{__('general.home')}}</a>
+                        <a href="/bio">{{__('general.bio')}}</a>
+                        <a href="/services">{{__('general.services')}}</a>
+                        <a href="/music">{{__('general.music')}}</</a>
+                        <a href="/tour">{{__('general.tour')}}</a>
+                        <a href="/blog" class="hidden">{{__('general.blog')}}</a>
+                        <a href="/contact">{{__('general.contact')}}</a>
                     </li>
                 </ul>
             </div>
             <div class="footer-menu">
-                <h3 class="menu-title">best music</h3>
+                <h3 class="menu-title">{{__('general.best_music')}}</h3>
                 <ul>
                     <li>
                         <a href="#">so what's next</a>
@@ -27,12 +27,11 @@
                         <a href="#">How deep is the ocean</a>
                         <a href="#">Folk waltz</a>
                         <a href="#">Pop song</a>
-
                     </li>
                 </ul>
             </div>
             <div class="footer-menu">
-                <h3 class="menu-title">last blog</h3>
+                <h3 class="menu-title">{{__('general.last_blog')}}</h3>
                 <ul>
                     <li>
                         <a href="#">so what's next</a>
@@ -40,7 +39,7 @@
                 </ul>
             </div>
             <div class="footer-menu">
-                <h3 class="menu-title">contact me</h3>
+                <h3 class="menu-title">{{__('general.contact_me')}}</h3>
                 <ul>
                     <li>
 

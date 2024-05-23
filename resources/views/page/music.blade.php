@@ -119,7 +119,7 @@
     <section class="releases music-page">
         <div class="wrapper">
             <div class="title">
-                <h1>Dernier Album</h1>
+                <h1>{{__('music.last_albums')}}</h1>
             </div>
 
 
@@ -177,8 +177,8 @@
     <section class="releases">
         <div class="wrapper desktop-row">
             <div class="title">
-                <h1>Nos plus belles chansons</h1>
-                <a class="cta-header music-cta" href="javascript:void(0)" id="seeMoreSection">see more</a>
+                <h1>{{__('music.best_songs')}}</h1>
+                <a class="cta-header music-cta" href="javascript:void(0)" id="seeMoreSection">{{__('general.see_more')}}</a>
             </div>
             <div class="row best-songs">
                 @foreach ($values as $value)
@@ -394,7 +394,7 @@
     <section class="song-page" id="specialPupUp">
         <div class="wrapper">
             <div class="title">
-                <h1>Nos pistes</h1>
+                <h1>{{__('music.our_music')}}</h1>
                 <a class="cta-header music-cta close-cta" href="javascript:void(0)" id="main-popup">close</a>
             </div>
             <div class="row best-songs dispaly-flex">
