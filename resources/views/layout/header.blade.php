@@ -40,9 +40,9 @@
                     <div class="header-title-wrapper w-fit sm:pb-40 pb-5 pl-6">
                         <div class="hero-title" style="font-size: 44px !important;">
                             <p class="artist-name">rafaËl dato</p>
-                            <h2 class="artist-instru">pianiste</h2>
-                            <h2 class="artist-comp">compositeur &amp; arrangeur</h2>
-                            <a class="cta-header" href="#album">Nouvel album</a>
+                            <h2 class="artist-instru">{{__('home.pianiste')}}</h2>
+                            <h2 class="artist-comp">{{__('home.pianiste2')}}</h2>
+                            <a class="cta-header" href="#album">{{__('general.new_album')}}</a>
                         </div>
                         <div class="social-header">
                             <a href=" https://open.spotify.com/artist/6trash5iM63TKWj9TEo0Go " target="_blank"> <i

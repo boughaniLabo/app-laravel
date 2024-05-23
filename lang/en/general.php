@@ -15,6 +15,6 @@ return [
     'know_more_about_me'=> 'More  About me',
     'new_album'=> 'New Album',
     'see_more'=> 'see more',
-    'buy'=> 'Buy <br> a ticket'
-
+    'buy'=> 'Buy <br> a ticket',
+    'out_of_stock'=> 'Out of Stock'
 ];

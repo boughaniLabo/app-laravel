@@ -15,5 +15,6 @@ return [
     'know_more_about_me'=> 'en savoir plus',
     'new_album'=> 'NOUVEL ALBUM',
     'see_more'=> 'voir plus',
-    'buy'=> 'Acheter <br> un billet'
+    'buy'=> 'Acheter <br> un billet',
+    'out_of_stock'=> 'En rupture de stock'
 ];

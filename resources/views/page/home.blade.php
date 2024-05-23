@@ -123,7 +123,7 @@
     <section class="releases">
         <div class="wrapper">
             <div class="title">
-                <h1>DERNIÈRES PUBLICATIONS</h1>
+                <h1>{{__('home.last_publications')}}</h1>
             </div>
             <div class="mobile-row">
                 @foreach ($latestMobile as $value)
@@ -304,9 +304,8 @@
     <section class="videos">
         <div class="wrapper ">
             <div class="title title-wrapper">
-                <h1>Videos</h1>
-                <a href="https://www.youtube.com/@rafaeldato-pianistcomposer5130" target="_blank" class="cta-video">see
-                    more</a>
+                <h1>{{__('home.videos')}}</h1>
+                <a href="https://www.youtube.com/@rafaeldato-pianistcomposer5130" target="_blank" class="cta-video">{{__('general.see_more')}}</a>
             </div>
             <div class="row">
 
@@ -349,8 +348,8 @@
     <section class="gallery">
         <div class="wrapper">
             <div class="title title-wrapper">
-                <h1>GALERIE</h1>
-                <a href="https://www.instagram.com/rafael_dato/" target="_blank" class="cta-video">voir plus</a>
+                <h1>{{__('home.galerie')}}</h1>
+                <a href="https://www.instagram.com/rafael_dato/" target="_blank" class="cta-video">{{__('general.see_more')}}</a>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-row-1">
@@ -430,8 +429,8 @@
     <section class="mobile-tour">
         <div class="wrapper">
             <div class="title">
-                <h1>APPARITIONS PRÉCÉDENTES</h1>
-                <a href="?lng=en&amp;p=Tour" class="cta-video py-0">see more</a>
+                <h1>{{__('home.latest_seens')}}</h1>
+                <a href="?lng=en&amp;p=Tour" class="cta-video py-0">{{__('general.see_more')}}</a>
             </div>
             <ul class="tourlist">
                 @foreach ($tours as $tour)
@@ -453,7 +452,7 @@
                             </div>
                         </li>
                         <a href="@isset($tour['link']) {{ $tour['link'] }} @else # @endisset"
-                            class="cta-mobile-ticket">out of stock</a>
+                            class="cta-mobile-ticket">{{__('general.out_of_stock')}}</a>
                     </div>
                 @endforeach
 
@@ -464,8 +463,8 @@
     <section class="tour">
         <div class="wrapper tour-section">
             <div class="title">
-                <h1>APPARITIONS PRÉCÉDENTES</h1>
-                <a href="?lng=en&amp;p=Tour" class="cta-video">see more</a>
+                <h1>{{__('home.latest_seens')}}</h1>
+                <a href="?lng=en&amp;p=Tour" class="cta-video">{{__('general.see_more')}}</a>
             </div>
             <ul class="tourlist">
                 @foreach ($tours as $tour)
@@ -482,7 +481,7 @@
                             <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ $tour['location'] }}</p>
                         </div>
                         <a href="@isset($tour['link']) {{ $tour['link'] }} @else # @endisset"
-                            class="cta-video">out of stock</a>
+                            class="cta-video">{{__('general.out_of_stock')}}</a>
                     </li>
                 @endforeach
             </ul>
